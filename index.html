@@ -1,700 +1,449 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8" />
-  <title>Koddo | Ajuste Fino de tu ERP — SAP B1, Apps y Datos — Bolivia</title>
-
-  <meta name="description" content="Tu ERP hace una parte del trabajo. El resto todavía se hace a mano. Koddo hace el ajuste fino, construye la última milla de tu SAP B1: apps, integraciones y tableros que tu equipo realmente usa. En semanas.">
-
-  <meta name="keywords" content="integración SAP B1 Bolivia, apps móviles SAP, data engineering Bolivia, ERP, SAP Business One, dashboard SAP B1, software agentico a medida Bolivia">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koddo · Agentes de IA que construyen el software de tu empresa</title>
+  <meta name="description" content="Koddo es una empresa de agentes de inteligencia artificial que construyen el software de tu empresa, dirigidos por arquitectos de software. Por suscripción, desde 500 créditos al mes.">
   <link rel="canonical" href="https://koddo.tech/">
   <link rel="alternate" hreflang="es" href="https://koddo.tech/">
   <link rel="alternate" hreflang="en" href="https://koddo.tech/en/">
   <link rel="alternate" hreflang="x-default" href="https://koddo.tech/">
-
-  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
-
-  <meta property="og:title" content="Koddo | La Última Milla de tu ERP">
-  <meta property="og:description" content="Tu ERP llega hasta cierto punto. Koddo construye el tramo que falta: apps, integraciones y tableros que tu equipo realmente usa. Bolivia y la región. El ajuste fino de tu ERP">
+  <meta property="og:title" content="Koddo · Agentes de IA que construyen el software de tu empresa">
+  <meta property="og:description" content="Agentes de inteligencia artificial dirigidos por arquitectos de software. Por suscripción, desde 500 créditos al mes.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://koddo.tech/assets/web-mockup.png">
   <meta property="og:url" content="https://koddo.tech/">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-
-  <!-- LLM -->
+  <meta property="og:image" content="https://koddo.tech/images/logo-red-light.png">
   <link rel="alternate" type="text/markdown" href="/about-koddo.md">
   <meta name="llm-context" content="/about-koddo.md">
-  
-  <style>
-    /* Critical CSS to prevent FOUC */
-    :root {
-      --color-bg: #121720;
-      --color-text-primary: #f4f2ee;
-      --font-family-base: 'Nunito Sans', system-ui, -apple-system, sans-serif;
-    }
-    body {
-      background-color: var(--color-bg);
-      color: var(--color-text-primary);
-      font-family: var(--font-family-base);
-      margin: 0;
-    }
-    /* Simple fade-in only for the app container */
-    #app {
-      opacity: 0;
-      animation: fadeIn 0.4s ease forwards;
-    }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      border: 0;
-    }
-  </style>
-  
-  <link rel="preload" href="/src/style.css" as="style">
-  <link rel="stylesheet" href="/src/style.css">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Koddo",
-    "slogan": "La Última Milla de tu ERP",
-    "description": "Koddo construye la última milla del ERP: apps móviles y web, integraciones SAP Business One (SAP B1) y tableros operacionales que llevan el sistema hasta donde la implementación original no llegó. Para empresas medianas en Bolivia y la región. El ajuste fino de tu ERP",
+    "slogan": "Agentes de IA que construyen el software de tu empresa",
+    "description": "Koddo es una empresa de agentes de inteligencia artificial que construyen software para empresas, dirigidos por arquitectos de software. Se contrata por suscripción mensual o anual con créditos.",
     "url": "https://koddo.tech",
     "areaServed": ["Bolivia", "Perú", "Argentina"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Santa Cruz",
-      "addressCountry": "Bolivia"
-    },
-    "serviceType": [
-      "SAP Business One Integration",
-      "Mobile Development",
-      "Data Engineering",
-      "Artificial Intelligence"
-    ],
-    "knowsAbout": ["SAP Business One", "SAP B1", "SAP S/4HANA", "Flutter", "NestJS", "NextJS", "Machine Learning", "Data Engineering"]
+    "address": { "@type": "PostalAddress", "addressLocality": "Santa Cruz", "addressCountry": "Bolivia" },
+    "serviceType": ["Software development with AI agents", "Mobile Development", "Data Engineering", "Systems Integration"]
   }
   </script>
+  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-900: #05080e;
+      --navy-800: #0a101b;
+      --navy-glow: #1d3354;
+      --cream: #f1ede4;
+      --cream-2: #e6dfd0;
+      --paper: #f5f2eb;
+      --ink: #121926;
+      --ink-2: rgba(18, 25, 38, .62);
+      --ink-3: rgba(18, 25, 38, .4);
+      --red: #da3c33;
+      --text: #f4f2ee;
+      --text-2: rgba(244, 242, 238, .64);
+      --text-3: rgba(244, 242, 238, .38);
+      --glass: rgba(22, 32, 52, .42);
+      --line: rgba(255, 255, 255, .10);
+      --glass-c: rgba(255, 255, 255, .45);
+      --line-c: rgba(18, 25, 38, .10);
+      --blur: blur(22px) saturate(140%);
+      --serif: 'Instrument Serif', Georgia, serif;
+      --dot: 'Doto', 'JetBrains Mono', monospace;
+      --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+      --sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --gutter: clamp(16px, 4vw, 48px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1160px, 100%); margin: 0 auto; padding: 0 var(--gutter); }
 
+    .label { display: inline-flex; align-items: center; gap: 8px; font: 500 11px/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+    .dark .label { color: var(--text-3); }
+    .dot-red { width: 7px; height: 7px; border-radius: 50%; background: var(--red); box-shadow: 0 0 10px rgba(218,60,51,.6); flex: none; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -.015em; }
+    h2 { font-size: clamp(38px, 5.2vw, 72px); line-height: 1.02; }
+    em { font-style: italic; }
+
+    .dark { background: var(--navy-900); color: var(--text); }
+    .glass { background: var(--glass); border: 1px solid var(--line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-radius: 22px; }
+    .glass-c { background: var(--glass-c); border: 1px solid var(--line-c); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-radius: 22px; }
+    .dots { background-image: radial-gradient(rgba(255,255,255,.085) 1px, transparent 1.4px); background-size: 28px 28px; }
+    .dots-c { background-image: radial-gradient(rgba(18,25,38,.08) 1px, transparent 1.4px); background-size: 28px 28px; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 26px; border-radius: 999px; font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; transition: transform .2s; white-space: nowrap; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-ink { background: var(--ink); color: var(--cream); }
+    .btn-cream { background: var(--cream); color: var(--ink); }
+    .btn-ghost { background: rgba(255,255,255,.05); border: 1px solid var(--line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+    .link { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); border-bottom: 1px solid var(--ink-3); padding-bottom: 4px; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.on { opacity: 1; transform: none; }
+
+    /* ---------- Menú: logo al centro, como YC ---------- */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 72px; background: rgba(245,242,235,.72); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-bottom: 1px solid transparent; transition: border-color .3s; }
+    .nav.scrolled { border-bottom-color: var(--line-c); }
+    .nav-in { height: 100%; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+    .nav ul { display: flex; gap: 28px; list-style: none; }
+    .nav ul a { font: 500 13px/1 var(--sans); color: var(--ink-2); }
+    .nav ul a:hover { color: var(--ink); }
+    .nav .logo img { height: 40px; width: auto; }
+    .nav .right { display: flex; justify-content: flex-end; align-items: center; gap: 22px; }
+    .nav .btn { height: 40px; padding: 0 18px; font-size: 11px; }
+
+    /* ---------- Héroe ---------- */
+    .hero { min-height: min(100vh, 900px); display: grid; place-items: center; text-align: center; padding: 140px 0 70px; position: relative; }
+    .hero h1 { font-size: clamp(46px, 6.6vw, 96px); line-height: 1; letter-spacing: -.02em; max-width: 1040px; margin: 0 auto; }
+    .hero h1 em { color: var(--ink); }
+    .hero sup { font: 400 .28em/1 var(--serif); vertical-align: super; margin-left: 4px; color: var(--ink-2); }
+    .note { max-width: 440px; margin: 34px auto 0; text-align: left; font: italic 400 19px/1.4 var(--serif); color: var(--ink-2); display: grid; grid-template-columns: auto 1fr; gap: 10px; }
+    .note span:first-child { font-style: normal; }
+    .hero .actions { display: flex; gap: 22px; justify-content: center; align-items: center; margin-top: 40px; flex-wrap: wrap; }
+    .how-sec { padding: 10px 0 clamp(100px, 12vw, 150px); text-align: center; }
+    .how-strip { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 940px; margin: 26px auto 0; border-top: 1px solid var(--line-c); text-align: left; }
+    .how-strip div { padding: 24px 22px 0; }
+    .how-strip div + div { border-left: 1px solid var(--line-c); }
+    .how-strip .n { font: 800 26px/1 var(--dot); color: var(--ink-3); }
+    .how-strip b { display: block; font: 400 24px/1.15 var(--serif); margin: 14px 0 6px; }
+    .how-strip .label { color: var(--ink-3); }
+    .how-strip .human .n { color: var(--red); }
+    .chev { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); color: var(--ink-3); animation: bob 2s infinite; }
+    @keyframes bob { 50% { transform: translate(-50%, 5px); } }
+
+    /* ---------- Casos: contexto de la empresa, antes y ahora ---------- */
+    .cases { padding: clamp(100px, 12vw, 160px) 0; }
+    .solution + .cases { padding-top: 0; }
+    .cases h2 { margin: 20px 0 48px; }
+    .story { position: relative; min-height: 620px; border-radius: 26px; overflow: hidden; display: flex; align-items: flex-end; padding: 22px; }
+    .story + .story { margin-top: 16px; }
+    .story > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.8) contrast(1.03); }
+    .story::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,8,14,.55) 0%, rgba(5,8,14,.15) 55%, rgba(5,8,14,0) 100%), linear-gradient(180deg, transparent 50%, rgba(5,8,14,.45)); }
+    .story.rev { justify-content: flex-end; }
+    .story.rev::after { background: linear-gradient(270deg, rgba(5,8,14,.55) 0%, rgba(5,8,14,.15) 55%, rgba(5,8,14,0) 100%), linear-gradient(180deg, transparent 50%, rgba(5,8,14,.45)); }
+    .story .panel { position: relative; z-index: 2; width: min(520px, 100%); padding: 28px; }
+    .story .panel > .label { color: var(--text-2); }
+    .story h3 { font-size: clamp(28px, 2.8vw, 38px); line-height: 1.08; margin: 12px 0 22px; }
+    .ba { display: grid; gap: 10px; }
+    .ba div { display: grid; grid-template-columns: 70px 1fr; gap: 14px; align-items: baseline; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); }
+    .ba .label { color: var(--text-3); }
+    .ba p { font-size: 15px; color: var(--text-2); }
+    .ba .now { background: rgba(218,60,51,.08); border-color: rgba(218,60,51,.3); }
+    .ba .now .label { color: var(--cream); }
+    .ba .now p { color: var(--text); }
+    .story .cite { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .story .cite p { font: italic 400 19px/1.3 var(--serif); }
+    .story .cite .label { margin-top: 8px; }
+
+    /* Producto: bandeja que se apoya sobre la foto */
+    .story { padding-bottom: 150px; align-items: center; }
+    .product { position: relative; z-index: 3; width: min(940px, 94%); margin: -120px auto 0; display: flex; justify-content: center; align-items: flex-end; gap: 22px; padding: 22px 22px 0; }
+    .frame-web { width: 66%; border-radius: 12px; overflow: hidden; background: #fff; border: 1px solid rgba(255,255,255,.18); box-shadow: 0 50px 90px -40px rgba(0,0,0,.9), 0 0 0 6px rgba(255,255,255,.04); }
+    .frame-web .bar { height: 24px; background: #eceef2; display: flex; gap: 6px; align-items: center; padding-left: 12px; }
+    .frame-web .bar i { width: 8px; height: 8px; border-radius: 50%; background: #cfd2d8; }
+    .frame-web img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; }
+    .frame-phone { width: 19%; aspect-ratio: 1170 / 2532; border-radius: 28px; overflow: hidden; border: 6px solid #0b0f17; background: #0b0f17; box-shadow: 0 50px 80px -30px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.14); margin-bottom: -26px; }
+    .frame-phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 22px; }
+    .product.phones .frame-phone { width: 23%; margin-bottom: 0; }
+    .product.phones .frame-phone:nth-child(2) { transform: translateY(-34px); }
+    .product-cap { display: flex; justify-content: center; margin-top: 46px; }
+    .product-cap + .story { margin-top: 72px; }
+
+    /* ---------- Problema ---------- */
+    .pain { padding: clamp(100px, 12vw, 160px) 0; }
+    .pain h2 { max-width: 860px; margin-top: 20px; }
+    .pain h2 .soft { color: var(--text-3); }
+    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 60px; }
+    .pain-card { padding: 28px; }
+    .pain-card .n { font: 800 46px/1 var(--dot); color: rgba(244,242,238,.25); }
+    .pain-card p { font: 400 27px/1.2 var(--serif); margin-top: 26px; }
+    .pain-card p span { color: var(--text-3); }
+
+    /* ---------- Solución + pasos ---------- */
+    .solution { padding: 0 0 clamp(100px, 12vw, 160px); }
+    .solution h2 { margin: 20px 0 56px; max-width: 760px; }
+    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .duo-card { padding: 32px; min-height: 250px; display: flex; flex-direction: column; }
+    .duo-card .n { font: 800 60px/1 var(--dot); color: rgba(244,242,238,.2); }
+    .duo-card h3 { font-size: clamp(30px, 3vw, 40px); line-height: 1.05; margin-top: auto; padding-top: 36px; }
+    .duo-card p { color: var(--text-2); margin-top: 8px; }
+    .duo-card.human { border-color: rgba(218,60,51,.38); background: linear-gradient(180deg, rgba(218,60,51,.09), rgba(22,32,52,.42)); }
+    .duo-card.human .n { color: var(--red); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+    .step { padding: 24px 26px; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; }
+    .step .n { font: 800 34px/1 var(--dot); color: rgba(244,242,238,.25); }
+    .step h3 { font-size: 24px; line-height: 1.1; }
+    .step.human { border-color: rgba(218,60,51,.38); }
+    .step.human .n { color: var(--red); }
+
+    /* ---------- Planes ---------- */
+    .plans { padding: clamp(100px, 12vw, 160px) 0; }
+    .plans-head { text-align: center; margin-bottom: 40px; }
+    .plans-head h2 { margin-top: 20px; }
+    .plans-head p { color: var(--ink-2); margin-top: 14px; }
+    .toggle { display: flex; width: max-content; margin: 0 auto 40px; padding: 5px; border-radius: 999px; background: var(--glass-c); border: 1px solid var(--line-c); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+    .toggle button { border: 0; background: none; cursor: pointer; height: 40px; padding: 0 20px; border-radius: 999px; font: 500 11.5px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); display: inline-flex; align-items: center; gap: 8px; }
+    .toggle button[aria-pressed="true"] { background: var(--ink); color: var(--cream); }
+    .toggle .save { color: var(--red); }
+    .toggle button[aria-pressed="true"] .save { color: #ff8a82; }
+    .plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 880px; margin: 0 auto; }
+    .plan { padding: 34px; display: flex; flex-direction: column; border-radius: 22px; }
+    .plan .name { display: flex; justify-content: space-between; align-items: center; font: 500 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+    .plan .credits { font: 800 clamp(64px, 7vw, 92px)/1 var(--dot); margin-top: 28px; letter-spacing: -.02em; }
+    .plan .credits-l { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); margin-top: 10px; }
+    .plan .price { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line-c); display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+    .plan .price b { font: 400 44px/1 var(--serif); }
+    .plan .price span { color: var(--ink-3); font-size: 14px; }
+    .plan .billed { font-size: 13px; color: var(--ink-3); margin-top: 6px; min-height: 20px; }
+    .plan ul { list-style: none; margin: 22px 0 30px; display: grid; gap: 11px; }
+    .plan li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; font-size: 15.5px; }
+    .plan li::before { content: "→"; font-family: var(--mono); color: var(--ink-3); }
+    .plan li.annual { display: none; color: var(--red); }
+    .plan li.annual::before { content: "＋"; color: var(--red); }
+    .annual-on .plan li.annual { display: grid; }
+    .plan .btn { margin-top: auto; }
+    .plan.top { background: var(--ink); color: var(--cream); box-shadow: 0 30px 60px -30px rgba(18,25,38,.55); }
+    .plan.top .name, .plan.top .credits-l, .plan.top .price span, .plan.top .billed, .plan.top li::before { color: rgba(241,237,228,.55); }
+    .plan.top .price { border-top-color: rgba(241,237,228,.14); }
+    .plan.top li.annual, .plan.top li.annual::before { color: #ff8a82; }
+    .plans-note { text-align: center; margin-top: 22px; color: var(--ink-3); font-size: 14px; }
+
+    /* ---------- Cierre ---------- */
+    .cta { padding: clamp(110px, 13vw, 180px) 0; text-align: center; background: radial-gradient(90% 70% at 50% 0%, var(--navy-glow) 0%, var(--navy-800) 50%, var(--navy-900) 85%); }
+    .cta h2 { font-size: clamp(50px, 7vw, 100px); margin: 20px auto 34px; }
+    .cta .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    footer { padding: 44px 0 56px; background: var(--navy-900); color: var(--text); border-top: 1px solid rgba(255,255,255,.06); }
+    .foot { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .foot img { height: 58px; width: auto; }
+
+    @media (max-width: 960px) {
+      .nav ul { display: none; }
+      .nav-in { grid-template-columns: auto 1fr; }
+      .nav-in > ul:first-child { display: none; }
+      .nav .right .link { display: none; }
+      .story, .story.rev { min-height: 0; justify-content: stretch; padding: 280px 14px 14px; }
+      .story > img { height: 420px; object-position: 30% center; }
+      .story::after, .story.rev::after { background: linear-gradient(180deg, rgba(5,8,14,0) 20%, rgba(5,8,14,.7)); }
+      .how-strip { grid-template-columns: 1fr; }
+      .how-strip div { padding: 20px 0; }
+      .how-strip div + div { border-left: 0; border-top: 1px solid var(--line-c); }
+      .pain-grid, .steps, .duo, .plan-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .story .panel { padding: 20px; }
+      .story { padding-bottom: 90px; }
+      .product { margin-top: -70px; gap: 10px; padding: 12px 6px 0; }
+      .frame-phone { border-width: 4px; border-radius: 16px; margin-bottom: -12px; }
+      .frame-phone img { border-radius: 12px; }
+      .product.phones .frame-phone { width: 30%; }
+      .product.phones .frame-phone:nth-child(2) { transform: translateY(-18px); }
+      .ba div { grid-template-columns: 1fr; gap: 4px; }
+      .nav .logo img { height: 34px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .chev { animation: none; } }
+  </style>
 </head>
-
 <body>
-  <div class="scroll-progress" aria-hidden="true"></div>
-  
-  <div id="app">
-    <header class="site-header">
-      <div class="header-content">
-        <div class="logo">
-           <img src="/images/logo-red-nobk.png" alt="KODDO Technologies" class="logo-img">
-        </div>
-        
-        <nav class="main-nav" aria-label="Navegación principal">
-          <ul>
-            <li><a href="#services">Servicios</a></li>
-            <li><a href="#work">Casos</a></li>
-            <li><a href="#start">Empieza sin riesgo</a></li>
-            <li><a href="/blog.html">Blog</a></li>
-            <li><a href="#about">Nosotros</a></li>
-            <li><a href="/en/" class="lang-switch" hreflang="en" lang="en">EN</a></li>
-            <li><a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="nav-cta">Agenda 30 min</a></li>
-          </ul>
-        </nav>
 
-        <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">
-          <span class="burger-line"></span>
-          <span class="burger-line"></span>
-        </button>
+  <nav class="nav" aria-label="Principal">
+    <div class="wrap nav-in">
+      <ul>
+        <li><a href="#casos">Casos</a></li>
+        <li><a href="#como">Cómo funciona</a></li>
+        <li><a href="#planes">Planes</a></li>
+      </ul>
+      <a href="#" class="logo"><img src="/images/logo-koddo-ink.png" alt="Koddo · software & data engineering"></a>
+      <div class="right">
+        <a class="link" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
+        <a class="btn btn-ink" href="#planes">Ver planes</a>
       </div>
-    </header>
-
-    <div class="menu-overlay" aria-hidden="true">
-      <nav class="mobile-nav">
-        <ul>
-           <li><a href="#services">Servicios</a></li>
-           <li><a href="#work">Casos</a></li>
-           <li><a href="#start">Empieza sin riesgo</a></li>
-           <li><a href="/blog.html">Blog</a></li>
-           <li><a href="#about">Nosotros</a></li>
-           <li><a href="/en/" class="lang-switch" hreflang="en" lang="en">English</a></li>
-           <li><a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="nav-cta">Agenda 30 min</a></li>
-        </ul>
-      </nav>
     </div>
+  </nav>
 
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-visuals" aria-hidden="true">
-          <!-- <div class="glow-sphere sphere-coral"></div> -->
-          <div class="glow-sphere sphere-steel"></div>
-          <div class="glow-cursor" data-cursor-glow></div>
-          <div class="grid-overlay"></div>
-        </div>
-
-        <div class="container">
-          <div class="hero-layout">
-            <div class="hero-content">
-              <!-- <div class="hero-badge">
-                <span class="badge-dot"></span>
-                SAP B1 · Apps · Integraciones · Datos
-              </div> -->
-              <h1 id="hero-title" class="hero-title">
-                <span class="sr-only">Koddo: </span>
-                La <span class="text-gradient">Última Milla</span><br>
-                de tu <span class="text-coral-glow">ERP</span>
-              </h1>
-              <p class="hero-subtitle">
-                Tu ERP hace una parte del trabajo. <strong>El resto todavía lo hace tu equipo a mano</strong>: planillas, transcripciones, reportes armados a última hora. Koddo construye las piezas que faltan y tu operación completa empieza a correr dentro del sistema.
-              </p>
-              <div class="hero-actions">
-                <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agenda una llamada conmigo</a>
-                <a href="#work" class="btn btn-secondary btn-arrow">
-                  <span>Ver casos reales</span>
-                  <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-              </div>
-            </div>
-
-            <!-- Bento mini-grid: flujo de datos en tiempo real -->
-            <aside class="hero-bento glass-card" aria-label="Flujo de integración de datos">
-              <div class="bento-head">
-                <span class="mono-label">live · data pipeline</span>
-                <span class="bento-pulse"><span class="bento-pulse-dot"></span>running</span>
-              </div>
-              <div class="flow-graph">
-                <svg viewBox="0 0 440 360" class="graph-svg" role="img" aria-label="Grafo: ERP conecta con API y MCP, y de ahí fluye a Apps y Agentes">
-                  <!-- Aristas (conexiones entre nodos) -->
-                  <g class="graph-edges">
-                    <path id="e-erp-api"  d="M220,44 L120,144"></path>
-                    <path id="e-erp-mcp"  d="M220,44 L322,144"></path>
-                    <path id="e-api-mcp"  d="M120,144 L322,144"></path>
-                    <path id="e-api-apps" d="M120,144 L138,288"></path>
-                    <path id="e-mcp-apps" d="M322,144 L138,288"></path>
-                    <path id="e-mcp-agt"  d="M322,144 L318,288"></path>
-                    <path id="e-apps-agt" d="M138,288 L318,288"></path>
-                  </g>
-
-                  <!-- Paquetes de info viajando por las aristas -->
-                  <g class="graph-packets">
-                    <circle r="3.2"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath href="#e-erp-api"/></animateMotion></circle>
-                    <circle r="3.2"><animateMotion dur="2s" begin="0.4s" repeatCount="indefinite"><mpath href="#e-erp-mcp"/></animateMotion></circle>
-                    <circle r="3.2"><animateMotion dur="2.4s" begin="0.8s" repeatCount="indefinite"><mpath href="#e-api-mcp"/></animateMotion></circle>
-                    <circle r="3.2" class="graph-packet--accent"><animateMotion dur="2.2s" begin="0.6s" repeatCount="indefinite"><mpath href="#e-mcp-apps"/></animateMotion></circle>
-                    <circle r="3.2" class="graph-packet--accent"><animateMotion dur="1.9s" begin="1.1s" repeatCount="indefinite"><mpath href="#e-mcp-agt"/></animateMotion></circle>
-                    <circle r="3.2" class="graph-packet--accent"><animateMotion dur="2.6s" begin="0.2s" repeatCount="indefinite"><mpath href="#e-api-apps"/></animateMotion></circle>
-                  </g>
-
-                  <!-- Nodos -->
-                  <g class="graph-nodes">
-                    <g class="graph-node" style="--i:0">
-                      <rect x="160" y="22" width="120" height="44" rx="14"></rect>
-                      <text x="220" y="49">ERP</text>
-                    </g>
-                    <g class="graph-node" style="--i:1">
-                      <rect x="60" y="122" width="120" height="44" rx="14"></rect>
-                      <text x="120" y="149">API</text>
-                    </g>
-                    <g class="graph-node" style="--i:2">
-                      <rect x="262" y="122" width="120" height="44" rx="14"></rect>
-                      <text x="322" y="149">MCP</text>
-                    </g>
-                    <g class="graph-node graph-node--accent" style="--i:3">
-                      <rect x="78" y="266" width="120" height="44" rx="14"></rect>
-                      <text x="138" y="293">APPS</text>
-                    </g>
-                    <g class="graph-node graph-node--accent" style="--i:4">
-                      <rect x="258" y="266" width="120" height="44" rx="14"></rect>
-                      <text x="318" y="293">AGENTES</text>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-              <div class="bento-foot mono-label">
-                <span>sync: <b>OK</b></span>
-                <span>latency: <b>42ms</b></span>
-              </div>
-            </aside>
-          </div>
-        </div>
-
-        <div class="hero-footer">
-          <div class="scroll-indicator">
-            <span class="scroll-text">Explore Koddo</span>
-            <span class="scroll-line"></span>
-          </div>
-        </div>
-      </section>
-
-      <section id="work" class="work-section">
-        <div class="container">
-          <div class="work-intro">
-            <span class="work-eyebrow mono-label">Casos reales · partners</span>
-            <h2 class="section-title work-title">Proyectos en los que<br>trabajamos para nuestros socios</h2>
-            <p class="work-sub">Empresas reales, con sistemas reales, que dejaron de operar a mano.</p>
-          </div>
-        </div>
-
-        <article class="product-showcase">
-          <div class="product-hero-full">
-            <img class="hero-bg" src="/images/uniSanity/unisanity-persona.png" alt="Técnico de Unión Agronegocios usando UniSanity en el potrero, con el ganado de fondo">
-            <div class="hero-inner">
-              <span class="hero-eyebrow">Caso de cliente · Unión Agronegocios</span>
-              <h3 class="hero-headline">Manejaban el control sanitario en Excel.</h3>
-              <p class="hero-sub">Unión Agronegocios registraba la sanidad de miles de cabezas a mano, desconectada de su ERP y CRM. En KODDO les construimos una plataforma y app para su equipo en campo — hoy todo el control llega solo al sistema, sin papel, sin pérdida de datos.</p>
-            </div>
-          </div>
-          <div class="product-body container">
-            <!-- Showcase: 2 imágenes grandes tipo hero (laptop + móvil) -->
-            <div class="showcase-slides">
-              <figure class="showcase-slide">
-                <div class="showcase-bg" style="background-image:url('/images/uniSanity/unisanity-laptop.png')" aria-hidden="true"></div>
-                <img class="showcase-img" src="/images/uniSanity/unisanity-laptop.png" alt="UniSanity — plataforma web de gestión" loading="lazy">
-              </figure>
-              <figure class="showcase-slide">
-                <div class="showcase-bg" style="background-image:url('/images/uniSanity/uniSanityMovile/unisanity-movile-login.png')" aria-hidden="true"></div>
-                <img class="showcase-img" src="/images/uniSanity/uniSanityMovile/unisanity-movile-login.png" alt="UniSanity — app móvil para la fuerza de venta en campo" loading="lazy">
-              </figure>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-showcase">
-          <div class="product-hero-full">
-            <img class="hero-bg" src="/images/rcm/rcm-papel.png" alt="Operador de RCM registrando trabajo desde la app en pleno campo al atardecer">
-            <div class="hero-inner">
-              <span class="hero-eyebrow">Caso de cliente · RCM - Tracktor</span>
-              <h3 class="hero-headline">Startup AgTech
-              </h3>
-              <p class="hero-sub">Tracktor es una startup de analisis de horas de trabajo y consumo de combustible para empresas agropecuarias. En KODDO les construimos RCM — una APP que captura datos en entornos sin señal y los centraliza para analizarlos.</p>
-            </div>
-          </div>
-          <div class="product-body container">
-            <!-- Showcase: 3 imágenes grandes tipo hero -->
-            <div class="showcase-slides">
-              <figure class="showcase-slide">
-                <div class="showcase-bg" style="background-image:url('/images/rcm/rcm-movile.png')" aria-hidden="true"></div>
-                <img class="showcase-img" src="/images/rcm/rcm-movile.png" alt="App RCM: registro de operaciones de maquinaria" loading="lazy">
-              </figure>
-              <figure class="showcase-slide">
-                <div class="showcase-bg" style="background-image:url('/images/rcm/rcm-coffe.png')" aria-hidden="true"></div>
-                <img class="showcase-img" src="/images/rcm/rcm-coffe.png" alt="El antes: registro en planillas de papel en el campo" loading="lazy">
-              </figure>
-            </div>
-          </div>
-        </article>
-
-        <div class="container">
-          <!-- OCULTO HASTA NUEVO AVISO — productos propios (FingerCode, MediGO).
-               Para reactivar, descomentar este bloque.
-          <div class="other-projects">
-            <h3 class="other-projects-title">También construimos productos propios</h3>
-            <p class="other-projects-sub">Porque la mejor prueba de que sabemos construir es lo que construimos para nosotros mismos.</p>
-            <div class="mini-projects-grid">
-              <article class="mini-project-card glass-card">
-                <span class="project-category">iOS · App Store</span>
-                <h4>FingerCode</h4>
-                <p>¿Olvidaste un PIN que tus dedos sí recuerdan? FingerCode lo recupera usando tu memoria muscular. 100% privado — nada sale de tu iPhone.</p>
-                <a href="/fingercode/" class="mini-project-link">Ver producto →</a>
-              </article>
-              <article class="mini-project-card glass-card">
-                <span class="project-category">Salud · Marketplace</span>
-                <h4>MediGO</h4>
-                <p>Encontrar un médico por especialidad y ciudad en Bolivia era una odisea. MediGO conecta pacientes con especialistas verificados desde el celular.</p>
-              </article>
-            </div>
-          </div>
-          -->
-        </div>
-      </section>
-
-      <section id="testimonials" class="testimonials-section theme-cream theme-cream--full" aria-labelledby="testimonials-title">
-        <div class="container">
-            <span class="cream-eyebrow">Reseñas · Opiniones</span>
-            <h2 id="testimonials-title" class="section-title">Opiniones de clientes y partners</h2>
-
-            <div class="testimonials-grid">
-              <article class="testimonial-card">
-                <p class="testimonial-quote">"El equipo de Koddo nos ayudó a construir algo que en Unión teníamos en mente desde hace tiempo, y <b>cumplió nuestras expectativas con creces</b>."</p>
-                <div class="testimonial-author">
-                  <span class="testimonial-avatar">GS</span>
-                  <span class="testimonial-meta">
-                    <span class="testimonial-name">Dr. Guerin Sensano</span>
-                    <span class="testimonial-role">Director de Sanidad Animal · Unión Agronegocios</span>
-                  </span>
-                </div>
-              </article>
-
-              <article class="testimonial-card">
-                <p class="testimonial-quote">"RCM es una startup que por naturaleza busca evolucionar rápido según las necesidades de sus usuarios. <b>Koddo es un partner clave en ese proceso</b>."</p>
-                <div class="testimonial-author">
-                  <span class="testimonial-avatar">JC</span>
-                  <span class="testimonial-meta">
-                    <span class="testimonial-name">Juan Camilo Narvaez</span>
-                    <span class="testimonial-role">CEO · Tracktor</span>
-                  </span>
-                </div>
-              </article>
-            </div>
-        </div>
-      </section>
-
-      <section id="problem" class="problem-section" aria-labelledby="problem-title">
-        <div class="container">
-          <div class="section-header">
-            <h2 id="problem-title" class="section-title">¿Te suena familiar?</h2>
-          </div>
-
-          <div class="problem-grid">
-            <article class="problem-card glass-card">
-              <p>Tu equipo en la calle, en el almacén o en el campo sigue anotando en papel o WhatsApp. Al final del día alguien lo pasa al sistema.</p>
-            </article>
-            <article class="problem-card glass-card">
-              <p>Los reportes que gerencia necesita se arman a mano en Excel, cruzando datos de tres lugares distintos. Cada semana. Las mismas horas perdidas.</p>
-            </article>
-            <article class="problem-card glass-card">
-              <p>Pagaste caro por un SAP B1 que iba a integrar toda tu empresa. Hoy cada área sigue trabajando en su propia isla, y nadie ve el panorama completo.</p>
-            </article>
-          </div>
-
-          <p class="problem-closing">
-            Esa distancia entre lo que tu ERP hace y lo que tu empresa necesita es <strong>la última milla</strong>. Koddo la construye.
-          </p>
-        </div>
-      </section>
-
-      <section id="ultima-milla" class="why-section" aria-labelledby="um-title">
-        <div class="container">
-          <div class="why-card glass-card">
-            <h2 id="um-title" class="section-title">La última milla de tu ERP</h2>
-            <p>Cuando implementaste tu ERP, el proyecto llegó hasta donde llegan todos: <strong>contabilidad, compras, inventario central</strong>. Ahí se cortó la cinta y se fue el consultor.</p>
-            <p>Pero tu empresa no termina ahí. Sigue en la calle con tus vendedores, en el almacén con los conteos, en el campo con la maquinaria, en finanzas con las facturas que alguien transcribe a mano. <strong>Ese tramo nunca se construyó.</strong></p>
-            <p>Koddo construye exactamente ese tramo: las apps, conexiones y tableros que llevan tu sistema hasta el último rincón de tu operación. <strong>Sin cambiar tu ERP. Sin proyectos eternos.</strong></p>
-            <div class="tech-pills">
-              <span class="tech-pill" style="--p:0">SAP B1 Service Layer</span>
-              <span class="tech-pill" style="--p:1">API Integrations</span>
-              <span class="tech-pill" style="--p:2">Data Engineering</span>
-              <span class="tech-pill" style="--p:3">Apps offline-first</span>
-              <span class="tech-pill" style="--p:4">Dashboards en vivo</span>
-              <span class="tech-pill" style="--p:5">Mapeo de procesos</span>
-              <span class="tech-pill" style="--p:6">UI Prototyping</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="start" class="start-section" aria-labelledby="start-title">
-        <div class="container">
-          <div class="section-header">
-            <h2 id="start-title" class="section-title">Tu primer proyecto con Koddo puede ser en 1 semana</h2>
-            <p class="section-tagline">Antes de comprometerte con un proyecto grande, puedes empezar con algo pequeño que ya te da valor real y que te muestra exactamente qué construir después.</p>
-          </div>
-
-          <div class="start-grid">
-            <article class="start-card glass-card">
-              <span class="start-price">$300–500 USD</span>
-              <h3>SAP B1 Health Check + Roadmap</h3>
-              <p>Auditoría de 1 semana de cómo tu empresa usa SAP B1. Identificamos los 3 cuellos de botella más críticos y entregamos un roadmap priorizado de mejoras.</p>
-              <p class="start-outcome">Resultado: sabes exactamente qué construir primero y cuánto va a costar.</p>
-              <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary start-cta">Solicitar Health Check</a>
-            </article>
-
-            <article class="start-card glass-card">
-              <span class="start-price">$500–800 USD</span>
-              <h3>Dashboard Operacional SAP B1</h3>
-              <p>Conectamos tu SAP B1 con un dashboard web en tiempo real. Ventas, inventario, órdenes — visibles para gerencia sin necesitar exportar a Excel.</p>
-              <p class="start-outcome">Entregado en 2 semanas.</p>
-              <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary start-cta">Solicitar Dashboard</a>
-            </article>
-
-            <article class="start-card glass-card">
-              <span class="start-price">$400–700 USD</span>
-              <h3>Integración Puntual SAP B1</h3>
-              <p>Tienes un proceso específico que no está conectado a tu SAP B1. Lo resolvemos en 1–2 semanas. Un endpoint, un flujo, una sincronización — lo que necesites.</p>
-              <p class="start-outcome">Empieza por donde más te duele.</p>
-              <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary start-cta">Describir mi problema</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="certs-section" aria-label="Certificaciones">
-        <div class="container">
-          <p class="certs-label">Certificaciones que respaldan nuestro trabajo</p>
-          <div class="certs-grid">
-            <div class="cert-badge glass-card cert-primary">
-              <span class="cert-name">SAP B1</span>
-              <span class="cert-type">Implementación e integración</span>
-            </div>
-            <div class="cert-badge glass-card">
-              <span class="cert-name">Apple Developer Program</span>
-              <span class="cert-type">Publicación en App Store</span>
-            </div>
-            <div class="cert-badge glass-card">
-              <span class="cert-name">Google Play Developer</span>
-              <span class="cert-type">Publicación en Play Store</span>
-            </div>
-            <div class="cert-badge glass-card">
-              <span class="cert-name">AWS Cloud</span>
-              <span class="cert-type">Infraestructura · EC2 · S3</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="about-section theme-cream theme-cream--full">
-        <div class="container">
-          <div class="about-grid">
-            <div class="about-text">
-              <span class="cream-eyebrow">Quiénes somos</span>
-              <h2 class="section-title">Agencia de Software</h2>
-              <p>KODDO es una firma boliviana de <strong>ingeniería de software y datos</strong> especializada en una sola cosa: hacer que tu ERP el cual ya fue implementado y pagado trabaje para toda tu empresa.</p>
-              <p>No vendemos licencias ni suscripciones. Construimos las piezas que faltan en tu sistema. Somos rápidos, sin rodeos y hablamos el idioma de tu negocio.</p>
-              <div class="about-stats">
-                <div class="stat-item">
-                  <span class="stat-number">SAP B1</span>
-                  <span class="stat-label">Certificación e integraciones</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-number">APPS</span>
-                  <span class="stat-label">Web y móvil para tu operación</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-number">DATA</span>
-                  <span class="stat-label">Tableros e inteligencia</span>
-                </div>
-              </div>
-            </div>
-            <div class="about-image">
-              <div class="image-wrapper">
-                <img src="/images/we.png" alt="El equipo de Koddo" class="mission-img" loading="lazy">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="process" class="process-section" aria-labelledby="process-title">
-        <div class="container">
-          <div class="section-header">
-            <h2 id="process-title" class="section-title">De la primera llamada al sistema en producción</h2>
-          </div>
-
-          <div class="process-grid">
-            <article class="process-step glass-card">
-              <span class="process-num">01</span>
-              <h3>Revisión gratuita (30 min)</h3>
-              <p>Entendemos tu operación y los cuellos de botella reales. Sin venta. Solo diagnóstico.</p>
-            </article>
-            <article class="process-step glass-card">
-              <span class="process-num">02</span>
-              <h3>Propuesta concreta</h3>
-              <p>Un documento con: qué se construye, cuánto cuesta, cuándo está listo. Sin letra pequeña.</p>
-            </article>
-            <article class="process-step glass-card">
-              <span class="process-num">03</span>
-              <h3>Desarrollo enfocado</h3>
-              <p>Proyectos de 2–6 semanas. Avances semanales.</p>
-            </article>
-            <article class="process-step glass-card">
-              <span class="process-num">04</span>
-              <h3>Entrega y soporte</h3>
-              <p>Sistema en producción + capacitación a tu equipo + acompañamiento post-lanzamiento.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- OCULTO: Cómo lo hacemos
-      <section id="services" class="services-section" aria-labelledby="services-title">
-        <div class="container">
-          <div class="section-header">
-            <h2 id="services-title" class="section-title">Cómo lo hacemos</h2>
-            <p class="section-tagline">Cuatro formas de llevar tu sistema hasta donde hoy no llega.</p>
-          </div>
-          
-          <div class="services-grid">
-            <article class="service-card glass-card">
-              <div class="service-icon-container">
-                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-              </div>
-              <h3>Apps para tu equipo</h3>
-              <p>Tu gente registra desde el celular — en la calle, el almacén o el campo, con o sin señal — y todo llega solo a tu SAP B1. Sin papel, sin transcripciones.</p>
-            </article>
-
-            <article class="service-card glass-card">
-              <div class="service-icon-container">
-                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-              </div>
-              <h3>Tableros para decidir</h3>
-              <p>Ventas, inventario y operación en una sola pantalla, actualizada al momento. Se acabó esperar el Excel del lunes para saber cómo va tu empresa.</p>
-            </article>
-
-            <article class="service-card glass-card">
-              <div class="service-icon-container">
-                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-              </div>
-              <h3>Conexiones con tu SAP B1</h3>
-              <p>Tu facturador, tu banco, tu e-commerce, tu báscula — lo que hoy se pasa a mano entre sistemas, lo conectamos para que fluya solo.</p>
-            </article>
-
-            <article class="service-card glass-card">
-              <div class="service-icon-container">
-                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-              </div>
-              <h3>Inteligencia aplicada</h3>
-              <p>Tu información histórica trabajando para vos: predicciones de demanda, recomendaciones de venta, alertas antes de que el problema cueste plata.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-      -->
-
-      <!-- OCULTO: Ideas para tu empresa
-      <section id="blog-preview" class="blog-preview-section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Ideas para tu empresa</h2>
-            <p class="section-tagline">Cómo las empresas medianas están cerrando la brecha entre sus sistemas y su operación real.</p>
-          </div>
-
-          <div class="blog-preview-grid">
-            <article class="blog-card glass-card">
-              <div class="blog-card-content">
-                <span class="blog-category">ERP · SAP B1</span>
-                <h3>Por qué tu ERP se usa a la mitad (y cómo completar la última milla)</h3>
-                <p>Pagaste por un sistema que iba a integrar toda tu empresa. Hoy media operación sigue en planillas. No es culpa tuya — es la última milla que nadie construyó.</p>
-                <div class="blog-card-footer">
-                  <span class="blog-date">11 jun 2026</span>
-                  <a href="/blog/por-que-tu-erp-se-usa-a-la-mitad/" class="blog-link">Leer artículo →</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="blog-card glass-card">
-              <div class="blog-card-content">
-                <span class="blog-category">Procesos</span>
-                <h3>Cómo mejorar los procesos de tu empresa sin cambiar de sistema</h3>
-                <p>La mayoría de las empresas no necesita un sistema nuevo. Necesita que el que ya tiene llegue a donde hoy no llega. Una guía práctica para decidir por dónde empezar.</p>
-                <div class="blog-card-footer">
-                  <span class="blog-date">11 jun 2026</span>
-                  <a href="/blog/como-mejorar-procesos-empresa-sin-cambiar-sistema/" class="blog-link">Leer artículo →</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="blog-card glass-card">
-              <div class="blog-card-content">
-                <span class="blog-category">Decisiones · Costos</span>
-                <h3>¿Contratar TI interno o trabajar con un partner tecnológico?</h3>
-                <p>Los números reales de cada opción para una empresa mediana en Bolivia: costos, riesgos y cuándo conviene cada camino.</p>
-                <div class="blog-card-footer">
-                  <span class="blog-date">11 jun 2026</span>
-                  <a href="/blog/ti-interno-o-partner-tecnologico/" class="blog-link">Leer artículo →</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="blog-card glass-card">
-              <div class="blog-card-content">
-                <span class="blog-category">IA · Organización</span>
-                <h3>Cómo construir una empresa en estos días</h3>
-                <p>La transformación real no es usar IA, sino rediseñar la arquitectura de la organización desde una lógica nueva.</p>
-                <div class="blog-card-footer">
-                  <span class="blog-date">9 abr 2026</span>
-                  <a href="/blog/como-construir-empresa-estos-dias/" class="blog-link">Leer artículo →</a>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="section-actions center">
-            <a href="/blog.html" class="btn btn-secondary">Ver todo el Blog</a>
-          </div>
-        </div>
-      </section>
-      -->
-
-      <!-- OCULTO: Contratar un Arquitecto TI
-      <section id="why-koddo" class="why-section" aria-labelledby="why-title">
-        <div class="container">
-          <div class="why-card glass-card">
-            <h2 id="why-title" class="section-title">¿Contratar un Arquitecto TI interno o trabajar con Koddo?</h2>
-            <p>Un arquitecto TI en Bolivia cuesta <strong>$900–1,400/mes</strong> en salario, más cargas sociales, más tiempo de ramp-up, más rotación.</p>
-            <p>Koddo entrega un sistemas que <strong>dura 5+ años</strong>, en semanas, sin planilla, sin rotación, sin gestión.</p>
-          </div>
-        </div>
-      </section>
-      -->
-
-      <section id="contact" class="contact-section">
-        <div class="container">
-          <div class="final-cta glass-card">
-            <h2 class="section-title">¿Tu sistema llegó hasta la oficina y ahí se quedó?</h2>
-            <p>Hablemos 30 minutos. Te digo exactamente qué tramo te falta construir, cuánto cuesta y cuándo estaría funcionando.</p>
-            <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Agenda una llamada conmigo</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <img src="/images/logo-red-dark.png" alt="KODDO Technologies" class="logo-img footer-logo">
-            <p class="footer-tagline">Engineering Data, Building Impact.</p>
-            <div class="footer-social">
-              <a href="https://www.linkedin.com/company/koddo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              </a>
-            </div>
-          </div>
-          
-          <div class="footer-nav-group">
-            <h4 class="footer-title">Soluciones</h4>
-            <ul>
-              <li><a href="#services">Conexiones SAP B1</a></li>
-              <li><a href="#services">Apps para tu equipo</a></li>
-              <li><a href="#services">Tableros e inteligencia</a></li>
-              <li><a href="#start">Health Check SAP B1</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-nav-group">
-            <h4 class="footer-title">Compañía</h4>
-            <ul>
-              <li><a href="#about">Nosotros</a></li>
-              <li><a href="#work">Casos de Éxito</a></li>
-              <li><a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="footer-bottom glass-card">
-          <p>&copy; 2026 KODDO Ingeniería de Datos y Software. Todos los derechos reservados.</p>
-          <nav class="footer-legal">
-            <a href="/legal.html">Legal & Privacidad</a>
-          </nav>
-        </div>
+  <!-- Héroe -->
+  <header class="hero dots-c">
+    <div class="wrap">
+      <h1 class="reveal">Agentes de IA<sup>[1]</sup> que construyen<br><em>el software de tu empresa.</em></h1>
+      <p class="note reveal"><span>[1]</span><span>Dirigidos por arquitectos de software, que definen el plan y revisan cada entrega.</span></p>
+      <div class="actions reveal">
+        <a class="btn btn-ink" href="#planes">Ver planes</a>
+        <a class="link" href="#casos">Ver casos</a>
       </div>
-    </footer>
-  </div>
+    </div>
+    <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </header>
 
-  <script type="module" src="/src/main.js"></script>
+  <!-- Cómo funciona -->
+  <section class="how-sec dots-c" id="como">
+    <div class="wrap">
+      <span class="label reveal">Cómo funciona</span>
+      <div class="how-strip reveal">
+        <div><span class="n">01</span><b>Cuéntanos tu idea</b><span class="label">Voz, texto o fotos</span></div>
+        <div class="human"><span class="n">02</span><b>Un arquitecto define el plan</b><span class="label"><span class="dot-red"></span>Alcance, fechas y créditos</span></div>
+        <div><span class="n">03</span><b>Los agentes la construyen</b><span class="label">Avances cada semana</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problema -->
+  <section class="dark pain dots">
+    <div class="wrap">
+      <span class="label reveal">El problema</span>
+      <h2 class="reveal">Todas las empresas tienen ideas de software. <span class="soft">Pocas saben cómo hacerlas bien.</span></h2>
+      <div class="pain-grid">
+        <article class="pain-card glass reveal"><span class="n">01</span><p>Saber cómo hacerlo <span>cuesta.</span></p></article>
+        <article class="pain-card glass reveal"><span class="n">02</span><p>Encontrar quién <span>tarda.</span></p></article>
+        <article class="pain-card glass reveal"><span class="n">03</span><p>Hacerlo mal <span>sale caro.</span></p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solución -->
+  <section class="dark solution dots">
+    <div class="wrap">
+      <span class="label reveal">La solución</span>
+      <h2 class="reveal">Agentes que construyen. <em>Arquitectos que deciden.</em></h2>
+      <div class="duo">
+        <article class="duo-card glass reveal"><span class="n">01</span><h3>Agentes de inteligencia artificial</h3><p>Construyen rápido y sin pausa.</p></article>
+        <article class="duo-card glass human reveal"><span class="n">02</span><h3>Arquitectos de software</h3><p>Definen el plan, revisan y responden.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Casos -->
+  <section class="dark cases dots" id="casos">
+    <div class="wrap">
+      <span class="label reveal">Casos</span>
+      <h2 class="reveal">Ideas que ya son <em>software.</em></h2>
+
+      <article class="story rev reveal">
+        <img src="/images/uniSanity/unisanity-persona.png" alt="Técnico de Unión Agronegocios en el campo, con el ganado de fondo" loading="lazy">
+        <div class="panel glass">
+          <span class="label">Unión Agronegocios · Sanidad animal</span>
+          <h3>Control sanitario de miles de cabezas, conectado de punta a punta.</h3>
+          <div class="ba">
+            <div><span class="label">Antes</span><p>Se registraba a mano, fuera de su sistema de gestión.</p></div>
+            <div class="now"><span class="label">Ahora</span><p>Unisanity: web y aplicación que llevan cada dato del campo al sistema.</p></div>
+          </div>
+          <div class="cite"><p>“Cumplió nuestras expectativas con creces.”</p><span class="label">Dr. Guerin Sensano · Director de Sanidad Animal</span></div>
+        </div>
+      </article>
+      <div class="product reveal" aria-label="Unisanity, el software construido para Unión">
+        <div class="frame-web"><div class="bar"><i></i><i></i><i></i></div><img src="/images/uniSanity/unisanity-modelo-sanitario.png" alt="Unisanity web: modelo sanitario" loading="lazy"></div>
+        <div class="frame-phone"><img src="/images/uniSanity/uniSanityMovile/unisanity-movil-5.png" alt="Unisanity móvil: calendario sanitario" loading="lazy"></div>
+      </div>
+      <p class="label product-cap reveal">Unisanity · web y aplicación</p>
+
+      <article class="story rev reveal">
+        <img src="/images/rcm/rcm-campo.png" alt="Operador de Tracktor con su teléfono en el campo, junto a la maquinaria" loading="lazy">
+        <div class="panel glass">
+          <span class="label">Tracktor · Maquinaria agrícola</span>
+          <h3>Horas y combustible medidos donde no hay señal.</h3>
+          <div class="ba">
+            <div><span class="label">Antes</span><p>Planillas de papel en el campo, pasadas a mano después.</p></div>
+            <div class="now"><span class="label">Ahora</span><p>Una aplicación que registra sin internet y centraliza los datos para analizarlos.</p></div>
+          </div>
+          <div class="cite"><p>“Koddo es un partner clave en ese proceso.”</p><span class="label">Juan Camilo Narvaez · CEO de Tracktor</span></div>
+        </div>
+      </article>
+      <div class="product phones reveal" aria-label="La aplicación construida para Tracktor">
+        <div class="frame-phone"><img src="/images/rcm/rcm-actividad.png" alt="Aplicación de Tracktor: registro de operaciones" loading="lazy"></div>
+        <div class="frame-phone"><img src="/images/rcm/rcm-iniciar-trabajo.png" alt="Aplicación de Tracktor: iniciar trabajo" loading="lazy"></div>
+        <div class="frame-phone"><img src="/images/rcm/rcm-metrics.png" alt="Aplicación de Tracktor: métricas y rendimiento" loading="lazy"></div>
+      </div>
+      <p class="label product-cap reveal">Aplicación de Tracktor · funciona sin internet</p>
+    </div>
+  </section>
+
+  <!-- Planes -->
+  <section class="plans dots-c" id="planes">
+    <div class="wrap">
+      <div class="plans-head reveal">
+        <span class="label">Planes</span>
+        <h2>Créditos cada mes. <em>Las ideas que quieras.</em></h2>
+        <p>Cada idea usa créditos según su tamaño. Sin cotizaciones.</p>
+      </div>
+      <div class="toggle reveal" role="group" aria-label="Forma de pago">
+        <button type="button" data-billing="monthly" aria-pressed="true">Mensual</button>
+        <button type="button" data-billing="annual" aria-pressed="false">Anual <span class="save">2 meses gratis</span></button>
+      </div>
+      <div class="plan-grid" id="plan-grid">
+        <article class="plan glass-c reveal">
+          <span class="name">Base</span>
+          <div class="credits">500</div>
+          <div class="credits-l">Créditos al mes</div>
+          <div class="price"><b data-monthly="$499" data-annual="$416">$499</b><span>/ mes</span></div>
+          <div class="billed" data-monthly="≈ $1,00 por crédito" data-annual="$4.990 al año · ≈ $0,83 por crédito">≈ $1,00 por crédito</div>
+          <ul>
+            <li>Un proyecto a la vez</li>
+            <li>Arquitecto asignado</li>
+            <li class="annual">2 meses gratis</li>
+            <li class="annual">Créditos acumulables todo el año</li>
+          </ul>
+          <a class="btn btn-ink" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Empezar</a>
+        </article>
+        <article class="plan top reveal">
+          <span class="name">Crecimiento <span class="label" style="color:var(--cream)"><span class="dot-red"></span>Recomendado</span></span>
+          <div class="credits">1.100</div>
+          <div class="credits-l">Créditos al mes · 100 de regalo</div>
+          <div class="price"><b data-monthly="$999" data-annual="$833">$999</b><span>/ mes</span></div>
+          <div class="billed" data-monthly="≈ $0,91 por crédito" data-annual="$9.990 al año · ≈ $0,76 por crédito">≈ $0,91 por crédito</div>
+          <ul>
+            <li>Proyectos en paralelo</li>
+            <li>Prioridad</li>
+            <li class="annual">2 meses gratis</li>
+            <li class="annual">Créditos acumulables todo el año</li>
+          </ul>
+          <a class="btn btn-cream" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Empezar</a>
+        </article>
+      </div>
+      <p class="plans-note reveal">Precios en dólares estadounidenses.</p>
+    </div>
+  </section>
+
+  <!-- Cierre -->
+  <section class="dark cta">
+    <div class="wrap reveal">
+      <span class="label"><span class="dot-red"></span>Hablemos</span>
+      <h2>¿Cuál es <em>tu idea?</em></h2>
+      <div class="actions">
+        <a class="btn btn-cream" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
+        <a class="btn btn-ghost" href="#planes">Ver planes</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <img src="/images/logo-koddo-cream.png" alt="Koddo · software &amp; data engineering">
+      <span class="label" style="color:var(--text-3)">Data &amp; systems, engineered with AI agents</span>
+      <span class="label" style="color:var(--text-3)">Santa Cruz · Bolivia</span>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 80 + 'ms'; io.observe(el); });
+
+    const nav = document.querySelector('.nav');
+    addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive: true });
+
+    const grid = document.getElementById('plan-grid');
+    document.querySelectorAll('.toggle button').forEach(b => b.addEventListener('click', () => {
+      const mode = b.dataset.billing;
+      document.querySelectorAll('.toggle button').forEach(x => x.setAttribute('aria-pressed', x === b));
+      grid.classList.toggle('annual-on', mode === 'annual');
+      grid.querySelectorAll('[data-monthly]').forEach(el => { el.textContent = el.dataset[mode]; });
+    }));
+    if (new URLSearchParams(location.search).get('pago') === 'anual') document.querySelector('[data-billing="annual"]').click();
+  </script>
 </body>
 </html>
