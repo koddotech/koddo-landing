@@ -25,4 +25,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://koddo.tech/sitemap.xml
+Sitemap: https://www.koddo.tech/sitemap.xml

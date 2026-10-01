@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Koddo · AI agents that build your company's software</title>
   <meta name="description" content="Koddo is a company of artificial intelligence agents that build your company's software, led by software architects. By subscription, from 199 credits a month.">
-  <link rel="canonical" href="https://koddo.tech/en/">
-  <link rel="alternate" hreflang="es" href="https://koddo.tech/">
-  <link rel="alternate" hreflang="en" href="https://koddo.tech/en/">
-  <link rel="alternate" hreflang="x-default" href="https://koddo.tech/">
+  <link rel="canonical" href="https://www.koddo.tech/en">
+  <link rel="alternate" hreflang="es" href="https://www.koddo.tech/">
+  <link rel="alternate" hreflang="en" href="https://www.koddo.tech/en">
+  <link rel="alternate" hreflang="x-default" href="https://www.koddo.tech/">
   <meta property="og:title" content="Koddo · AI agents that build your company's software">
   <meta property="og:description" content="Artificial intelligence agents led by software architects. By subscription, from 199 credits a month.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://koddo.tech/en/">
+  <meta property="og:url" content="https://www.koddo.tech/en">
   <meta property="og:image" content="https://www.koddo.tech/images/og-hero-en.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
@@ -26,19 +26,136 @@
   <link rel="alternate" type="text/markdown" href="/about-koddo.md">
   <meta name="llm-context" content="/about-koddo.md">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Koddo",
-    "slogan": "AI agents that build your company's software",
-    "description": "Koddo is a company of artificial intelligence agents that build software for businesses, led by software architects. Hired by monthly or annual subscription with credits.",
-    "url": "https://koddo.tech",
-    "areaServed": ["Bolivia", "Perú", "Argentina"],
-    "address": { "@type": "PostalAddress", "addressLocality": "Santa Cruz", "addressCountry": "Bolivia" },
-    "serviceType": ["Software development with AI agents", "Mobile Development", "Data Engineering", "Systems Integration"]
-  }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.koddo.tech/#org",
+      "name": "Koddo",
+      "url": "https://www.koddo.tech",
+      "logo": "https://www.koddo.tech/images/logo-koddo-ink.png",
+      "image": "https://www.koddo.tech/images/og-hero.png?v=2",
+      "slogan": "Built by agents, designed by humans",
+      "description": "A company of artificial intelligence agents that build software for businesses, led by software architects.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santa Cruz de la Sierra",
+        "addressCountry": "BO"
+      },
+      "areaServed": [
+        "BO",
+        "PE",
+        "AR"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/koddo"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.koddo.tech/#website",
+      "url": "https://www.koddo.tech",
+      "name": "Koddo",
+      "publisher": {
+        "@id": "https://www.koddo.tech/#org"
+      },
+      "inLanguage": [
+        "es",
+        "en"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.koddo.tech/en#page",
+      "url": "https://www.koddo.tech/en",
+      "inLanguage": "en",
+      "name": "Koddo · AI agents that build your company's software",
+      "isPartOf": {
+        "@id": "https://www.koddo.tech/#website"
+      },
+      "about": {
+        "@id": "https://www.koddo.tech/#org"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Software development with AI agents",
+      "serviceType": "Custom software development",
+      "provider": {
+        "@id": "https://www.koddo.tech/#org"
+      },
+      "areaServed": [
+        "BO",
+        "PE",
+        "AR"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Koddo Startup",
+          "description": "199 credits per month. One project at a time, built to validate an idea fast.",
+          "price": "199",
+          "priceCurrency": "USD",
+          "url": "https://www.koddo.tech/en#plans",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "199",
+            "priceCurrency": "USD",
+            "unitCode": "MON",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitCode": "MON"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Koddo Pro",
+          "description": "500 credits per month. One project at a time with a dedicated architect.",
+          "price": "499",
+          "priceCurrency": "USD",
+          "url": "https://www.koddo.tech/en#plans",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "499",
+            "priceCurrency": "USD",
+            "unitCode": "MON",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitCode": "MON"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Koddo Max",
+          "description": "1,100 credits per month. Projects in parallel and priority.",
+          "price": "999",
+          "priceCurrency": "USD",
+          "url": "https://www.koddo.tech/en#plans",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "999",
+            "priceCurrency": "USD",
+            "unitCode": "MON",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitCode": "MON"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
   <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+  <link rel="apple-touch-icon" href="/images/web-icon.png">
+  <meta name="theme-color" content="#f5f2eb">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Doto:wght@800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">

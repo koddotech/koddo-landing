@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Koddo · Agentes de IA que construyen el software de tu empresa</title>
   <meta name="description" content="Koddo es una empresa de agentes de inteligencia artificial que construyen el software de tu empresa, dirigidos por arquitectos de software. Por suscripción, desde 199 créditos al mes.">
-  <link rel="canonical" href="https://koddo.tech/">
-  <link rel="alternate" hreflang="es" href="https://koddo.tech/">
-  <link rel="alternate" hreflang="en" href="https://koddo.tech/en/">
-  <link rel="alternate" hreflang="x-default" href="https://koddo.tech/">
+  <link rel="canonical" href="https://www.koddo.tech/">
+  <link rel="alternate" hreflang="es" href="https://www.koddo.tech/">
+  <link rel="alternate" hreflang="en" href="https://www.koddo.tech/en">
+  <link rel="alternate" hreflang="x-default" href="https://www.koddo.tech/">
   <meta property="og:title" content="Koddo · Agentes de IA que construyen el software de tu empresa">
   <meta property="og:description" content="Agentes de inteligencia artificial dirigidos por arquitectos de software. Por suscripción, desde 199 créditos al mes.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://koddo.tech/">
+  <meta property="og:url" content="https://www.koddo.tech/">
   <meta property="og:image" content="https://www.koddo.tech/images/og-hero.png?v=2">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
@@ -20,24 +20,142 @@
   <meta property="og:image:alt" content="Agentes de IA que construyen el software de tu empresa. Koddo.">
   <meta property="og:site_name" content="Koddo">
   <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://www.koddo.tech/images/og-hero.png?v=2">
   <link rel="alternate" type="text/markdown" href="/about-koddo.md">
   <meta name="llm-context" content="/about-koddo.md">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Koddo",
-    "slogan": "Agentes de IA que construyen el software de tu empresa",
-    "description": "Koddo es una empresa de agentes de inteligencia artificial que construyen software para empresas, dirigidos por arquitectos de software. Se contrata por suscripción mensual o anual con créditos.",
-    "url": "https://koddo.tech",
-    "areaServed": ["Bolivia", "Perú", "Argentina"],
-    "address": { "@type": "PostalAddress", "addressLocality": "Santa Cruz", "addressCountry": "Bolivia" },
-    "serviceType": ["Software development with AI agents", "Mobile Development", "Data Engineering", "Systems Integration"]
-  }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.koddo.tech/#org",
+      "name": "Koddo",
+      "url": "https://www.koddo.tech",
+      "logo": "https://www.koddo.tech/images/logo-koddo-ink.png",
+      "image": "https://www.koddo.tech/images/og-hero.png?v=2",
+      "slogan": "Built by agents, designed by humans",
+      "description": "Empresa de agentes de inteligencia artificial que construyen el software de otras empresas, dirigidos por arquitectos de software.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santa Cruz de la Sierra",
+        "addressCountry": "BO"
+      },
+      "areaServed": [
+        "BO",
+        "PE",
+        "AR"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/koddo"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.koddo.tech/#website",
+      "url": "https://www.koddo.tech",
+      "name": "Koddo",
+      "publisher": {
+        "@id": "https://www.koddo.tech/#org"
+      },
+      "inLanguage": [
+        "es",
+        "en"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.koddo.tech/#page",
+      "url": "https://www.koddo.tech/",
+      "inLanguage": "es",
+      "name": "Koddo · Agentes de IA que construyen el software de tu empresa",
+      "isPartOf": {
+        "@id": "https://www.koddo.tech/#website"
+      },
+      "about": {
+        "@id": "https://www.koddo.tech/#org"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Desarrollo de software con agentes de IA",
+      "serviceType": "Desarrollo de software a medida",
+      "provider": {
+        "@id": "https://www.koddo.tech/#org"
+      },
+      "areaServed": [
+        "BO",
+        "PE",
+        "AR"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Koddo Startup",
+          "description": "199 créditos al mes. Un proyecto a la vez, pensado para validar una idea rápido.",
+          "price": "199",
+          "priceCurrency": "USD",
+          "url": "https://www.koddo.tech/#planes",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "199",
+            "priceCurrency": "USD",
+            "unitCode": "MON",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitCode": "MON"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Koddo Pro",
+          "description": "500 créditos al mes. Un proyecto a la vez con arquitecto asignado.",
+          "price": "499",
+          "priceCurrency": "USD",
+          "url": "https://www.koddo.tech/#planes",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "499",
+            "priceCurrency": "USD",
+            "unitCode": "MON",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitCode": "MON"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Koddo Max",
+          "description": "1100 créditos al mes. Proyectos en paralelo y prioridad.",
+          "price": "999",
+          "priceCurrency": "USD",
+          "url": "https://www.koddo.tech/#planes",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "999",
+            "priceCurrency": "USD",
+            "unitCode": "MON",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitCode": "MON"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
   <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+  <link rel="apple-touch-icon" href="/images/web-icon.png">
+  <meta name="theme-color" content="#f5f2eb">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Doto:wght@800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -265,7 +383,7 @@
         <li><a href="#casos">Casos</a></li>
         <li><a href="#como">Cómo funciona</a></li>
         <li><a href="#planes">Planes</a></li>
-        <li><a href="/en/" hreflang="en" lang="en">EN</a></li>
+        <li><a href="/en" hreflang="en" lang="en">EN</a></li>
       </ul>
       <a href="#" class="logo"><img src="/images/logo-koddo-ink.svg" alt="Koddo · built by agents, designed by humans"></a>
       <div class="right">
@@ -435,7 +553,7 @@
     <div class="wrap foot">
       <img src="/images/logo-koddo-cream.svg" alt="Koddo · built by agents, designed by humans">
       <span class="label" style="color:var(--text-3)">Santa Cruz · Bolivia</span>
-      <a class="label" style="color:var(--text-2)" href="/en/" hreflang="en" lang="en">English</a>
+      <a class="label" style="color:var(--text-2)" href="/en" hreflang="en" lang="en">English</a>
     </div>
   </footer>
 

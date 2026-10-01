@@ -54,7 +54,7 @@ Para resaltar una palabra técnica dentro de un párrafo:
 `Usa la función \`analyzeData()\` para procesar...`
 
 ### 6. Enlaces
-`[Texto del enlace](https://koddo.tech)`
+`[Texto del enlace](https://www.koddo.tech)`
 
 ---
 
