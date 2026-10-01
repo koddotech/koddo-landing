@@ -30,6 +30,7 @@ export default defineConfig({
         blogConstruirEmpresa: resolve(__dirname, 'blog/como-construir-empresa-estos-dias/index.html'),
         onePager: resolve(__dirname, 'one-pager/index.html'),
         login: resolve(__dirname, 'login.html'),
+        loginEn: resolve(__dirname, 'en/login.html'),
       },
     },
   },

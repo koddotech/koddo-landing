@@ -1,638 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <title>Koddo | The Last Mile of Your ERP — SAP B1, Apps & Data — Bolivia</title>
-
-  <meta name="description" content="Your ERP does part of the job. The rest is still done by hand. Koddo builds the last mile of your SAP B1: apps, integrations and dashboards your team actually uses. In weeks, not months.">
-
-  <meta name="keywords" content="SAP B1 integration Bolivia, SAP mobile apps, data engineering Bolivia, Flutter SAP Business One, SAP B1 dashboard, custom software Bolivia, Latin America">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koddo · AI agents that build your company's software</title>
+  <meta name="description" content="Koddo is a company of artificial intelligence agents that build your company's software, led by software architects. By subscription, from 199 credits a month.">
   <link rel="canonical" href="https://koddo.tech/en/">
   <link rel="alternate" hreflang="es" href="https://koddo.tech/">
   <link rel="alternate" hreflang="en" href="https://koddo.tech/en/">
   <link rel="alternate" hreflang="x-default" href="https://koddo.tech/">
-
-  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
-
-  <meta property="og:title" content="Koddo | The Last Mile of Your ERP">
-  <meta property="og:description" content="Your ERP reaches a certain point. Koddo builds the missing stretch: apps, integrations and dashboards your team actually uses. Bolivia and Latin America.">
+  <meta property="og:title" content="Koddo · AI agents that build your company's software">
+  <meta property="og:description" content="Artificial intelligence agents led by software architects. By subscription, from 199 credits a month.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://koddo.tech/assets/web-mockup.png">
   <meta property="og:url" content="https://koddo.tech/en/">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-
-  <!-- LLM -->
+  <meta property="og:image" content="https://www.koddo.tech/images/og-hero-en.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AI agents that build your company's software. Koddo.">
+  <meta property="og:site_name" content="Koddo">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.koddo.tech/images/og-hero-en.png">
   <link rel="alternate" type="text/markdown" href="/about-koddo.md">
   <meta name="llm-context" content="/about-koddo.md">
-
-  <style>
-    /* Critical CSS to prevent FOUC */
-    :root {
-      --color-bg: #000000;
-      --color-text-primary: #f5f5f7;
-      --font-family-base: 'Nunito Sans', system-ui, -apple-system, sans-serif;
-    }
-    body {
-      background-color: var(--color-bg);
-      color: var(--color-text-primary);
-      font-family: var(--font-family-base);
-      margin: 0;
-    }
-    #app {
-      opacity: 0;
-      animation: fadeIn 0.4s ease forwards;
-    }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      border: 0;
-    }
-  </style>
-
-  <link rel="preload" href="/src/style.css" as="style">
-  <link rel="stylesheet" href="/src/style.css">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Koddo",
-    "slogan": "The Last Mile of Your ERP",
-    "description": "Koddo builds the last mile of the ERP: mobile and web apps, SAP Business One (SAP B1) integrations and operational dashboards that take the system where the original implementation never reached. For mid-sized companies in Bolivia and Latin America.",
-    "url": "https://koddo.tech/en/",
-    "areaServed": ["Bolivia", "Peru", "Argentina"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Santa Cruz",
-      "addressCountry": "Bolivia"
-    },
-    "serviceType": [
-      "SAP Business One Integration",
-      "Mobile Development",
-      "Data Engineering",
-      "Artificial Intelligence"
-    ],
-    "knowsAbout": ["SAP Business One", "SAP B1", "SAP S/4HANA", "Flutter", "NestJS", "NextJS", "Machine Learning", "Data Engineering"]
+    "slogan": "AI agents that build your company's software",
+    "description": "Koddo is a company of artificial intelligence agents that build software for businesses, led by software architects. Hired by monthly or annual subscription with credits.",
+    "url": "https://koddo.tech",
+    "areaServed": ["Bolivia", "Perú", "Argentina"],
+    "address": { "@type": "PostalAddress", "addressLocality": "Santa Cruz", "addressCountry": "Bolivia" },
+    "serviceType": ["Software development with AI agents", "Mobile Development", "Data Engineering", "Systems Integration"]
   }
   </script>
+  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-900: #05080e;
+      --navy-800: #0a101b;
+      --navy-glow: #1d3354;
+      --cream: #f1ede4;
+      --cream-2: #e6dfd0;
+      --paper: #f5f2eb;
+      --ink: #121926;
+      --ink-2: rgba(18, 25, 38, .62);
+      --ink-3: rgba(18, 25, 38, .4);
+      --red: #da3c33;
+      --text: #f4f2ee;
+      --text-2: rgba(244, 242, 238, .64);
+      --text-3: rgba(244, 242, 238, .38);
+      --glass: rgba(22, 32, 52, .42);
+      --line: rgba(255, 255, 255, .10);
+      --glass-c: rgba(255, 255, 255, .45);
+      --line-c: rgba(18, 25, 38, .10);
+      --blur: blur(22px) saturate(140%);
+      --serif: 'Instrument Serif', Georgia, serif;
+      --dot: 'Doto', 'JetBrains Mono', monospace;
+      --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+      --sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --gutter: clamp(16px, 4vw, 48px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1160px, 100%); margin: 0 auto; padding: 0 var(--gutter); }
 
+    .label { display: inline-flex; align-items: center; gap: 8px; font: 500 11px/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+    .dark .label { color: var(--text-3); }
+    .dot-red { width: 7px; height: 7px; border-radius: 50%; background: var(--red); box-shadow: 0 0 10px rgba(218,60,51,.6); flex: none; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -.015em; }
+    h2 { font-size: clamp(38px, 5.2vw, 72px); line-height: 1.02; }
+    em { font-style: italic; }
+
+    .dark { background: var(--navy-900); color: var(--text); }
+    .glass { background: var(--glass); border: 1px solid var(--line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-radius: 22px; }
+    .glass-c { background: var(--glass-c); border: 1px solid var(--line-c); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-radius: 22px; }
+    .dots { background-image: radial-gradient(rgba(255,255,255,.085) 1px, transparent 1.4px); background-size: 28px 28px; }
+    .dots-c { background-image: radial-gradient(rgba(18,25,38,.08) 1px, transparent 1.4px); background-size: 28px 28px; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 26px; border-radius: 999px; font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; transition: transform .2s; white-space: nowrap; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-ink { background: var(--ink); color: var(--cream); }
+    .btn-cream { background: var(--cream); color: var(--ink); }
+    .btn-ghost { background: rgba(255,255,255,.05); border: 1px solid var(--line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+    .link { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); border-bottom: 1px solid var(--ink-3); padding-bottom: 4px; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.on { opacity: 1; transform: none; }
+
+    /* ---------- Menú: logo al centro, como YC ---------- */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 72px; background: rgba(245,242,235,.72); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-bottom: 1px solid transparent; transition: border-color .3s; }
+    .nav.scrolled { border-bottom-color: var(--line-c); }
+    .nav-in { height: 100%; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+    .nav ul { display: flex; gap: 28px; list-style: none; }
+    .nav ul a { font: 500 13px/1 var(--sans); color: var(--ink-2); }
+    .nav ul a:hover { color: var(--ink); }
+    .nav .logo img { height: 40px; width: auto; }
+    .nav .right { display: flex; justify-content: flex-end; align-items: center; gap: 22px; }
+    .nav .btn { height: 40px; padding: 0 18px; font-size: 11px; }
+    .nav .right { gap: 12px; }
+    .nav .right .link { margin-right: 10px; }
+    .nav .right .btn-ink { display: none; }
+    .nav.past-hero .right .btn-ink { display: inline-flex; animation: fade-in .3s ease; }
+    @keyframes fade-in { from { opacity: 0; transform: translateY(-4px); } }
+    .btn-line { border: 1px solid rgba(18,25,38,.28); color: var(--ink); background: rgba(255,255,255,.35); }
+    .btn-line:hover { border-color: var(--ink); }
+
+    /* ---------- Héroe ---------- */
+    .hero { min-height: min(100vh, 900px); display: grid; place-items: center; text-align: center; padding: 140px 0 70px; position: relative; }
+    .hero h1 { font-size: clamp(46px, 6.6vw, 96px); line-height: 1; letter-spacing: -.02em; max-width: 1040px; margin: 0 auto; }
+    .hero h1 em { color: var(--ink); }
+    .hero sup { font: 400 .28em/1 var(--serif); vertical-align: super; margin-left: 4px; color: var(--ink-2); }
+    .note { max-width: 440px; margin: 34px auto 0; text-align: left; font: italic 400 19px/1.4 var(--serif); color: var(--ink-2); display: grid; grid-template-columns: auto 1fr; gap: 10px; }
+    .note span:first-child { font-style: normal; }
+    .hero .actions { display: flex; gap: 22px; justify-content: center; align-items: center; margin-top: 40px; flex-wrap: wrap; }
+    .how-sec { padding: clamp(100px, 12vw, 160px) 0; text-align: center; }
+    .how-sec h2 { margin: 20px auto 0; max-width: 820px; }
+    .how-strip { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 940px; margin: 26px auto 0; border-top: 1px solid var(--line-c); text-align: left; }
+    .how-strip div { padding: 24px 22px 0; }
+    .how-strip div + div { border-left: 1px solid var(--line-c); }
+    .how-strip .n { font: 800 26px/1 var(--dot); color: var(--ink-3); }
+    .how-strip b { display: block; font: 400 24px/1.15 var(--serif); margin: 14px 0 6px; }
+    .how-strip .label { color: var(--ink-3); }
+    .how-strip .human .n { color: var(--red); }
+    .chev { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); color: var(--ink-3); animation: bob 2s infinite; }
+    @keyframes bob { 50% { transform: translate(-50%, 5px); } }
+
+    /* ---------- Casos: contexto de la empresa, antes y ahora ---------- */
+    .cases { padding: clamp(100px, 12vw, 160px) 0; }
+    .cases h2 { margin: 20px 0 48px; }
+    .story { position: relative; min-height: 620px; border-radius: 26px; overflow: hidden; display: flex; align-items: flex-end; padding: 22px; }
+    .story + .story { margin-top: 16px; }
+    .story > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.8) contrast(1.03); }
+    .story::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,8,14,.55) 0%, rgba(5,8,14,.15) 55%, rgba(5,8,14,0) 100%), linear-gradient(180deg, transparent 50%, rgba(5,8,14,.45)); }
+    .story.rev { justify-content: flex-end; }
+    .story.rev::after { background: linear-gradient(270deg, rgba(5,8,14,.55) 0%, rgba(5,8,14,.15) 55%, rgba(5,8,14,0) 100%), linear-gradient(180deg, transparent 50%, rgba(5,8,14,.45)); }
+    .story .panel { position: relative; z-index: 2; width: min(520px, 100%); padding: 28px; }
+    .story .panel > .label { color: var(--text-2); }
+    .story h3 { font-size: clamp(28px, 2.8vw, 38px); line-height: 1.08; margin: 12px 0 22px; }
+    .ba { display: grid; gap: 10px; }
+    .ba div { display: grid; grid-template-columns: 70px 1fr; gap: 14px; align-items: baseline; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); }
+    .ba .label { color: var(--text-3); }
+    .ba p { font-size: 15px; color: var(--text-2); }
+    .ba .now { background: rgba(218,60,51,.08); border-color: rgba(218,60,51,.3); }
+    .ba .now .label { color: var(--cream); }
+    .ba .now p { color: var(--text); }
+    .story .cite { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .story .cite p { font: italic 400 19px/1.3 var(--serif); }
+    .story .cite .label { margin-top: 8px; }
+
+    /* Producto: bandeja que se apoya sobre la foto */
+    .story { padding-bottom: 150px; align-items: center; }
+    .product { position: relative; z-index: 3; width: min(940px, 94%); margin: -120px auto 0; display: flex; justify-content: center; align-items: flex-end; gap: 22px; padding: 22px 22px 0; }
+    .frame-web { width: 66%; border-radius: 12px; overflow: hidden; background: #fff; border: 1px solid rgba(255,255,255,.18); box-shadow: 0 50px 90px -40px rgba(0,0,0,.9), 0 0 0 6px rgba(255,255,255,.04); }
+    .frame-web .bar { height: 24px; background: #eceef2; display: flex; gap: 6px; align-items: center; padding-left: 12px; }
+    .frame-web .bar i { width: 8px; height: 8px; border-radius: 50%; background: #cfd2d8; }
+    .frame-web img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; }
+    .frame-phone { width: 19%; aspect-ratio: 1170 / 2532; border-radius: 28px; overflow: hidden; border: 6px solid #0b0f17; background: #0b0f17; box-shadow: 0 50px 80px -30px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.14); margin-bottom: -26px; }
+    .frame-phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 22px; }
+    .product.phones .frame-phone { width: 23%; margin-bottom: 0; }
+    .product.phones .frame-phone:nth-child(2) { transform: translateY(-34px); }
+    .product-cap { display: flex; justify-content: center; margin-top: 46px; }
+    .product-cap + .story { margin-top: 72px; }
+
+    /* ---------- Problema ---------- */
+    .pain { padding: clamp(100px, 12vw, 160px) 0; }
+    .pain h2 { max-width: 860px; margin-top: 20px; }
+    .pain h2 .soft { color: var(--text-3); }
+    .pain-lines { margin-top: 64px; border-top: 1px solid var(--line); }
+    .pain-lines p { font: 400 clamp(34px, 4.6vw, 64px)/1.08 var(--serif); letter-spacing: -.015em; padding: 26px 0; border-bottom: 1px solid var(--line); }
+    .pain-lines span { color: var(--text-3); font-style: italic; }
+
+    /* ---------- Planes ---------- */
+    .plans { padding: clamp(100px, 12vw, 160px) 0; }
+    .plans-head { text-align: center; margin-bottom: 40px; }
+    .plans-head h2 { margin-top: 20px; }
+    .plans-head p { color: var(--ink-2); margin-top: 14px; }
+    .toggle { display: flex; width: max-content; margin: 0 auto 40px; padding: 5px; border-radius: 999px; background: var(--glass-c); border: 1px solid var(--line-c); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+    .toggle button { border: 0; background: none; cursor: pointer; height: 40px; padding: 0 20px; border-radius: 999px; font: 500 11.5px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); display: inline-flex; align-items: center; gap: 8px; }
+    .toggle button[aria-pressed="true"] { background: var(--ink); color: var(--cream); }
+    .toggle .save { color: var(--red); }
+    .toggle button[aria-pressed="true"] .save { color: #ff8a82; }
+    .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1100px; margin: 0 auto; }
+    .plan { padding: 30px; }
+    .plan .credits { font-size: clamp(56px, 5.6vw, 76px); }
+    .plan { padding: 34px; display: flex; flex-direction: column; border-radius: 22px; }
+    .plan .name { display: flex; justify-content: space-between; align-items: center; font: 500 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+    .plan .credits { font: 800 clamp(64px, 7vw, 92px)/1 var(--dot); margin-top: 28px; letter-spacing: -.02em; }
+    .plan .credits-l { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); margin-top: 10px; }
+    .plan .price { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line-c); display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+    .plan .price b { font: 400 44px/1 var(--serif); }
+    .plan .price span { color: var(--ink-3); font-size: 14px; }
+    .plan .billed { font-size: 13px; color: var(--ink-3); margin-top: 6px; min-height: 20px; }
+    .plan ul { list-style: none; margin: 22px 0 30px; display: grid; gap: 11px; }
+    .plan li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; font-size: 15.5px; }
+    .plan li::before { content: "→"; font-family: var(--mono); color: var(--ink-3); }
+    .plan li.annual { display: none; color: var(--red); }
+    .plan li.annual::before { content: "＋"; color: var(--red); }
+    .annual-on .plan li.annual { display: grid; }
+    .plan .btn { margin-top: auto; }
+    .plan.top { background: var(--ink); color: var(--cream); box-shadow: 0 30px 60px -30px rgba(18,25,38,.55); }
+    .plan.top .name, .plan.top .credits-l, .plan.top .price span, .plan.top .billed, .plan.top li::before { color: rgba(241,237,228,.55); }
+    .plan.top .price { border-top-color: rgba(241,237,228,.14); }
+    .plan.top li.annual, .plan.top li.annual::before { color: #ff8a82; }
+    .plans-note { text-align: center; margin-top: 22px; color: var(--ink-3); font-size: 14px; }
+
+    /* ---------- Cierre ---------- */
+    .cta { padding: clamp(110px, 13vw, 180px) 0; text-align: center; background: radial-gradient(90% 70% at 50% 0%, var(--navy-glow) 0%, var(--navy-800) 50%, var(--navy-900) 85%); }
+    .cta h2 { font-size: clamp(50px, 7vw, 100px); margin: 20px auto 34px; }
+    .cta .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    footer { padding: 44px 0 56px; background: var(--navy-900); color: var(--text); border-top: 1px solid rgba(255,255,255,.06); }
+    .foot { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .foot img { height: 58px; width: auto; }
+
+    @media (max-width: 960px) {
+      .nav ul { display: none; }
+      .nav-in { grid-template-columns: auto 1fr; }
+      .nav-in > ul:first-child { display: none; }
+      .nav .right .link { display: none; }
+      .nav .btn { padding: 0 14px; }
+      .story, .story.rev { min-height: 0; justify-content: stretch; padding: 280px 14px 14px; }
+      .story > img { height: 420px; object-position: 30% center; }
+      .story::after, .story.rev::after { background: linear-gradient(180deg, rgba(5,8,14,0) 20%, rgba(5,8,14,.7)); }
+      .how-strip { grid-template-columns: 1fr; }
+      .how-strip div { padding: 20px 0; }
+      .how-strip div + div { border-left: 0; border-top: 1px solid var(--line-c); }
+      .plan-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .story .panel { padding: 20px; }
+      .product { margin-top: 28px; gap: 10px; padding: 12px 6px 0; }
+      .frame-phone { border-width: 4px; border-radius: 16px; margin-bottom: -12px; }
+      .frame-phone img { border-radius: 12px; }
+      .product.phones .frame-phone { width: 30%; }
+      .product.phones .frame-phone:nth-child(2) { transform: translateY(-18px); }
+      .ba div { grid-template-columns: 1fr; gap: 4px; }
+      .nav .logo img { height: 34px; }
+      .nav .right { gap: 8px; }
+      .nav .btn { padding: 0 12px; letter-spacing: .08em; }
+      .product-cap { text-align: center; }
+      .toggle button { padding: 0 14px; letter-spacing: .08em; }
+    }
+    @media (max-width: 360px) {
+      .nav.past-hero .right .btn-ink { display: none; }
+      .toggle button { padding: 0 10px; font-size: 10.5px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .chev { animation: none; } }
+  </style>
 </head>
-
 <body>
-  <div class="scroll-progress" aria-hidden="true"></div>
 
-  <div id="app">
-    <header class="site-header">
-      <div class="header-content">
-        <div class="logo">
-           <img src="/images/logo-red-nobk.png" alt="KODDO Technologies" class="logo-img">
-        </div>
-
-        <nav class="main-nav" aria-label="Main navigation">
-          <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#work">Case Studies</a></li>
-            <li><a href="#start">Start Risk-Free</a></li>
-            <li><a href="/blog.html">Blog</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="/" class="lang-switch" hreflang="es" lang="es">ES</a></li>
-            <li><a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="nav-cta">Book 30 min</a></li>
-          </ul>
-        </nav>
-
-        <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
-          <span class="burger-line"></span>
-          <span class="burger-line"></span>
-        </button>
+  <nav class="nav" aria-label="Main">
+    <div class="wrap nav-in">
+      <ul>
+        <li><a href="#cases">Cases</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#plans">Plans</a></li>
+        <li><a href="/" hreflang="es" lang="es">ES</a></li>
+      </ul>
+      <a href="#" class="logo"><img src="/images/logo-koddo-ink.svg" alt="Koddo · built by agents, designed by humans"></a>
+      <div class="right">
+        <a class="link" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Book 30 min</a>
+        <a class="btn btn-ink" href="#plans">See plans</a>
+        <a class="btn btn-line" href="/en/login">Platform</a>
       </div>
-    </header>
-
-    <div class="menu-overlay" aria-hidden="true">
-      <nav class="mobile-nav">
-        <ul>
-           <li><a href="#services">Services</a></li>
-           <li><a href="#work">Case Studies</a></li>
-           <li><a href="#start">Start Risk-Free</a></li>
-           <li><a href="/blog.html">Blog</a></li>
-           <li><a href="#about">About</a></li>
-           <li><a href="/" class="lang-switch" hreflang="es" lang="es">Español</a></li>
-           <li><a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="nav-cta">Book 30 min</a></li>
-        </ul>
-      </nav>
     </div>
+  </nav>
 
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-visuals">
-          <div class="glow-sphere sphere-1"></div>
-          <div class="glow-sphere sphere-2"></div>
-          <div class="grid-overlay"></div>
-        </div>
-
-        <div class="container">
-          <div class="hero-content">
-            <div class="hero-badge">
-              <span class="badge-dot"></span>
-              SAP B1 · Apps · Integrations · Data
-            </div>
-            <h3 id="hero-title" class="hero-title">
-              <span class="sr-only">Koddo: </span>
-              The <span class="text-gradient">Last Mile</span><br>
-              of your <span class="text-gradient">ERP</span>
-            </h3>
-            <p class="hero-subtitle">
-              Your ERP does part of the job. <strong>The rest is still done by hand</strong>: spreadsheets, transcriptions, reports assembled at the last minute. Koddo builds the missing pieces — and your entire operation starts running inside the system. In weeks, not months.
-            </p>
-            <div class="hero-actions">
-              <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a call with me</a>
-              <a href="#work" class="btn btn-secondary">See real cases</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-footer">
-          <div class="scroll-indicator">
-            <span class="scroll-text">Explore Koddo</span>
-            <span class="scroll-line"></span>
-          </div>
-        </div>
-      </section>
-
-      <section id="problem" class="problem-section" aria-labelledby="problem-title">
-        <div class="container">
-          <div class="section-header">
-            <h2 id="problem-title" class="section-title">Sound familiar?</h2>
-          </div>
-
-          <div class="problem-grid">
-            <article class="problem-card glass-card">
-              <span class="problem-emoji" aria-hidden="true"></span>
-              <p>Your team in the field, the warehouse or out on the street still writes things down on paper or WhatsApp — and only at the end of the day does someone enter it into the system. If they do.</p>
-            </article>
-            <article class="problem-card glass-card">
-              <span class="problem-emoji" aria-hidden="true"></span>
-              <p>The reports management needs are assembled by hand in Excel, cross-referencing data from three different places. Every week. The same hours lost.</p>
-            </article>
-            <article class="problem-card glass-card">
-              <span class="problem-emoji" aria-hidden="true"></span>
-              <p>You paid good money for a SAP B1 that was supposed to integrate your whole company. Today every department still works on its own island, and nobody sees the full picture.</p>
-            </article>
-          </div>
-
-          <p class="problem-closing">
-            That distance between what your ERP does and what your company needs is <strong>the last mile</strong>. Koddo builds it.
-          </p>
-        </div>
-      </section>
-
-      <section class="certs-section" aria-label="Certifications">
-        <div class="container">
-          <p class="certs-label">Certifications behind our work</p>
-          <div class="certs-grid">
-            <div class="cert-badge glass-card cert-primary">
-              <span class="cert-name">SAP B1</span>
-              <span class="cert-type">Official certification</span>
-            </div>
-            <div class="cert-badge glass-card">
-              <span class="cert-name">AWS</span>
-              <span class="cert-type">Certified</span>
-            </div>
-            <div class="cert-badge glass-card">
-              <span class="cert-name">Google</span>
-              <span class="cert-type">Certified</span>
-            </div>
-            <div class="cert-badge glass-card">
-              <span class="cert-name">Apple</span>
-              <span class="cert-type">Developer Program</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="last-mile" class="why-section" aria-labelledby="um-title">
-        <div class="container">
-          <div class="why-card glass-card">
-            <h2 id="um-title" class="section-title">The last mile of your ERP</h2>
-            <p>When you implemented your ERP, the project went as far as they all go: <strong>accounting, purchasing, central inventory</strong>. Then the ribbon was cut and the consultant left.</p>
-            <p>But your company doesn't end there. It continues on the street with your salespeople, in the warehouse with the stock counts, in the field with the machinery, in finance where someone transcribes invoices by hand. <strong>That stretch was never built.</strong></p>
-            <p>Koddo builds exactly that stretch: the apps, connections and dashboards that take your system to the furthest corner of your operation. <strong>Without replacing your ERP. Without never-ending projects.</strong></p>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" class="services-section" aria-labelledby="services-title">
-        <div class="container">
-          <div class="section-header">
-            <h2 id="services-title" class="section-title">How we cover that mile</h2>
-            <p class="section-tagline">Four ways to take your system where it doesn't reach today.</p>
-          </div>
-
-          <div class="services-grid">
-            <article class="service-card glass-card">
-              <div class="service-icon-container">
-                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-              </div>
-              <h3>Apps for your team</h3>
-              <p>Your people record from their phones — on the street, in the warehouse or in the field, with or without signal — and everything flows straight into your SAP B1. No paper, no transcription.</p>
-            </article>
-
-            <article class="service-card glass-card">
-              <div class="service-icon-container">
-                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-              </div>
-              <h3>Dashboards for decisions</h3>
-              <p>Sales, inventory and operations on a single screen, updated in real time. No more waiting for Monday's Excel to know how your company is doing.</p>
-            </article>
-
-            <article class="service-card glass-card">
-              <div class="service-icon-container">
-                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-              </div>
-              <h3>Connections to your SAP B1</h3>
-              <p>Your invoicing system, your bank, your e-commerce, your weighing scale — whatever is moved by hand between systems today, we connect so it flows on its own.</p>
-            </article>
-
-            <article class="service-card glass-card">
-              <div class="service-icon-container">
-                <svg class="service-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-              </div>
-              <h3>Applied intelligence</h3>
-              <p>Your historical data working for you: demand forecasts, sales recommendations, alerts before a problem costs money.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="about-section">
-        <div class="container">
-          <div class="about-grid">
-            <div class="about-text">
-              <h2 class="section-title">Who we are</h2>
-              <p>KODDO is a Bolivian <strong>software and data engineering</strong> firm specialized in one thing: making the system you already paid for work for your entire company.</p>
-              <p>We don't sell licenses or never-ending implementations. We build the missing pieces — fast, straight to the point, and speaking the language of your business, not the language of technology.</p>
-              <div class="about-stats">
-                <div class="stat-item">
-                  <span class="stat-number">SAP B1</span>
-                  <span class="stat-label">Certification & integrations</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-number">APPS</span>
-                  <span class="stat-label">Web & mobile for your operation</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-number">DATA</span>
-                  <span class="stat-label">Dashboards & intelligence</span>
-                </div>
-              </div>
-            </div>
-            <div class="about-image">
-              <div class="image-wrapper glass-card">
-                <img src="/images/we.png" alt="Koddo Mission Tech Abstract" class="mission-img" loading="lazy">
-                <div class="tech-abstract-anim" aria-hidden="true"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="process" class="process-section" aria-labelledby="process-title">
-        <div class="container">
-          <div class="section-header">
-            <h2 id="process-title" class="section-title">From the first call to a system in production</h2>
-          </div>
-
-          <div class="process-grid">
-            <article class="process-step glass-card">
-              <span class="process-num">01</span>
-              <h3>Free review (30 min)</h3>
-              <p>We understand your operation and the real bottlenecks. No selling. Just diagnosis.</p>
-            </article>
-            <article class="process-step glass-card">
-              <span class="process-num">02</span>
-              <h3>Concrete proposal</h3>
-              <p>One document: what gets built, what it costs, when it's ready. No fine print.</p>
-            </article>
-            <article class="process-step glass-card">
-              <span class="process-num">03</span>
-              <h3>Focused development</h3>
-              <p>2–6 week projects. Weekly progress. You see the work advance in real time.</p>
-            </article>
-            <article class="process-step glass-card">
-              <span class="process-num">04</span>
-              <h3>Delivery & support</h3>
-              <p>System in production + team training + post-launch support.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="work" class="work-section">
-        <div class="container">
-          <h2 class="section-title">Last miles we've already built</h2>
-          <p class="section-tagline" style="margin-bottom: 0;">Real companies, with real systems, that stopped operating by hand.</p>
-        </div>
-
-        <article class="product-showcase">
-          <div class="product-hero-full">
-            <img class="hero-bg" src="/images/uniSanity/unisanity-persona.png" alt="Unión Agronegocios technician using UniSanity out in the pasture, with cattle in the background">
-            <div class="hero-inner">
-              <span class="hero-eyebrow">UniSanity · for Unión Agronegocios</span>
-              <h3 class="hero-headline">Protect your biggest investment: your herd's health</h3>
-              <p class="hero-sub">Health tracking for thousands of head, from the notebook to the phone — and wired into what your company already sells.</p>
-            </div>
-          </div>
-          <div class="product-body container">
-            <ul class="product-benefits">
-              <li class="benefit">
-                <span class="benefit-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
-                <h4>Zero paperwork</h4>
-                <p>All livestock health tracking in a single app. Goodbye notebooks and loose spreadsheets.</p>
-              </li>
-              <li class="benefit">
-                <span class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-                <h4>Your customers, one tap away</h4>
-                <p>Thousands of producers with their full history, synced from your system — even offline.</p>
-              </li>
-              <li class="benefit">
-                <span class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
-                <h4>Prevent, don't react</h4>
-                <p>Health plans and calendars by zone and species to get ahead of disease.</p>
-              </li>
-              <li class="benefit">
-                <span class="benefit-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
-                <h4>Decisions on real data</h4>
-                <p>Livestock inventory, campaigns and activities up to date, not at month-end.</p>
-              </li>
-            </ul>
-            <div class="project-preview">
-              <div class="project-gallery" data-gallery>
-                <button type="button" class="gallery-main" aria-label="Enlarge screenshot">
-                  <img class="gallery-main-img" src="/images/uniSanity/unisanity-login.png" alt="UniSanity — access to the animal-health intelligence platform" width="700" height="auto">
-                </button>
-                <div class="gallery-thumbs">
-                  <button type="button" class="gallery-thumb is-active" data-src="/images/uniSanity/unisanity-login.png" data-alt="UniSanity — access to the animal-health intelligence platform"><img src="/images/uniSanity/unisanity-login.png" alt="" loading="lazy"></button>
-                  <button type="button" class="gallery-thumb" data-src="/images/uniSanity/unisanity-modelo-sanitario.png" data-alt="Health model by species and zone"><img src="/images/uniSanity/unisanity-modelo-sanitario.png" alt="" loading="lazy"></button>
-                  <button type="button" class="gallery-thumb" data-src="/images/uniSanity/unisanity-clientes.png" data-alt="Customer directory synced with the ERP"><img src="/images/uniSanity/unisanity-clientes.png" alt="" loading="lazy"></button>
-                  <button type="button" class="gallery-thumb" data-src="/images/uniSanity/unisanity-actividades.png" data-alt="Catalog of veterinary activities"><img src="/images/uniSanity/unisanity-actividades.png" alt="" loading="lazy"></button>
-                  <button type="button" class="gallery-thumb" data-src="/images/uniSanity/unisanity-ganado.png" data-alt="Livestock master data by species"><img src="/images/uniSanity/unisanity-ganado.png" alt="" loading="lazy"></button>
-                  <button type="button" class="gallery-thumb" data-src="/images/uniSanity/unisanity-productos.png" data-alt="Product catalog imported from the ERP"><img src="/images/uniSanity/unisanity-productos.png" alt="" loading="lazy"></button>
-                  <button type="button" class="gallery-thumb" data-src="/images/uniSanity/unisanity-tienda.jpg" data-alt="Customer browsing products with UniSanity at the point of sale"><img src="/images/uniSanity/unisanity-tienda.jpg" alt="" loading="lazy"></button>
-                  <button type="button" class="gallery-thumb" data-src="/images/uniSanity/uniSanityMovile/unisanity-movil-clientes.png" data-alt="Mobile app: customers in the field"><img src="/images/uniSanity/uniSanityMovile/unisanity-movil-clientes.png" alt="" loading="lazy"></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-showcase">
-          <div class="product-hero-full">
-            <img class="hero-bg" src="/images/tracktor/rcm-campo.png" alt="RCM operator logging work from the app out in the field at sunset">
-            <div class="hero-inner">
-              <span class="hero-eyebrow">RCM · for Incubatec</span>
-              <h3 class="hero-headline">Every machine and every liter, under control</h3>
-              <p class="hero-sub">We moved operations logging off paper and onto the phone — it works with no signal out in the field and syncs to your system on its own.</p>
-            </div>
-          </div>
-          <div class="product-body container">
-            <ul class="product-benefits">
-              <li class="benefit">
-                <span class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></span>
-                <h4>Goodbye paper forms</h4>
-                <p>Machinery, fuel and maintenance logged from the phone, right in the field.</p>
-              </li>
-              <li class="benefit">
-                <span class="benefit-icon"><svg viewBox="0 0 24 24"><line x1="1" y1="1" x2="23" y2="23"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.58 9"/><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></span>
-                <h4>Works offline</h4>
-                <p>Everything is stored on the phone and syncs to your system when the connection returns.</p>
-              </li>
-              <li class="benefit">
-                <span class="benefit-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
-                <h4>Real control of your assets</h4>
-                <p>How much each machine consumes and its status, visible from the office, up to date.</p>
-              </li>
-              <li class="benefit">
-                <span class="benefit-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
-                <h4>Zero manual transcription</h4>
-                <p>What's logged in the field enters the system without anyone copying it by hand.</p>
-              </li>
-            </ul>
-            <div class="project-preview">
-              <div class="project-gallery" data-gallery>
-                <button type="button" class="gallery-main" aria-label="Enlarge screenshot">
-                  <img class="gallery-main-img" src="/images/tracktor/rcm-actividad.png" alt="RCM app: machinery operations log" width="700" height="auto">
-                </button>
-                <div class="gallery-thumbs">
-                  <button type="button" class="gallery-thumb is-active" data-src="/images/tracktor/rcm-actividad.png" data-alt="RCM app: machinery operations log"><img src="/images/tracktor/rcm-actividad.png" alt="" loading="lazy"></button>
-                  <button type="button" class="gallery-thumb" data-src="/images/tracktor/rcm-iniciar-trabajo.png" data-alt="RCM app: start a tractor job"><img src="/images/tracktor/rcm-iniciar-trabajo.png" alt="" loading="lazy"></button>
-                  <button type="button" class="gallery-thumb" data-src="/images/tracktor/rcm-papel.png" data-alt="The before: logging on paper forms in the field"><img src="/images/tracktor/rcm-papel.png" alt="" loading="lazy"></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <div class="container">
-          <!-- HIDDEN UNTIL FURTHER NOTICE — own products (FingerCode, MediGO).
-               To re-enable, uncomment this block.
-          <div class="other-projects">
-            <h3 class="other-projects-title">We also build our own products</h3>
-            <p class="other-projects-sub">Because the best proof that we know how to build is what we build for ourselves.</p>
-            <div class="mini-projects-grid">
-              <article class="mini-project-card glass-card">
-                <span class="project-category">iOS · App Store</span>
-                <h4>FingerCode</h4>
-                <p>Forgot a PIN your fingers still remember? FingerCode recovers it using your muscle memory. 100% private — nothing leaves your iPhone.</p>
-                <a href="/fingercode/" class="mini-project-link">See product →</a>
-              </article>
-              <article class="mini-project-card glass-card">
-                <span class="project-category">Health · Marketplace</span>
-                <h4>MediGO</h4>
-                <p>Finding a doctor by specialty and city in Bolivia used to be an odyssey. MediGO connects patients with verified specialists from their phone.</p>
-              </article>
-            </div>
-          </div>
-          -->
-        </div>
-      </section>
-
-      <section id="blog-preview" class="blog-preview-section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Ideas for your company</h2>
-            <p class="section-tagline">How mid-sized companies are closing the gap between their systems and their real operation. (Articles in Spanish.)</p>
-          </div>
-
-          <div class="blog-preview-grid">
-            <article class="blog-card glass-card">
-              <div class="blog-card-content">
-                <span class="blog-category">ERP · SAP B1</span>
-                <h3>Why your ERP is only half-used (and how to complete the last mile)</h3>
-                <p>You paid for a system that was supposed to integrate your whole company. Half your operation still runs on spreadsheets. It's not your fault — it's the last mile nobody built.</p>
-                <div class="blog-card-footer">
-                  <span class="blog-date">Jun 11, 2026</span>
-                  <a href="/blog/por-que-tu-erp-se-usa-a-la-mitad/" class="blog-link">Read article →</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="blog-card glass-card">
-              <div class="blog-card-content">
-                <span class="blog-category">Processes</span>
-                <h3>How to improve your company's processes without changing systems</h3>
-                <p>Most companies don't need a new system. They need the one they already have to reach where it doesn't reach today. A practical guide to deciding where to start.</p>
-                <div class="blog-card-footer">
-                  <span class="blog-date">Jun 11, 2026</span>
-                  <a href="/blog/como-mejorar-procesos-empresa-sin-cambiar-sistema/" class="blog-link">Read article →</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="blog-card glass-card">
-              <div class="blog-card-content">
-                <span class="blog-category">Decisions · Costs</span>
-                <h3>Hire in-house IT or work with a technology partner?</h3>
-                <p>The real numbers behind each option for a mid-sized company in Bolivia: costs, risks and when each path makes sense.</p>
-                <div class="blog-card-footer">
-                  <span class="blog-date">Jun 11, 2026</span>
-                  <a href="/blog/ti-interno-o-partner-tecnologico/" class="blog-link">Read article →</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="blog-card glass-card">
-              <div class="blog-card-content">
-                <span class="blog-category">AI · Organization</span>
-                <h3>How to build a company these days</h3>
-                <p>Real transformation isn't using AI — it's redesigning the architecture of the organization from a new logic.</p>
-                <div class="blog-card-footer">
-                  <span class="blog-date">Apr 9, 2026</span>
-                  <a href="/blog/como-construir-empresa-estos-dias/" class="blog-link">Read article →</a>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="section-actions center">
-            <a href="/blog.html" class="btn btn-secondary">View full Blog</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="start" class="start-section" aria-labelledby="start-title">
-        <div class="container">
-          <div class="section-header">
-            <h2 id="start-title" class="section-title">Your first project with Koddo can happen in 1 week</h2>
-            <p class="section-tagline">Before committing to a large project, you can start with something small that already delivers real value — and shows you exactly what to build next.</p>
-          </div>
-
-          <div class="start-grid">
-            <article class="start-card glass-card">
-              <span class="start-price">$300–500 USD</span>
-              <h3>SAP B1 Health Check + Roadmap</h3>
-              <p>A 1-week audit of how your company uses SAP B1. We identify the 3 most critical bottlenecks and deliver a prioritized improvement roadmap.</p>
-              <p class="start-outcome">Outcome: you know exactly what to build first and what it will cost.</p>
-              <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary start-cta">Request Health Check</a>
-            </article>
-
-            <article class="start-card glass-card">
-              <span class="start-price">$500–800 USD</span>
-              <h3>SAP B1 Operational Dashboard</h3>
-              <p>We connect your SAP B1 to a real-time web dashboard. Sales, inventory, orders — visible to management without exporting to Excel.</p>
-              <p class="start-outcome">Delivered in 2 weeks.</p>
-              <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary start-cta">Request Dashboard</a>
-            </article>
-
-            <article class="start-card glass-card">
-              <span class="start-price">$400–700 USD</span>
-              <h3>Targeted SAP B1 Integration</h3>
-              <p>You have a specific process that isn't connected to your SAP B1. We solve it in 1–2 weeks. One endpoint, one flow, one sync — whatever you need.</p>
-              <p class="start-outcome">Start where it hurts most.</p>
-              <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary start-cta">Describe my problem</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="why-koddo" class="why-section" aria-labelledby="why-title">
-        <div class="container">
-          <div class="why-card glass-card">
-            <h2 id="why-title" class="section-title">Hire in-house IT or work with Koddo?</h2>
-            <p>An IT architect in Bolivia costs <strong>$800–1,200/month</strong> in salary, plus benefits, plus ramp-up time, plus turnover.</p>
-            <p>Koddo delivers a system that <strong>lasts 5+ years</strong>, in weeks, with no payroll, no turnover, no management overhead.</p>
-            <p>And if the project doesn't meet what was agreed, <strong>you don't pay</strong>. No in-house employee can guarantee that.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="contact-section">
-        <div class="container">
-          <div class="final-cta glass-card">
-            <h2 class="section-title">Did your system reach the office and stop there?</h2>
-            <p>Let's talk for 30 minutes. I'll tell you exactly which stretch you're missing, what it costs, and when it would be up and running.</p>
-            <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a call with me</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <img src="/images/logo-red-nobk.png" alt="KODDO Technologies" class="logo-img footer-logo">
-            <p class="footer-tagline">Engineering Data, Building Impact.</p>
-            <div class="footer-social">
-              <a href="https://www.linkedin.com/company/koddo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="footer-nav-group">
-            <h4 class="footer-title">Solutions</h4>
-            <ul>
-              <li><a href="#services">SAP B1 Connections</a></li>
-              <li><a href="#services">Apps for your team</a></li>
-              <li><a href="#services">Dashboards & intelligence</a></li>
-              <li><a href="#start">SAP B1 Health Check</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-nav-group">
-            <h4 class="footer-title">Company</h4>
-            <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#work">Case Studies</a></li>
-              <li><a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Book 30 min</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="footer-bottom glass-card">
-          <p>&copy; 2026 KODDO Data & Software Engineering. All rights reserved.</p>
-          <nav class="footer-legal">
-            <a href="/legal.html">Legal & Privacy</a>
-          </nav>
-        </div>
+  <!-- Hero -->
+  <header class="hero dots-c">
+    <div class="wrap">
+      <h1 class="reveal">AI agents<sup>[1]</sup> that build<br><em>your company's software.</em></h1>
+      <p class="note reveal"><span>[1]</span><span>Led by software architects, who set the plan and review every delivery.</span></p>
+      <div class="actions reveal">
+        <a class="btn btn-ink" href="#plans">See plans</a>
+        <a class="link" href="#cases">See cases</a>
       </div>
-    </footer>
-  </div>
+    </div>
+    <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </header>
 
-  <script type="module" src="/src/main.js"></script>
+  <!-- Problem -->
+  <section class="dark pain dots">
+    <div class="wrap">
+      <span class="label reveal">The problem</span>
+      <h2 class="reveal">Every company has software ideas. <span class="soft">Few know how to build them right.</span></h2>
+      <div class="pain-lines">
+        <p class="reveal">Figuring out how <span>costs money.</span></p>
+        <p class="reveal">Finding the right team <span>takes time.</span></p>
+        <p class="reveal">Getting it wrong <span>is expensive.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how-sec dots-c" id="how">
+    <div class="wrap">
+      <span class="label reveal">How it works</span>
+      <h2 class="reveal">No quotes <em>and no hunting for developers.</em></h2>
+      <div class="how-strip reveal">
+        <div><span class="n">01</span><b>Tell us your idea</b><span class="label">Voice, text or photos</span></div>
+        <div class="human"><span class="n">02</span><b>An architect sets the plan</b><span class="label"><span class="dot-red"></span>Scope, dates and credits</span></div>
+        <div><span class="n">03</span><b>The agents build it</b><span class="label">Progress every week</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cases -->
+  <section class="dark cases dots" id="cases">
+    <div class="wrap">
+      <span class="label reveal">Cases</span>
+      <h2 class="reveal">Ideas that are already <em>software.</em></h2>
+
+      <article class="story rev reveal">
+        <img src="/images/uniSanity/unisanity-persona.png" alt="Unión Agronegocios technician in the field, with cattle in the background" loading="lazy">
+        <div class="panel glass">
+          <span class="label">Unión Agronegocios · Animal health</span>
+          <h3>Health control for thousands of cattle, connected end to end.</h3>
+          <div class="ba">
+            <div><span class="label">Before</span><p>Recorded by hand, outside their management system.</p></div>
+            <div class="now"><span class="label">Now</span><p>Unisanity: a web platform and app that carry every field record into the system.</p></div>
+          </div>
+          <div class="cite"><p>“It far exceeded our expectations.”</p><span class="label">Dr. Guerin Sensano · Director of Animal Health</span></div>
+        </div>
+      </article>
+      <div class="product reveal" aria-label="Unisanity, the software built for Unión">
+        <div class="frame-web"><div class="bar"><i></i><i></i><i></i></div><img src="/images/uniSanity/unisanity-modelo-sanitario.png" alt="Unisanity web: health model" loading="lazy"></div>
+        <div class="frame-phone"><img src="/images/uniSanity/uniSanityMovile/unisanity-movil-2.png" alt="Unisanity mobile: home screen with system status" loading="lazy"></div>
+      </div>
+      <p class="label product-cap reveal">Unisanity · web and app</p>
+
+      <article class="story rev reveal">
+        <img src="/images/tracktor/hero-user-tracktor.webp" alt="Tracktor operator with his phone in the field, next to the machinery" loading="lazy">
+        <div class="panel glass">
+          <span class="label">Tracktor · Farm machinery</span>
+          <h3>Hours and fuel measured where there is no signal.</h3>
+          <div class="ba">
+            <div><span class="label">Before</span><p>Paper sheets in the field, typed in by hand later.</p></div>
+            <div class="now"><span class="label">Now</span><p>An app that records offline and brings the data together for analysis.</p></div>
+          </div>
+          <div class="cite"><p>“Koddo is a key partner in that process.”</p><span class="label">Juan Camilo Narvaez · CEO of Tracktor</span></div>
+        </div>
+      </article>
+      <div class="product phones reveal" aria-label="The app built for Tracktor">
+        <div class="frame-phone"><img src="/images/tracktor/history.webp" alt="Tracktor app: work history" loading="lazy"></div>
+        <div class="frame-phone"><img src="/images/tracktor/report.webp" alt="Tracktor app: spending and consumption reports" loading="lazy"></div>
+      </div>
+      <p class="label product-cap reveal">Tracktor app · works offline</p>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section class="plans dots-c" id="plans">
+    <div class="wrap">
+      <div class="plans-head reveal">
+        <span class="label">Plans</span>
+        <h2>Credits every month. <em>As many ideas as you want.</em></h2>
+        <p>Each idea uses credits based on its size.</p>
+      </div>
+      <div class="toggle reveal" role="group" aria-label="Billing">
+        <button type="button" data-billing="monthly" aria-pressed="true">Monthly</button>
+        <button type="button" data-billing="annual" aria-pressed="false">Annual <span class="save">2 months free</span></button>
+      </div>
+      <div class="plan-grid" id="plan-grid">
+        <article class="plan glass-c reveal">
+          <span class="name">Startup</span>
+          <div class="credits">199</div>
+          <div class="credits-l">Credits per month</div>
+          <div class="price"><b data-monthly="$199" data-annual="$166">$199</b><span>/ month</span></div>
+          <div class="billed" data-monthly="$1.00 per credit" data-annual="$1,990 per year · ≈ $0.83 per credit">$1.00 per credit</div>
+          <ul>
+            <li>One project at a time</li>
+            <li>Validate your idea fast: from idea to something you can test</li>
+            <li class="annual">2 months free</li>
+            <li class="annual">Credits roll over all year</li>
+          </ul>
+          <a class="btn btn-ink" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Get started</a>
+        </article>
+        <article class="plan glass-c reveal">
+          <span class="name">Pro</span>
+          <div class="credits">500</div>
+          <div class="credits-l">Credits per month</div>
+          <div class="price"><b data-monthly="$499" data-annual="$416">$499</b><span>/ month</span></div>
+          <div class="billed" data-monthly="≈ $1.00 per credit" data-annual="$4,990 per year · ≈ $0.83 per credit">≈ $1.00 per credit</div>
+          <ul>
+            <li>One project at a time</li>
+            <li>Dedicated architect</li>
+            <li class="annual">2 months free</li>
+            <li class="annual">Credits roll over all year</li>
+          </ul>
+          <a class="btn btn-ink" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Get started</a>
+        </article>
+        <article class="plan top reveal">
+          <span class="name">Max <span class="label" style="color:var(--cream)"><span class="dot-red"></span>Top rated</span></span>
+          <div class="credits">1,100</div>
+          <div class="credits-l">Credits per month · 100 bonus</div>
+          <div class="price"><b data-monthly="$999" data-annual="$833">$999</b><span>/ month</span></div>
+          <div class="billed" data-monthly="≈ $0.91 per credit" data-annual="$9,990 per year · ≈ $0.76 per credit">≈ $0.91 per credit</div>
+          <ul>
+            <li>Projects in parallel</li>
+            <li>Priority</li>
+            <li class="annual">2 months free</li>
+            <li class="annual">Credits roll over all year</li>
+          </ul>
+          <a class="btn btn-cream" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Get started</a>
+        </article>
+      </div>
+      <p class="plans-note reveal">Prices in US dollars.</p>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="dark cta">
+    <div class="wrap reveal">
+      <span class="label"><span class="dot-red"></span>Let's talk</span>
+      <h2>What's <em>your idea?</em></h2>
+      <div class="actions">
+        <a class="btn btn-cream" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Book 30 min</a>
+        <a class="btn btn-ghost" href="#plans">See plans</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <img src="/images/logo-koddo-cream.svg" alt="Koddo · built by agents, designed by humans">
+      <span class="label" style="color:var(--text-3)">Santa Cruz · Bolivia</span>
+      <a class="label" style="color:var(--text-2)" href="/" hreflang="es" lang="es">Español</a>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 80 + 'ms'; io.observe(el); });
+
+    const nav = document.querySelector('.nav');
+    const hero = document.querySelector('.hero');
+    const onScroll = () => {
+      nav.classList.toggle('scrolled', scrollY > 10);
+      nav.classList.toggle('past-hero', hero.getBoundingClientRect().bottom < nav.offsetHeight);
+    };
+    addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const grid = document.getElementById('plan-grid');
+    document.querySelectorAll('.toggle button').forEach(b => b.addEventListener('click', () => {
+      const mode = b.dataset.billing;
+      document.querySelectorAll('.toggle button').forEach(x => x.setAttribute('aria-pressed', x === b));
+      grid.classList.toggle('annual-on', mode === 'annual');
+      grid.querySelectorAll('[data-monthly]').forEach(el => { el.textContent = el.dataset[mode]; });
+    }));
+    if (new URLSearchParams(location.search).get('billing') === 'annual') document.querySelector('[data-billing="annual"]').click();
+  </script>
 </body>
 </html>

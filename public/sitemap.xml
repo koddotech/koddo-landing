@@ -5,7 +5,7 @@
   <!-- ===== Koddo (corporativo) ===== -->
   <url>
     <loc>https://koddo.tech/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://koddo.tech/"/>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://koddo.tech/en/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://koddo.tech/"/>
