@@ -99,6 +99,10 @@
     .nav .logo img { height: 40px; width: auto; }
     .nav .right { display: flex; justify-content: flex-end; align-items: center; gap: 22px; }
     .nav .btn { height: 40px; padding: 0 18px; font-size: 11px; }
+    .nav .right { gap: 12px; }
+    .nav .right .link { margin-right: 10px; }
+    .btn-line { border: 1px solid rgba(18,25,38,.28); color: var(--ink); background: rgba(255,255,255,.35); }
+    .btn-line:hover { border-color: var(--ink); }
 
     /* ---------- Héroe ---------- */
     .hero { min-height: min(100vh, 900px); display: grid; place-items: center; text-align: center; padding: 140px 0 70px; position: relative; }
@@ -229,6 +233,7 @@
       .nav-in { grid-template-columns: auto 1fr; }
       .nav-in > ul:first-child { display: none; }
       .nav .right .link { display: none; }
+      .nav .btn { padding: 0 14px; }
       .story, .story.rev { min-height: 0; justify-content: stretch; padding: 280px 14px 14px; }
       .story > img { height: 420px; object-position: 30% center; }
       .story::after, .story.rev::after { background: linear-gradient(180deg, rgba(5,8,14,0) 20%, rgba(5,8,14,.7)); }
@@ -264,6 +269,7 @@
       <div class="right">
         <a class="link" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
         <a class="btn btn-ink" href="#planes">Ver planes</a>
+        <a class="btn btn-line" href="/login">Plataforma</a>
       </div>
     </div>
   </nav>
@@ -338,12 +344,12 @@
       </article>
       <div class="product reveal" aria-label="Unisanity, el software construido para Unión">
         <div class="frame-web"><div class="bar"><i></i><i></i><i></i></div><img src="/images/uniSanity/unisanity-modelo-sanitario.png" alt="Unisanity web: modelo sanitario" loading="lazy"></div>
-        <div class="frame-phone"><img src="/images/uniSanity/uniSanityMovile/unisanity-movil-5.png" alt="Unisanity móvil: calendario sanitario" loading="lazy"></div>
+        <div class="frame-phone"><img src="/images/uniSanity/uniSanityMovile/unisanity-movil-2.png" alt="Unisanity móvil: inicio con el estado del sistema" loading="lazy"></div>
       </div>
       <p class="label product-cap reveal">Unisanity · web y aplicación</p>
 
       <article class="story rev reveal">
-        <img src="/images/rcm/rcm-campo.png" alt="Operador de Tracktor con su teléfono en el campo, junto a la maquinaria" loading="lazy">
+        <img src="/images/tracktor/hero-user-tracktor.webp" alt="Operador de Tracktor con su teléfono en el campo, junto a la maquinaria" loading="lazy">
         <div class="panel glass">
           <span class="label">Tracktor · Maquinaria agrícola</span>
           <h3>Horas y combustible medidos donde no hay señal.</h3>
@@ -355,9 +361,8 @@
         </div>
       </article>
       <div class="product phones reveal" aria-label="La aplicación construida para Tracktor">
-        <div class="frame-phone"><img src="/images/rcm/rcm-actividad.png" alt="Aplicación de Tracktor: registro de operaciones" loading="lazy"></div>
-        <div class="frame-phone"><img src="/images/rcm/rcm-iniciar-trabajo.png" alt="Aplicación de Tracktor: iniciar trabajo" loading="lazy"></div>
-        <div class="frame-phone"><img src="/images/rcm/rcm-metrics.png" alt="Aplicación de Tracktor: métricas y rendimiento" loading="lazy"></div>
+        <div class="frame-phone"><img src="/images/tracktor/history.webp" alt="Aplicación de Tracktor: historial de trabajo" loading="lazy"></div>
+        <div class="frame-phone"><img src="/images/tracktor/report.webp" alt="Aplicación de Tracktor: reportes de gasto y consumo" loading="lazy"></div>
       </div>
       <p class="label product-cap reveal">Aplicación de Tracktor · funciona sin internet</p>
     </div>

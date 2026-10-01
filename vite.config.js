@@ -29,6 +29,7 @@ export default defineConfig({
         blogTiInterno: resolve(__dirname, 'blog/ti-interno-o-partner-tecnologico/index.html'),
         blogConstruirEmpresa: resolve(__dirname, 'blog/como-construir-empresa-estos-dias/index.html'),
         onePager: resolve(__dirname, 'one-pager/index.html'),
+        login: resolve(__dirname, 'login.html'),
       },
     },
   },
