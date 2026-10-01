@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koddo · Agentes de IA que construyen el software de tu empresa</title>
+  <meta name="description" content="Koddo es una empresa de agentes de inteligencia artificial que construyen el software de tu empresa, dirigidos por arquitectos de software. Por suscripción, desde 500 créditos al mes.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-900: #05080e;
+      --navy-800: #0a101b;
+      --navy-glow: #1d3354;
+      --cream: #f1ede4;
+      --cream-2: #e6dfd0;
+      --paper: #f5f2eb;
+      --ink: #121926;
+      --ink-2: rgba(18, 25, 38, .62);
+      --ink-3: rgba(18, 25, 38, .4);
+      --red: #da3c33;
+      --text: #f4f2ee;
+      --text-2: rgba(244, 242, 238, .64);
+      --text-3: rgba(244, 242, 238, .38);
+      --glass: rgba(22, 32, 52, .42);
+      --line: rgba(255, 255, 255, .10);
+      --glass-c: rgba(255, 255, 255, .45);
+      --line-c: rgba(18, 25, 38, .10);
+      --blur: blur(22px) saturate(140%);
+      --serif: 'Instrument Serif', Georgia, serif;
+      --dot: 'Doto', 'JetBrains Mono', monospace;
+      --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+      --sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --gutter: clamp(16px, 4vw, 48px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1160px, 100%); margin: 0 auto; padding: 0 var(--gutter); }
+
+    .label { display: inline-flex; align-items: center; gap: 8px; font: 500 11px/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+    .dark .label { color: var(--text-3); }
+    .dot-red { width: 7px; height: 7px; border-radius: 50%; background: var(--red); box-shadow: 0 0 10px rgba(218,60,51,.6); flex: none; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -.015em; }
+    h2 { font-size: clamp(38px, 5.2vw, 72px); line-height: 1.02; }
+    em { font-style: italic; }
+
+    .dark { background: var(--navy-900); color: var(--text); }
+    .glass { background: var(--glass); border: 1px solid var(--line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-radius: 22px; }
+    .glass-c { background: var(--glass-c); border: 1px solid var(--line-c); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-radius: 22px; }
+    .dots { background-image: radial-gradient(rgba(255,255,255,.085) 1px, transparent 1.4px); background-size: 28px 28px; }
+    .dots-c { background-image: radial-gradient(rgba(18,25,38,.08) 1px, transparent 1.4px); background-size: 28px 28px; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 26px; border-radius: 999px; font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; transition: transform .2s; white-space: nowrap; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-ink { background: var(--ink); color: var(--cream); }
+    .btn-cream { background: var(--cream); color: var(--ink); }
+    .btn-ghost { background: rgba(255,255,255,.05); border: 1px solid var(--line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+    .link { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); border-bottom: 1px solid var(--ink-3); padding-bottom: 4px; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.on { opacity: 1; transform: none; }
+
+    /* ---------- Menú: logo al centro, como YC ---------- */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 72px; background: rgba(245,242,235,.72); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-bottom: 1px solid transparent; transition: border-color .3s; }
+    .nav.scrolled { border-bottom-color: var(--line-c); }
+    .nav-in { height: 100%; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+    .nav ul { display: flex; gap: 28px; list-style: none; }
+    .nav ul a { font: 500 13px/1 var(--sans); color: var(--ink-2); }
+    .nav ul a:hover { color: var(--ink); }
+    .nav .logo img { height: 40px; width: auto; }
+    .nav .right { display: flex; justify-content: flex-end; align-items: center; gap: 22px; }
+    .nav .btn { height: 40px; padding: 0 18px; font-size: 11px; }
+
+    /* ---------- Héroe ---------- */
+    .hero { min-height: min(100vh, 900px); display: grid; place-items: center; text-align: center; padding: 140px 0 70px; position: relative; }
+    .hero h1 { font-size: clamp(46px, 6.6vw, 96px); line-height: 1; letter-spacing: -.02em; max-width: 1040px; margin: 0 auto; }
+    .hero h1 em { color: var(--ink); }
+    .hero sup { font: 400 .28em/1 var(--serif); vertical-align: super; margin-left: 4px; color: var(--ink-2); }
+    .note { max-width: 440px; margin: 34px auto 0; text-align: left; font: italic 400 19px/1.4 var(--serif); color: var(--ink-2); display: grid; grid-template-columns: auto 1fr; gap: 10px; }
+    .note span:first-child { font-style: normal; }
+    .hero .actions { display: flex; gap: 22px; justify-content: center; align-items: center; margin-top: 40px; flex-wrap: wrap; }
+    .how-sec { padding: 10px 0 clamp(100px, 12vw, 150px); text-align: center; }
+    .how-strip { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 940px; margin: 26px auto 0; border-top: 1px solid var(--line-c); text-align: left; }
+    .how-strip div { padding: 24px 22px 0; }
+    .how-strip div + div { border-left: 1px solid var(--line-c); }
+    .how-strip .n { font: 800 26px/1 var(--dot); color: var(--ink-3); }
+    .how-strip b { display: block; font: 400 24px/1.15 var(--serif); margin: 14px 0 6px; }
+    .how-strip .label { color: var(--ink-3); }
+    .how-strip .human .n { color: var(--red); }
+    .chev { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); color: var(--ink-3); animation: bob 2s infinite; }
+    @keyframes bob { 50% { transform: translate(-50%, 5px); } }
+
+    /* ---------- Casos: contexto de la empresa, antes y ahora ---------- */
+    .cases { padding: clamp(100px, 12vw, 160px) 0; }
+    .solution + .cases { padding-top: 0; }
+    .cases h2 { margin: 20px 0 48px; }
+    .story { position: relative; min-height: 620px; border-radius: 26px; overflow: hidden; display: flex; align-items: flex-end; padding: 22px; }
+    .story + .story { margin-top: 16px; }
+    .story > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.8) contrast(1.03); }
+    .story::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,8,14,.55) 0%, rgba(5,8,14,.15) 55%, rgba(5,8,14,0) 100%), linear-gradient(180deg, transparent 50%, rgba(5,8,14,.45)); }
+    .story.rev { justify-content: flex-end; }
+    .story.rev::after { background: linear-gradient(270deg, rgba(5,8,14,.55) 0%, rgba(5,8,14,.15) 55%, rgba(5,8,14,0) 100%), linear-gradient(180deg, transparent 50%, rgba(5,8,14,.45)); }
+    .story .panel { position: relative; z-index: 2; width: min(520px, 100%); padding: 28px; }
+    .story .panel > .label { color: var(--text-2); }
+    .story h3 { font-size: clamp(28px, 2.8vw, 38px); line-height: 1.08; margin: 12px 0 22px; }
+    .ba { display: grid; gap: 10px; }
+    .ba div { display: grid; grid-template-columns: 70px 1fr; gap: 14px; align-items: baseline; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); }
+    .ba .label { color: var(--text-3); }
+    .ba p { font-size: 15px; color: var(--text-2); }
+    .ba .now { background: rgba(218,60,51,.08); border-color: rgba(218,60,51,.3); }
+    .ba .now .label { color: var(--cream); }
+    .ba .now p { color: var(--text); }
+    .story .cite { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .story .cite p { font: italic 400 19px/1.3 var(--serif); }
+    .story .cite .label { margin-top: 8px; }
+
+    /* ---------- Problema ---------- */
+    .pain { padding: clamp(100px, 12vw, 160px) 0; }
+    .pain h2 { max-width: 860px; margin-top: 20px; }
+    .pain h2 .soft { color: var(--text-3); }
+    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 60px; }
+    .pain-card { padding: 28px; }
+    .pain-card .n { font: 800 46px/1 var(--dot); color: rgba(244,242,238,.25); }
+    .pain-card p { font: 400 27px/1.2 var(--serif); margin-top: 26px; }
+    .pain-card p span { color: var(--text-3); }
+
+    /* ---------- Solución + pasos ---------- */
+    .solution { padding: 0 0 clamp(100px, 12vw, 160px); }
+    .solution h2 { margin: 20px 0 56px; max-width: 760px; }
+    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .duo-card { padding: 32px; min-height: 250px; display: flex; flex-direction: column; }
+    .duo-card .n { font: 800 60px/1 var(--dot); color: rgba(244,242,238,.2); }
+    .duo-card h3 { font-size: clamp(30px, 3vw, 40px); line-height: 1.05; margin-top: auto; padding-top: 36px; }
+    .duo-card p { color: var(--text-2); margin-top: 8px; }
+    .duo-card.human { border-color: rgba(218,60,51,.38); background: linear-gradient(180deg, rgba(218,60,51,.09), rgba(22,32,52,.42)); }
+    .duo-card.human .n { color: var(--red); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+    .step { padding: 24px 26px; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; }
+    .step .n { font: 800 34px/1 var(--dot); color: rgba(244,242,238,.25); }
+    .step h3 { font-size: 24px; line-height: 1.1; }
+    .step.human { border-color: rgba(218,60,51,.38); }
+    .step.human .n { color: var(--red); }
+
+    /* ---------- Planes ---------- */
+    .plans { padding: clamp(100px, 12vw, 160px) 0; }
+    .plans-head { text-align: center; margin-bottom: 40px; }
+    .plans-head h2 { margin-top: 20px; }
+    .plans-head p { color: var(--ink-2); margin-top: 14px; }
+    .toggle { display: flex; width: max-content; margin: 0 auto 40px; padding: 5px; border-radius: 999px; background: var(--glass-c); border: 1px solid var(--line-c); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+    .toggle button { border: 0; background: none; cursor: pointer; height: 40px; padding: 0 20px; border-radius: 999px; font: 500 11.5px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); display: inline-flex; align-items: center; gap: 8px; }
+    .toggle button[aria-pressed="true"] { background: var(--ink); color: var(--cream); }
+    .toggle .save { color: var(--red); }
+    .toggle button[aria-pressed="true"] .save { color: #ff8a82; }
+    .plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 880px; margin: 0 auto; }
+    .plan { padding: 34px; display: flex; flex-direction: column; border-radius: 22px; }
+    .plan .name { display: flex; justify-content: space-between; align-items: center; font: 500 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+    .plan .credits { font: 800 clamp(64px, 7vw, 92px)/1 var(--dot); margin-top: 28px; letter-spacing: -.02em; }
+    .plan .credits-l { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); margin-top: 10px; }
+    .plan .price { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line-c); display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+    .plan .price b { font: 400 44px/1 var(--serif); }
+    .plan .price span { color: var(--ink-3); font-size: 14px; }
+    .plan .billed { font-size: 13px; color: var(--ink-3); margin-top: 6px; min-height: 20px; }
+    .plan ul { list-style: none; margin: 22px 0 30px; display: grid; gap: 11px; }
+    .plan li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; font-size: 15.5px; }
+    .plan li::before { content: "→"; font-family: var(--mono); color: var(--ink-3); }
+    .plan li.annual { display: none; color: var(--red); }
+    .plan li.annual::before { content: "＋"; color: var(--red); }
+    .annual-on .plan li.annual { display: grid; }
+    .plan .btn { margin-top: auto; }
+    .plan.top { background: var(--ink); color: var(--cream); box-shadow: 0 30px 60px -30px rgba(18,25,38,.55); }
+    .plan.top .name, .plan.top .credits-l, .plan.top .price span, .plan.top .billed, .plan.top li::before { color: rgba(241,237,228,.55); }
+    .plan.top .price { border-top-color: rgba(241,237,228,.14); }
+    .plan.top li.annual, .plan.top li.annual::before { color: #ff8a82; }
+    .plans-note { text-align: center; margin-top: 22px; color: var(--ink-3); font-size: 14px; }
+
+    /* ---------- Cierre ---------- */
+    .cta { padding: clamp(110px, 13vw, 180px) 0; text-align: center; background: radial-gradient(90% 70% at 50% 0%, var(--navy-glow) 0%, var(--navy-800) 50%, var(--navy-900) 85%); }
+    .cta h2 { font-size: clamp(50px, 7vw, 100px); margin: 20px auto 34px; }
+    .cta .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    footer { padding: 44px 0 56px; background: var(--navy-900); color: var(--text); border-top: 1px solid rgba(255,255,255,.06); }
+    .foot { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .foot img { height: 58px; width: auto; }
+
+    @media (max-width: 960px) {
+      .nav ul { display: none; }
+      .nav-in { grid-template-columns: auto 1fr; }
+      .nav-in > ul:first-child { display: none; }
+      .nav .right .link { display: none; }
+      .story, .story.rev { min-height: 0; justify-content: stretch; padding: 280px 14px 14px; }
+      .story > img { height: 420px; object-position: 30% center; }
+      .story::after, .story.rev::after { background: linear-gradient(180deg, rgba(5,8,14,0) 20%, rgba(5,8,14,.7)); }
+      .how-strip { grid-template-columns: 1fr; }
+      .how-strip div { padding: 20px 0; }
+      .how-strip div + div { border-left: 0; border-top: 1px solid var(--line-c); }
+      .pain-grid, .steps, .duo, .plan-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .story .panel { padding: 20px; }
+      .ba div { grid-template-columns: 1fr; gap: 4px; }
+      .nav .logo img { height: 34px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .chev { animation: none; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" aria-label="Principal">
+    <div class="wrap nav-in">
+      <ul>
+        <li><a href="#casos">Casos</a></li>
+        <li><a href="#como">Cómo funciona</a></li>
+        <li><a href="#planes">Planes</a></li>
+      </ul>
+      <a href="#" class="logo"><img src="/images/logo-koddo-ink.png" alt="Koddo · software & data engineering"></a>
+      <div class="right">
+        <a class="link" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
+        <a class="btn btn-ink" href="#planes">Ver planes</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Héroe -->
+  <header class="hero dots-c">
+    <div class="wrap">
+      <h1 class="reveal">Agentes de IA<sup>[1]</sup> que construyen<br><em>el software de tu empresa.</em></h1>
+      <p class="note reveal"><span>[1]</span><span>Dirigidos por arquitectos de software, que definen el plan y revisan cada entrega.</span></p>
+      <div class="actions reveal">
+        <a class="btn btn-ink" href="#planes">Ver planes</a>
+        <a class="link" href="#casos">Ver casos</a>
+      </div>
+    </div>
+    <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </header>
+
+  <!-- Cómo funciona -->
+  <section class="how-sec dots-c" id="como">
+    <div class="wrap">
+      <span class="label reveal">Cómo funciona</span>
+      <div class="how-strip reveal">
+        <div><span class="n">01</span><b>Cuéntanos tu idea</b><span class="label">Voz, texto o fotos</span></div>
+        <div class="human"><span class="n">02</span><b>Un arquitecto define el plan</b><span class="label"><span class="dot-red"></span>Alcance, fechas y créditos</span></div>
+        <div><span class="n">03</span><b>Los agentes la construyen</b><span class="label">Avances cada semana</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problema -->
+  <section class="dark pain dots">
+    <div class="wrap">
+      <span class="label reveal">El problema</span>
+      <h2 class="reveal">Todas las empresas tienen ideas de software. <span class="soft">Pocas saben cómo hacerlas bien.</span></h2>
+      <div class="pain-grid">
+        <article class="pain-card glass reveal"><span class="n">01</span><p>Saber cómo hacerlo <span>cuesta.</span></p></article>
+        <article class="pain-card glass reveal"><span class="n">02</span><p>Encontrar quién <span>tarda.</span></p></article>
+        <article class="pain-card glass reveal"><span class="n">03</span><p>Hacerlo mal <span>sale caro.</span></p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solución -->
+  <section class="dark solution dots">
+    <div class="wrap">
+      <span class="label reveal">La solución</span>
+      <h2 class="reveal">Agentes que construyen. <em>Arquitectos que deciden.</em></h2>
+      <div class="duo">
+        <article class="duo-card glass reveal"><span class="n">01</span><h3>Agentes de inteligencia artificial</h3><p>Construyen rápido y sin pausa.</p></article>
+        <article class="duo-card glass human reveal"><span class="n">02</span><h3>Arquitectos de software</h3><p>Definen el plan, revisan y responden.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Casos -->
+  <section class="dark cases dots" id="casos">
+    <div class="wrap">
+      <span class="label reveal">Casos</span>
+      <h2 class="reveal">Ideas que ya son <em>software.</em></h2>
+
+      <article class="story rev reveal">
+        <img src="/images/uniSanity/unisanity-persona.png" alt="Técnico de Unión Agronegocios en el campo, con el ganado de fondo" loading="lazy">
+        <div class="panel glass">
+          <span class="label">Unión Agronegocios · Sanidad animal</span>
+          <h3>Control sanitario de miles de cabezas, conectado de punta a punta.</h3>
+          <div class="ba">
+            <div><span class="label">Antes</span><p>Se registraba a mano, fuera de su sistema de gestión.</p></div>
+            <div class="now"><span class="label">Ahora</span><p>Unisanity: web y aplicación que llevan cada dato del campo al sistema.</p></div>
+          </div>
+          <div class="cite"><p>“Cumplió nuestras expectativas con creces.”</p><span class="label">Dr. Guerin Sensano · Director de Sanidad Animal</span></div>
+        </div>
+      </article>
+
+      <article class="story rev reveal">
+        <img src="/images/rcm/rcm-campo.png" alt="Operador de Tracktor con su teléfono en el campo, junto a la maquinaria" loading="lazy">
+        <div class="panel glass">
+          <span class="label">Tracktor · Maquinaria agrícola</span>
+          <h3>Horas y combustible medidos donde no hay señal.</h3>
+          <div class="ba">
+            <div><span class="label">Antes</span><p>Planillas de papel en el campo, pasadas a mano después.</p></div>
+            <div class="now"><span class="label">Ahora</span><p>Una aplicación que registra sin internet y centraliza los datos para analizarlos.</p></div>
+          </div>
+          <div class="cite"><p>“Koddo es un partner clave en ese proceso.”</p><span class="label">Juan Camilo Narvaez · CEO de Tracktor</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Planes -->
+  <section class="plans dots-c" id="planes">
+    <div class="wrap">
+      <div class="plans-head reveal">
+        <span class="label">Planes</span>
+        <h2>Créditos cada mes. <em>Las ideas que quieras.</em></h2>
+        <p>Cada idea usa créditos según su tamaño. Sin cotizaciones.</p>
+      </div>
+      <div class="toggle reveal" role="group" aria-label="Forma de pago">
+        <button type="button" data-billing="monthly" aria-pressed="true">Mensual</button>
+        <button type="button" data-billing="annual" aria-pressed="false">Anual <span class="save">2 meses gratis</span></button>
+      </div>
+      <div class="plan-grid" id="plan-grid">
+        <article class="plan glass-c reveal">
+          <span class="name">Base</span>
+          <div class="credits">500</div>
+          <div class="credits-l">Créditos al mes</div>
+          <div class="price"><b data-monthly="$499" data-annual="$416">$499</b><span>/ mes</span></div>
+          <div class="billed" data-monthly="≈ $1,00 por crédito" data-annual="$4.990 al año · ≈ $0,83 por crédito">≈ $1,00 por crédito</div>
+          <ul>
+            <li>Un proyecto a la vez</li>
+            <li>Arquitecto asignado</li>
+            <li class="annual">2 meses gratis</li>
+            <li class="annual">Créditos acumulables todo el año</li>
+          </ul>
+          <a class="btn btn-ink" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Empezar</a>
+        </article>
+        <article class="plan top reveal">
+          <span class="name">Crecimiento <span class="label" style="color:var(--cream)"><span class="dot-red"></span>Recomendado</span></span>
+          <div class="credits">1.100</div>
+          <div class="credits-l">Créditos al mes · 100 de regalo</div>
+          <div class="price"><b data-monthly="$999" data-annual="$833">$999</b><span>/ mes</span></div>
+          <div class="billed" data-monthly="≈ $0,91 por crédito" data-annual="$9.990 al año · ≈ $0,76 por crédito">≈ $0,91 por crédito</div>
+          <ul>
+            <li>Proyectos en paralelo</li>
+            <li>Prioridad</li>
+            <li class="annual">2 meses gratis</li>
+            <li class="annual">Créditos acumulables todo el año</li>
+          </ul>
+          <a class="btn btn-cream" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Empezar</a>
+        </article>
+      </div>
+      <p class="plans-note reveal">Precios en dólares estadounidenses.</p>
+    </div>
+  </section>
+
+  <!-- Cierre -->
+  <section class="dark cta">
+    <div class="wrap reveal">
+      <span class="label"><span class="dot-red"></span>Hablemos</span>
+      <h2>¿Cuál es <em>tu idea?</em></h2>
+      <div class="actions">
+        <a class="btn btn-cream" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
+        <a class="btn btn-ghost" href="#planes">Ver planes</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <img src="/images/logo-koddo-cream.png" alt="Koddo · software &amp; data engineering">
+      <span class="label" style="color:var(--text-3)">Data &amp; systems, engineered with AI agents</span>
+      <span class="label" style="color:var(--text-3)">Santa Cruz · Bolivia</span>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 80 + 'ms'; io.observe(el); });
+
+    const nav = document.querySelector('.nav');
+    addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive: true });
+
+    const grid = document.getElementById('plan-grid');
+    document.querySelectorAll('.toggle button').forEach(b => b.addEventListener('click', () => {
+      const mode = b.dataset.billing;
+      document.querySelectorAll('.toggle button').forEach(x => x.setAttribute('aria-pressed', x === b));
+      grid.classList.toggle('annual-on', mode === 'annual');
+      grid.querySelectorAll('[data-monthly]').forEach(el => { el.textContent = el.dataset[mode]; });
+    }));
+    if (new URLSearchParams(location.search).get('pago') === 'anual') document.querySelector('[data-billing="annual"]').click();
+  </script>
+</body>
+</html>

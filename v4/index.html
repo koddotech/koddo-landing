@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koddo · Tienes la idea. Nosotros, el cómo.</title>
+  <meta name="description" content="Software por suscripción. Agentes de inteligencia artificial construyen tu software; arquitectos de software deciden cómo.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-900: #05080e;
+      --navy-800: #0a101b;
+      --navy-glow: #1d3354;
+      --cream: #f1ede4;
+      --cream-2: #e6dfd0;
+      --ink: #121926;
+      --ink-2: rgba(18, 25, 38, .6);
+      --ink-3: rgba(18, 25, 38, .4);
+      --red: #da3c33;
+      --text: #f4f2ee;
+      --text-2: rgba(244, 242, 238, .64);
+      --text-3: rgba(244, 242, 238, .38);
+      --glass: rgba(22, 32, 52, .42);
+      --line: rgba(255, 255, 255, .10);
+      --glass-c: rgba(255, 255, 255, .42);
+      --line-c: rgba(18, 25, 38, .10);
+      --blur: blur(22px) saturate(140%);
+      --serif: 'Instrument Serif', Georgia, serif;
+      --dot: 'Doto', 'JetBrains Mono', monospace;
+      --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+      --sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --gutter: clamp(16px, 4vw, 48px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--navy-900); color: var(--text); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1160px, 100%); margin: 0 auto; padding: 0 var(--gutter); }
+
+    .label { display: inline-flex; align-items: center; gap: 8px; font: 500 11px/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); }
+    .dot-red { width: 7px; height: 7px; border-radius: 50%; background: var(--red); box-shadow: 0 0 10px rgba(218,60,51,.7); flex: none; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -.015em; }
+    h2 { font-size: clamp(38px, 5.2vw, 72px); line-height: 1.02; }
+    em { font-style: italic; }
+
+    .glass { background: var(--glass); border: 1px solid var(--line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-radius: 22px; }
+    .glass-c { background: var(--glass-c); border: 1px solid var(--line-c); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-radius: 22px; }
+    .dots { background-image: radial-gradient(rgba(255,255,255,.085) 1px, transparent 1.4px); background-size: 28px 28px; }
+    .dots-c { background-image: radial-gradient(rgba(18,25,38,.09) 1px, transparent 1.4px); background-size: 28px 28px; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 24px; border-radius: 999px; font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; transition: transform .2s; white-space: nowrap; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-cream { background: var(--cream); color: var(--ink); }
+    .btn-ghost { background: rgba(255,255,255,.05); border: 1px solid var(--line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+    .btn-ink { background: var(--ink); color: var(--cream); }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.on { opacity: 1; transform: none; }
+
+    /* Menú: píldora de vidrio con el logo completo */
+    .nav { position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 50; width: min(760px, calc(100% - 24px)); height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 10px 0 18px; border-radius: 16px; }
+    .nav .logo img { height: 36px; width: auto; }
+    .nav ul { display: flex; gap: 26px; list-style: none; }
+    .nav ul a { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--text-2); }
+    .nav ul a:hover { color: var(--text); }
+    .nav .btn { height: 40px; padding: 0 16px; font-size: 11px; }
+
+    /* Héroe */
+    .hero { position: relative; min-height: min(100vh, 900px); display: grid; align-items: center; padding: 130px 0 80px; overflow: hidden;
+            background: radial-gradient(120% 80% at 50% 115%, var(--navy-glow) 0%, var(--navy-800) 45%, var(--navy-900) 75%); }
+    .hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1.4px); background-size: 28px 28px; mask-image: radial-gradient(70% 60% at 50% 45%, #000 30%, transparent 85%); -webkit-mask-image: radial-gradient(70% 60% at 50% 45%, #000 30%, transparent 85%); }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+    .hero h1 { font-size: clamp(52px, 7.4vw, 104px); line-height: .96; margin: 22px 0 24px; }
+    .hero h1 em { color: var(--cream-2); }
+    .hero .lead { font-size: clamp(17px, 1.6vw, 20px); color: var(--text-2); max-width: 470px; }
+    .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+
+    .card-brand { padding: 26px; }
+    .card-brand .logo-big { width: 62%; max-width: 260px; margin-bottom: 26px; }
+    .flow { display: grid; gap: 10px; }
+    .flow-row { display: grid; grid-template-columns: 30px 1fr auto; align-items: center; gap: 14px; padding: 15px 16px; border-radius: 14px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.06); }
+    .flow-row .n { font: 800 18px/1 var(--dot); color: var(--text-3); }
+    .flow-row b { font: 500 15px/1.3 var(--sans); }
+    .flow-row .who { font: 500 10px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); display: inline-flex; align-items: center; gap: 6px; }
+    .flow-row.human { background: rgba(218,60,51,.07); border-color: rgba(218,60,51,.3); }
+    .flow-row.human .n { color: var(--red); }
+    .flow-row.human .who { color: var(--cream); }
+
+    /* Dolor (crema) */
+    .cream-sec { background: var(--cream); color: var(--ink); }
+    .cream-sec .label { color: var(--ink-3); }
+    .pain { padding: clamp(90px, 12vw, 160px) 0; }
+    .pain h2 { max-width: 860px; margin-top: 20px; }
+    .pain h2 .soft { color: var(--ink-3); }
+    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 60px; }
+    .pain-card { padding: 28px; }
+    .pain-card .n { font: 800 48px/1 var(--dot); color: var(--ink); }
+    .pain-card p { font: 400 26px/1.2 var(--serif); margin-top: 26px; }
+    .pain-card p span { color: var(--ink-3); }
+
+    /* Solución */
+    .solution { padding: clamp(90px, 12vw, 160px) 0; }
+    .solution h2 { margin: 20px 0 56px; max-width: 760px; }
+    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .duo-card { padding: 32px; min-height: 280px; display: flex; flex-direction: column; }
+    .duo-card .n { font: 800 64px/1 var(--dot); color: rgba(244,242,238,.2); }
+    .duo-card h3 { font-size: clamp(30px, 3vw, 40px); line-height: 1.05; margin-top: auto; padding-top: 40px; }
+    .duo-card p { color: var(--text-2); margin-top: 8px; }
+    .duo-card.human { border-color: rgba(218,60,51,.38); background: linear-gradient(180deg, rgba(218,60,51,.09), rgba(22,32,52,.42)); }
+    .duo-card.human .n { color: var(--red); }
+    .you { margin-top: 16px; padding: 22px 28px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .you p { font: 400 clamp(24px, 2.4vw, 32px)/1.1 var(--serif); }
+
+    /* Cómo */
+    .how { padding: clamp(90px, 12vw, 150px) 0; background: linear-gradient(180deg, var(--navy-900), var(--navy-800)); }
+    .how h2 { margin: 20px 0 52px; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .step { padding: 28px; min-height: 230px; display: flex; flex-direction: column; }
+    .step .n { font: 800 48px/1 var(--dot); color: rgba(244,242,238,.2); }
+    .step h3 { font-size: 30px; line-height: 1.05; margin-top: auto; padding-top: 30px; }
+    .step .label { margin-top: 12px; }
+    .step.human { border-color: rgba(218,60,51,.38); background: linear-gradient(180deg, rgba(218,60,51,.09), rgba(22,32,52,.42)); }
+    .step.human .n { color: var(--red); }
+
+    /* Planes (crema) */
+    .plans { padding: clamp(90px, 12vw, 160px) 0; }
+    .plans-head { text-align: center; margin-bottom: 56px; }
+    .plans-head h2 { margin-top: 20px; }
+    .plans-head p { color: var(--ink-2); margin-top: 14px; }
+    .plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 860px; margin: 0 auto; }
+    .plan { padding: 34px; display: flex; flex-direction: column; border-radius: 22px; }
+    .plan .name { font: 500 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); display: flex; justify-content: space-between; }
+    .plan .price { font: 800 clamp(56px, 6vw, 76px)/1 var(--dot); margin: 26px 0 4px; }
+    .plan .per { color: var(--ink-3); font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .plan ul { list-style: none; margin: 28px 0 32px; display: grid; gap: 12px; }
+    .plan li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; font-size: 15.5px; }
+    .plan li::before { content: "→"; font-family: var(--mono); color: var(--ink-3); }
+    .plan .btn { margin-top: auto; }
+    .plan.top { background: var(--ink); color: var(--cream); box-shadow: 0 30px 60px -30px rgba(18,25,38,.55); }
+    .plan.top .name, .plan.top .per, .plan.top li::before { color: rgba(241,237,228,.55); }
+
+    /* Casos */
+    .cases { padding: clamp(90px, 12vw, 150px) 0; }
+    .cases h2 { margin: 20px 0 48px; }
+    .case-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; }
+    .case { position: relative; min-height: 480px; border-radius: 24px; overflow: hidden; }
+    .case img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.75); }
+    .case::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(5,8,14,.55)); }
+    .case .tag { position: absolute; left: 16px; right: 16px; bottom: 16px; z-index: 2; padding: 20px 22px; }
+    .case .tag h3 { font-size: 28px; line-height: 1.1; margin-top: 8px; }
+    .quote { margin-top: 16px; padding: 30px 34px; border-radius: 24px; background: rgba(241,237,228,.92); color: var(--ink); display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center; }
+    .quote img { width: 60px; }
+    .quote p { font: 400 clamp(21px, 2.2vw, 28px)/1.25 var(--serif); }
+    .quote .label { color: var(--ink-3); margin-top: 12px; }
+
+    /* Cierre */
+    .cta { padding: clamp(100px, 13vw, 180px) 0; text-align: center; background: radial-gradient(90% 70% at 50% 0%, var(--navy-glow) 0%, var(--navy-800) 50%, var(--navy-900) 85%); }
+    .cta h2 { font-size: clamp(48px, 7vw, 100px); margin: 20px auto 34px; }
+    .cta .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    footer { padding: 44px 0 56px; border-top: 1px solid rgba(255,255,255,.06); }
+    .foot { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .foot img { height: 58px; width: auto; }
+
+    @media (max-width: 960px) {
+      .hero-grid, .duo { grid-template-columns: 1fr; }
+      .pain-grid, .steps { grid-template-columns: 1fr; }
+      .case-grid, .plan-grid { grid-template-columns: 1fr; }
+      .nav ul { display: none; }
+    }
+    @media (max-width: 560px) {
+      .quote { grid-template-columns: 1fr; }
+      .case { min-height: 420px; }
+      .nav .logo img { height: 30px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav glass" aria-label="Principal">
+    <a href="#" class="logo"><img src="/images/logo-koddo-cream.png" alt="Koddo · software & data engineering"></a>
+    <ul>
+      <li><a href="#como">Cómo</a></li>
+      <li><a href="#planes">Planes</a></li>
+      <li><a href="#casos">Casos</a></li>
+    </ul>
+    <a class="btn btn-cream" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
+  </nav>
+
+  <!-- Héroe -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="label"><span class="dot-red"></span>Software por suscripción</span>
+        <h1>Tienes la idea. <em>Nosotros, el cómo.</em></h1>
+        <p class="lead">Agentes de inteligencia artificial construyen tu software. Arquitectos de software deciden cómo.</p>
+        <div class="actions">
+          <a class="btn btn-cream" href="#planes">Ver planes</a>
+          <a class="btn btn-ghost" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
+        </div>
+      </div>
+
+      <aside class="card-brand glass reveal" aria-label="Cómo trabaja Koddo">
+        <img class="logo-big" src="/images/logo-koddo-cream.png" alt="Koddo">
+        <div class="flow">
+          <div class="flow-row"><span class="n">01</span><b>Tu idea</b><span class="who">Tú</span></div>
+          <div class="flow-row human"><span class="n">02</span><b>El cómo</b><span class="who"><span class="dot-red"></span>Arquitecto</span></div>
+          <div class="flow-row"><span class="n">03</span><b>Tu software</b><span class="who">Agentes</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- Dolor -->
+  <section class="cream-sec pain dots-c">
+    <div class="wrap">
+      <span class="label reveal">El problema</span>
+      <h2 class="reveal">Todas las empresas tienen ideas de software. <span class="soft">Pocas saben cómo hacerlas bien.</span></h2>
+      <div class="pain-grid">
+        <article class="pain-card glass-c reveal"><span class="n">01</span><p>Saber cómo hacerlo <span>cuesta.</span></p></article>
+        <article class="pain-card glass-c reveal"><span class="n">02</span><p>Encontrar quién <span>tarda.</span></p></article>
+        <article class="pain-card glass-c reveal"><span class="n">03</span><p>Hacerlo mal <span>sale caro.</span></p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solución -->
+  <section class="solution dots">
+    <div class="wrap">
+      <span class="label reveal">La solución</span>
+      <h2 class="reveal">Ponemos el <em>cómo</em> al alcance de todos.</h2>
+      <div class="duo">
+        <article class="duo-card glass reveal"><span class="n">IA</span><h3>Agentes de inteligencia artificial</h3><p>Construyen rápido y sin pausa.</p></article>
+        <article class="duo-card glass human reveal"><span class="n">+</span><h3>Arquitectos de software</h3><p>Deciden, revisan y responden.</p></article>
+      </div>
+      <div class="you glass reveal"><p>Tú solo pones la idea.</p><span class="label"><span class="dot-red"></span>Criterio humano en cada entrega</span></div>
+    </div>
+  </section>
+
+  <!-- Cómo -->
+  <section class="how" id="como">
+    <div class="wrap">
+      <span class="label reveal">Cómo funciona</span>
+      <h2 class="reveal">Tres pasos.</h2>
+      <div class="steps">
+        <article class="step glass reveal"><span class="n">01</span><h3>Cuéntanos tu idea</h3><span class="label">Voz, texto o fotos</span></article>
+        <article class="step glass human reveal"><span class="n">02</span><h3>Un arquitecto define el plan</h3><span class="label"><span class="dot-red"></span>Alcance y fechas</span></article>
+        <article class="step glass reveal"><span class="n">03</span><h3>Los agentes lo construyen</h3><span class="label">Avances cada semana</span></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planes -->
+  <section class="cream-sec plans dots-c" id="planes">
+    <div class="wrap">
+      <div class="plans-head reveal">
+        <span class="label">Planes</span>
+        <h2>Precio fijo. <em>Las ideas que quieras.</em></h2>
+        <p>Cada idea usa créditos según su tamaño. Sin cotizaciones.</p>
+      </div>
+      <div class="plan-grid">
+        <article class="plan glass-c reveal">
+          <span class="name">Base</span>
+          <div class="price">$500</div><span class="per">Por mes</span>
+          <ul>
+            <li>Créditos mensuales</li>
+            <li>Un proyecto a la vez</li>
+            <li>Arquitecto asignado</li>
+          </ul>
+          <a class="btn btn-ink" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Empezar</a>
+        </article>
+        <article class="plan top reveal">
+          <span class="name">Crecimiento <span class="label" style="color:var(--cream)"><span class="dot-red"></span>Recomendado</span></span>
+          <div class="price">$1000</div><span class="per">Por mes</span>
+          <ul>
+            <li>El doble de créditos</li>
+            <li>Proyectos en paralelo</li>
+            <li>Prioridad</li>
+          </ul>
+          <a class="btn btn-cream" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Empezar</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Casos -->
+  <section class="cases dots" id="casos">
+    <div class="wrap">
+      <span class="label reveal">Casos</span>
+      <h2 class="reveal">Ideas que ya funcionan.</h2>
+      <div class="case-grid">
+        <article class="case reveal">
+          <img src="/images/uniSanity/unisanity-persona.png" alt="Técnico de Unión Agronegocios usando Unisanity en el campo" loading="lazy">
+          <div class="tag glass"><span class="label">Unión Agronegocios</span><h3>Sanidad animal, digital.</h3></div>
+        </article>
+        <article class="case reveal">
+          <img src="/images/rcm/rcm-papel.png" alt="Operador de Tracktor usando la aplicación en el campo" loading="lazy">
+          <div class="tag glass"><span class="label">Tracktor</span><h3>Datos sin señal.</h3></div>
+        </article>
+      </div>
+      <div class="quote reveal">
+        <img src="/images/logo-koddo-kata.png" alt="" aria-hidden="true">
+        <div>
+          <p>“El equipo de Koddo nos ayudó a construir algo que en Unión teníamos en mente desde hace tiempo, y cumplió nuestras expectativas con creces.”</p>
+          <span class="label">Dr. Guerin Sensano · Unión Agronegocios</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cierre -->
+  <section class="cta">
+    <div class="wrap reveal">
+      <span class="label"><span class="dot-red"></span>Hablemos</span>
+      <h2>¿Cuál es <em>tu idea?</em></h2>
+      <div class="actions">
+        <a class="btn btn-cream" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
+        <a class="btn btn-ghost" href="#planes">Ver planes</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <img src="/images/logo-koddo-cream.png" alt="Koddo · software &amp; data engineering">
+      <span class="label">Data &amp; systems, engineered with AI agents</span>
+      <span class="label">Santa Cruz · Bolivia</span>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 80 + 'ms'; io.observe(el); });
+  </script>
+</body>
+</html>

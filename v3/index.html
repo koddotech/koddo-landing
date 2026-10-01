@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koddo · Software por suscripción</title>
+  <meta name="description" content="Todas las empresas necesitan software. Koddo es tu equipo de software por una cuota mensual: pides lo que necesitas, nuestros agentes lo construyen y un ingeniero lo aprueba.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Identidad Koddo */
+      --navy-950: #04070c;
+      --navy-900: #060a10;
+      --navy-800: #0d131d;
+      --navy-700: #161c26;
+      --navy-glow: #1c3150;
+      --cream: #f1ede4;
+      --cream-2: #e8e2d5;
+      --cream-3: #f7f4ee;
+      --ink: #161c26;
+      --ink-2: rgba(22, 28, 38, .66);
+      --ink-3: rgba(22, 28, 38, .42);
+      --red: #da3c33;          /* rojo del logo */
+      --red-soft: rgba(218, 60, 51, .14);
+
+      --text: #f4f2ee;
+      --text-2: rgba(244, 242, 238, .68);
+      --text-3: rgba(244, 242, 238, .42);
+
+      /* Vidrio */
+      --glass: rgba(26, 36, 54, .45);
+      --glass-line: rgba(255, 255, 255, .10);
+      --glass-hi: linear-gradient(155deg, rgba(255,255,255,.10), rgba(255,255,255,.03) 40%, rgba(255,255,255,.015));
+      --glass-cream: rgba(255, 255, 255, .45);
+      --glass-cream-line: rgba(22, 28, 38, .10);
+      --blur: blur(20px) saturate(150%);
+
+      --head: 'Space Grotesk', 'Nunito Sans', sans-serif;
+      --mono: 'Space Mono', ui-monospace, Menlo, monospace;
+      --body: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+
+      --gutter: clamp(16px, 4vw, 48px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--navy-900); color: var(--text); font: 400 17px/1.6 var(--body); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1200px, 100%); margin: 0 auto; padding: 0 var(--gutter); }
+
+    .label { display: inline-flex; align-items: center; gap: 8px; font: 400 11.5px/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); }
+    .label .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); box-shadow: 0 0 10px rgba(218,60,51,.7); }
+    h1, h2, h3 { font-family: var(--head); font-weight: 700; letter-spacing: -.03em; }
+    h2 { font-size: clamp(34px, 4.6vw, 60px); line-height: 1.02; }
+    .red { color: var(--red); }
+
+    .glass { background: var(--glass-hi), var(--glass); border: 1px solid var(--glass-line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-radius: 22px; box-shadow: 0 1px 0 rgba(255,255,255,.08) inset, 0 20px 50px -24px rgba(0,0,0,.7); }
+    .glass-c { background: var(--glass-cream); border: 1px solid var(--glass-cream-line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-radius: 22px; box-shadow: 0 1px 0 rgba(255,255,255,.7) inset, 0 18px 40px -26px rgba(22,28,38,.35); }
+    .dots { background-image: radial-gradient(rgba(255,255,255,.085) 1px, transparent 1.5px); background-size: 26px 26px; }
+    .dots-c { background-image: radial-gradient(rgba(22,28,38,.10) 1px, transparent 1.5px); background-size: 26px 26px; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 50px; padding: 0 24px; border-radius: 999px; font: 700 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; transition: transform .2s, box-shadow .2s, background .2s; white-space: nowrap; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-red { background: var(--red); color: #fff; box-shadow: 0 10px 30px -10px rgba(218,60,51,.7); }
+    .btn-cream { background: var(--cream); color: var(--ink); }
+    .btn-ghost { background: rgba(255,255,255,.05); border: 1px solid var(--glass-line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+    .btn-ink { background: var(--ink); color: var(--cream); }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.on { opacity: 1; transform: none; }
+
+    /* ---------- Menú en píldora de vidrio ---------- */
+    .nav { position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 50; width: min(820px, calc(100% - 24px)); height: 54px; display: flex; align-items: center; justify-content: space-between; padding: 0 8px 0 20px; border-radius: 16px; }
+    .nav .logo img { height: 18px; width: auto; }
+    .nav ul { display: flex; gap: 26px; list-style: none; }
+    .nav ul a { font: 400 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--text-2); }
+    .nav ul a:hover { color: var(--text); }
+    .nav .btn { height: 38px; padding: 0 16px; font-size: 11px; }
+
+    /* ---------- Héroe ---------- */
+    .hero { position: relative; padding: 150px 0 110px; overflow: hidden; background: radial-gradient(110% 70% at 70% 0%, var(--navy-glow) 0%, var(--navy-800) 40%, var(--navy-900) 70%); }
+    .hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1.5px); background-size: 26px 26px; mask-image: radial-gradient(80% 70% at 50% 40%, #000 30%, transparent 85%); -webkit-mask-image: radial-gradient(80% 70% at 50% 40%, #000 30%, transparent 85%); }
+    .hero .kata { position: absolute; right: -30px; bottom: -70px; width: min(560px, 55vw); opacity: .05; pointer-events: none; }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+    .hero h1 { font-size: clamp(42px, 6.2vw, 84px); line-height: .98; margin: 22px 0 26px; }
+    .hero h1 .soft { color: var(--text-3); }
+    .hero .lead { font-size: clamp(17px, 1.5vw, 20px); color: var(--text-2); max-width: 540px; }
+    .hero .lead b { color: var(--text); font-weight: 700; }
+    .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero .fine { margin-top: 18px; }
+
+    /* Vista de la plataforma (vidrio) */
+    .app { padding: 20px; }
+    .app-top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid var(--glass-line); }
+    .app-top img { height: 14px; }
+    .credits { margin: 18px 0 16px; }
+    .credits-row { display: flex; justify-content: space-between; align-items: baseline; }
+    .credits-row b { font: 700 28px/1 var(--head); letter-spacing: -.02em; }
+    .bar { height: 8px; border-radius: 99px; background: rgba(255,255,255,.07); margin-top: 10px; overflow: hidden; }
+    .bar i { display: block; height: 100%; width: 64%; border-radius: inherit; background: linear-gradient(90deg, var(--cream-2), var(--cream)); }
+    .req { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; padding: 13px 14px; border-radius: 14px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.06); margin-top: 8px; }
+    .req b { display: block; font: 600 14.5px/1.3 var(--body); }
+    .req small { color: var(--text-3); font-size: 12.5px; }
+    .st { font: 400 10px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; padding: 7px 9px; border-radius: 99px; border: 1px solid rgba(255,255,255,.1); color: var(--text-2); white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
+    .st.ok { color: #9fe0b5; border-color: rgba(159,224,181,.3); }
+    .st.human { color: var(--cream); border-color: rgba(218,60,51,.55); background: var(--red-soft); }
+    .st.human::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--red); box-shadow: 0 0 8px var(--red); }
+    .st.run::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--cream); animation: blink 1.4s infinite; }
+    @keyframes blink { 50% { opacity: .15; } }
+    .app-new { margin-top: 12px; display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 14px; border: 1px dashed rgba(255,255,255,.16); color: var(--text-3); font-size: 14px; }
+
+    /* ---------- Problema (crema) ---------- */
+    .cream-sec { background: var(--cream); color: var(--ink); }
+    .cream-sec .label { color: var(--ink-3); }
+    .problem { padding: clamp(90px, 11vw, 150px) 0; }
+    .problem h2 { max-width: 900px; margin-top: 18px; }
+    .problem h2 .soft { color: var(--ink-3); }
+    .pains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
+    .pain { padding: 26px; min-height: 220px; display: flex; flex-direction: column; }
+    .pain .n { font: 700 13px/1 var(--mono); color: var(--red); letter-spacing: .1em; }
+    .pain h3 { font-size: 23px; line-height: 1.15; margin: 34px 0 10px; letter-spacing: -.02em; }
+    .pain p { color: var(--ink-2); font-size: 15.5px; }
+    .verdict { margin-top: 40px; font: 700 clamp(22px, 2.4vw, 30px)/1.25 var(--head); letter-spacing: -.02em; max-width: 820px; }
+
+    /* ---------- Solución: comparación ---------- */
+    .solution { padding: clamp(90px, 11vw, 150px) 0; position: relative; overflow: hidden; }
+    .solution-head { display: grid; grid-template-columns: 1fr .8fr; gap: 40px; align-items: end; margin-bottom: 52px; }
+    .solution-head h2 { margin-top: 18px; }
+    .solution-head p { color: var(--text-2); }
+    .compare { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; }
+    .compare th, .compare td { text-align: left; padding: 20px 22px; border-bottom: 1px solid var(--glass-line); vertical-align: top; }
+    .compare th { font: 400 11px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); }
+    .compare td:first-child { font: 400 11px/1.5 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); width: 18%; }
+    .compare td { color: var(--text-2); font-size: 15.5px; }
+    .compare .k { color: var(--text); background: rgba(218,60,51,.07); font-weight: 600; }
+    .compare th.k { color: var(--cream); background: rgba(218,60,51,.12); }
+    .compare tr:last-child td { border-bottom: 0; }
+    .compare-wrap { padding: 0; overflow-x: auto; }
+
+    /* ---------- Cómo funciona ---------- */
+    .how { padding: clamp(90px, 11vw, 150px) 0; background: linear-gradient(180deg, var(--navy-900), var(--navy-800)); }
+    .how h2 { margin: 18px 0 52px; max-width: 800px; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .step { padding: 24px; min-height: 270px; display: flex; flex-direction: column; }
+    .step .n { font: 700 46px/1 var(--head); color: rgba(244,242,238,.16); letter-spacing: -.04em; }
+    .step h3 { font-size: 21px; line-height: 1.2; margin: 26px 0 10px; letter-spacing: -.02em; }
+    .step p { color: var(--text-2); font-size: 15px; }
+    .step .who { margin-top: auto; padding-top: 18px; }
+    .step.human { border-color: rgba(218,60,51,.4); background: linear-gradient(180deg, rgba(218,60,51,.10), rgba(26,36,54,.45)); }
+    .step.human .n { color: var(--red); }
+
+    /* Créditos */
+    .credits-sec { margin-top: 18px; padding: 32px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; align-items: center; }
+    .credits-sec h3 { font-size: clamp(26px, 2.6vw, 34px); line-height: 1.1; margin-top: 14px; }
+    .credits-sec p { color: var(--text-2); margin-top: 12px; }
+    .scale { display: grid; gap: 10px; }
+    .scale-row { display: grid; grid-template-columns: 1fr 110px; gap: 16px; align-items: center; }
+    .scale-row span { font-size: 15px; }
+    .scale-row .c { height: 10px; border-radius: 99px; background: rgba(255,255,255,.07); overflow: hidden; }
+    .scale-row .c i { display: block; height: 100%; border-radius: inherit; background: var(--cream); }
+
+    /* ---------- Planes (crema) ---------- */
+    .plans { padding: clamp(90px, 11vw, 150px) 0; }
+    .plans-head { text-align: center; max-width: 760px; margin: 0 auto 56px; }
+    .plans-head h2 { margin-top: 18px; }
+    .plans-head p { color: var(--ink-2); margin-top: 16px; }
+    .plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 920px; margin: 0 auto; }
+    .plan { padding: 34px; display: flex; flex-direction: column; position: relative; }
+    .plan .name { font: 700 13px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+    .plan .price { margin: 22px 0 6px; font: 700 64px/1 var(--head); letter-spacing: -.04em; }
+    .plan .price small { font: 400 16px/1 var(--body); letter-spacing: 0; color: var(--ink-3); margin-left: 4px; }
+    .plan .for { color: var(--ink-2); min-height: 52px; }
+    .plan ul { list-style: none; margin: 26px 0 30px; display: grid; gap: 12px; }
+    .plan li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; font-size: 15.5px; }
+    .plan li::before { content: "→"; font-family: var(--mono); color: var(--ink-3); }
+    .plan .btn { margin-top: auto; }
+    .plan.top { border-radius: 22px; background: var(--ink); color: var(--cream); border-color: transparent; box-shadow: 0 30px 60px -30px rgba(22,28,38,.6); }
+    .plan.top .name, .plan.top .for, .plan.top .price small, .plan.top li::before { color: rgba(241,237,228,.6); }
+    .plan .badge { position: absolute; top: 26px; right: 26px; }
+    .plan.top .badge { color: var(--cream); }
+    .plans-note { text-align: center; margin-top: 26px; color: var(--ink-3); font-size: 14px; }
+
+    /* ---------- Prueba ---------- */
+    .proof { padding: clamp(90px, 11vw, 150px) 0; }
+    .proof h2 { margin: 18px 0 48px; max-width: 760px; }
+    .case-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; }
+    .case { position: relative; min-height: 500px; border-radius: 24px; overflow: hidden; }
+    .case img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.8); }
+    .case::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(4,7,12,.6)); }
+    .case .card { position: absolute; left: 16px; right: 16px; bottom: 16px; z-index: 2; padding: 22px; }
+    .case .card h3 { font-size: 24px; margin: 10px 0 6px; letter-spacing: -.02em; }
+    .case .card p { color: var(--text-2); font-size: 14.5px; }
+    .quote { margin-top: 16px; padding: 34px; border-radius: 24px; background: rgba(241,237,228,.92); color: var(--ink); display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center; }
+    .quote .kata-q { width: 64px; }
+    .quote p { font: 500 clamp(19px, 2vw, 25px)/1.35 var(--head); letter-spacing: -.01em; }
+    .quote .label { color: var(--ink-3); margin-top: 14px; }
+
+    /* ---------- Preguntas ---------- */
+    .faq { padding: clamp(80px, 10vw, 130px) 0; }
+    .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; }
+    .faq h2 { margin-top: 18px; }
+    details { border-bottom: 1px solid var(--glass-cream-line); padding: 22px 0; }
+    details:first-child { border-top: 1px solid var(--glass-cream-line); }
+    summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 20px; font: 600 19px/1.3 var(--head); letter-spacing: -.01em; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-family: var(--mono); color: var(--red); }
+    details[open] summary::after { content: "–"; }
+    details p { color: var(--ink-2); margin-top: 12px; max-width: 620px; }
+
+    /* ---------- Cierre ---------- */
+    .cta { position: relative; padding: clamp(100px, 13vw, 180px) 0; text-align: center; overflow: hidden; background: radial-gradient(90% 70% at 50% 0%, var(--navy-glow) 0%, var(--navy-800) 50%, var(--navy-900) 85%); }
+    .cta h2 { font-size: clamp(40px, 6vw, 80px); max-width: 960px; margin: 22px auto 22px; }
+    .cta p { color: var(--text-2); max-width: 520px; margin: 0 auto 36px; }
+    .cta .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    footer { padding: 48px 0 60px; background: var(--navy-950); }
+    .foot { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .foot img { height: 64px; width: auto; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 980px) {
+      .hero-grid, .solution-head, .credits-sec, .faq-grid { grid-template-columns: 1fr; }
+      .pains, .steps { grid-template-columns: 1fr 1fr; }
+      .case-grid, .plan-grid { grid-template-columns: 1fr; }
+      .nav ul { display: none; }
+    }
+    @media (max-width: 600px) {
+      .pains, .steps { grid-template-columns: 1fr; }
+      .compare th, .compare td { padding: 14px; }
+      .compare { min-width: 620px; }
+      .quote { grid-template-columns: 1fr; }
+      .case { min-height: 440px; }
+      .plan .price { font-size: 52px; }
+      .scale-row { grid-template-columns: 1fr 80px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .st.run::before { animation: none; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav glass" aria-label="Principal">
+    <a href="#" class="logo"><img src="/images/logo-koddo-word-cream.png" alt="Koddo"></a>
+    <ul>
+      <li><a href="#como">Cómo funciona</a></li>
+      <li><a href="#planes">Planes</a></li>
+      <li><a href="#casos">Casos</a></li>
+      <li><a href="#preguntas">Preguntas</a></li>
+    </ul>
+    <a class="btn btn-red" href="#planes">Ver planes</a>
+  </nav>
+
+  <!-- 1 · HÉROE -->
+  <header class="hero">
+    <img class="kata" src="/images/logo-koddo-kata.png" alt="" aria-hidden="true">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="label"><span class="dot"></span>Software por suscripción</span>
+        <h1>Tu empresa necesita software. <span class="soft">Ahora puede pagarlo.</span></h1>
+        <p class="lead">Koddo es tu equipo de software por una cuota mensual. <b>Pides lo que necesitas, nuestros agentes de inteligencia artificial lo construyen y un ingeniero lo aprueba.</b> Sin cotizaciones. Sin contratar.</p>
+        <div class="actions">
+          <a class="btn btn-red" href="#planes">Ver planes · desde $500</a>
+          <a class="btn btn-ghost" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
+        </div>
+        <p class="label fine">Data &amp; systems, engineered with AI agents</p>
+      </div>
+
+      <aside class="app glass reveal" aria-label="Así se ve tu plataforma Koddo">
+        <div class="app-top">
+          <img src="/images/logo-koddo-word-cream.png" alt="Koddo">
+          <span class="label">Tu plataforma</span>
+        </div>
+        <div class="credits">
+          <div class="credits-row"><span class="label">Créditos del mes</span><b>64%</b></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="req"><span><b>App de pedidos para vendedores</b><small>Agentes construyendo · avance diario</small></span><span class="st run">En curso</span></div>
+        <div class="req"><span><b>Conexión con facturación</b><small>Plan listo, falta aprobación</small></span><span class="st human">Ingeniero</span></div>
+        <div class="req"><span><b>Tablero de ventas</b><small>Publicado hace 3 días</small></span><span class="st ok">Entregado</span></div>
+        <div class="app-new">＋ &nbsp;Pide algo nuevo: cuéntalo por voz, texto o fotos</div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- 2 · PROBLEMA -->
+  <section class="cream-sec problem dots-c">
+    <div class="wrap">
+      <span class="label reveal">El problema</span>
+      <h2 class="reveal">Todas las empresas necesitan software. <span class="soft">Casi ninguna puede pagarlo como hoy se vende.</span></h2>
+      <div class="pains">
+        <article class="pain glass-c reveal"><span class="n">01</span><h3>Cada idea es una cotización</h3><p>Una aplicación, un reporte, una conexión: cada pedido es un presupuesto nuevo, una negociación y semanas de espera antes de empezar.</p></article>
+        <article class="pain glass-c reveal"><span class="n">02</span><h3>Armar un equipo es otra empresa</h3><p>Desarrolladores, diseño, alguien que coordine: sueldos fijos todos los meses, haya trabajo o no.</p></article>
+        <article class="pain glass-c reveal"><span class="n">03</span><h3>Los cambios se cobran aparte</h3><p>El software nunca está terminado. Con el modelo de siempre, cada ajuste vuelve a cotizarse.</p></article>
+      </div>
+      <p class="verdict reveal">Resultado: la mayoría se queda en Excel y WhatsApp, <span class="red">aunque sabe que necesita algo mejor.</span></p>
+    </div>
+  </section>
+
+  <!-- 3 · SOLUCIÓN -->
+  <section class="solution dots">
+    <div class="wrap">
+      <div class="solution-head">
+        <div>
+          <span class="label reveal">La solución</span>
+          <h2 class="reveal">Un equipo de software, por una cuota fija al mes.</h2>
+        </div>
+        <p class="reveal">Los agentes de inteligencia artificial hacen el trabajo pesado. Un ingeniero decide qué se construye y responde por el resultado. Por eso podemos cobrar una cuota y no un proyecto.</p>
+      </div>
+      <div class="compare-wrap glass reveal">
+        <table class="compare">
+          <thead><tr><th></th><th>Agencia tradicional</th><th>Equipo propio</th><th class="k">Koddo</th></tr></thead>
+          <tbody>
+            <tr><td>Cómo pagas</td><td>Una cotización por proyecto</td><td>Sueldos fijos cada mes</td><td class="k">Una cuota fija mensual</td></tr>
+            <tr><td>Para empezar</td><td>Negociar alcance y precio</td><td>Contratar y capacitar</td><td class="k">Pides en la plataforma</td></tr>
+            <tr><td>Cambios</td><td>Se vuelven a cotizar</td><td>Dependen de quién esté</td><td class="k">Se piden con créditos</td></tr>
+            <tr><td>Quién decide</td><td>El gerente de proyecto</td><td>Tú, además de tu negocio</td><td class="k">Un ingeniero de Koddo, contigo</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · CÓMO FUNCIONA -->
+  <section class="how" id="como">
+    <div class="wrap">
+      <span class="label reveal">Cómo funciona</span>
+      <h2 class="reveal">Pides. Aprobamos. Los agentes construyen.</h2>
+      <div class="steps">
+        <article class="step glass reveal"><span class="n">01</span><h3>Elige tu plan</h3><p>Te suscribes y entras a tu plataforma Koddo. Sin contrato de proyecto.</p><span class="label who">Tú</span></article>
+        <article class="step glass reveal"><span class="n">02</span><h3>Cuenta lo que necesitas</h3><p>Por voz, texto, fotos o documentos. Un agente lo ordena y te lo devuelve en diagramas hasta que confirmes.</p><span class="label who">Agente</span></article>
+        <article class="step glass human reveal"><span class="n">03</span><h3>Un ingeniero aprueba el plan</h3><p>Define qué se construye, en qué fechas y cuántos créditos usa. Tú decides si avanza.</p><span class="label who"><span class="dot"></span>Persona</span></article>
+        <article class="step glass reveal"><span class="n">04</span><h3>Se construye y se publica</h3><p>Los agentes desarrollan, el ingeniero revisa y tú ves el avance en la plataforma.</p><span class="label who">Agentes + persona</span></article>
+      </div>
+
+      <div class="credits-sec glass reveal">
+        <div>
+          <span class="label">Los créditos</span>
+          <h3>Sin cotizaciones: cada pedido usa créditos según su tamaño.</h3>
+          <p>Cada mes recibes créditos con tu plan. Un ajuste usa pocos; una aplicación nueva, más. Antes de empezar sabes exactamente cuántos usa.</p>
+        </div>
+        <div class="scale" aria-label="Ejemplos de uso de créditos">
+          <div class="scale-row"><span>Ajuste en una pantalla</span><span class="c"><i style="width:12%"></i></span></div>
+          <div class="scale-row"><span>Reporte o tablero nuevo</span><span class="c"><i style="width:35%"></i></span></div>
+          <div class="scale-row"><span>Conexión con tu sistema de gestión</span><span class="c"><i style="width:55%"></i></span></div>
+          <div class="scale-row"><span>Aplicación nueva</span><span class="c"><i style="width:90%"></i></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · PLANES -->
+  <section class="cream-sec plans dots-c" id="planes">
+    <div class="wrap">
+      <div class="plans-head reveal">
+        <span class="label">Planes</span>
+        <h2>Software a medida, por menos de lo que cuesta un desarrollador.</h2>
+        <p>Dos planes. Mismo equipo, misma plataforma. Cambia cuánto puedes construir cada mes.</p>
+      </div>
+      <div class="plan-grid">
+        <article class="plan glass-c reveal">
+          <span class="name">Base</span>
+          <div class="price">$500<small>/ mes</small></div>
+          <p class="for">Para empresas que empiezan a dejar el Excel.</p>
+          <ul>
+            <li>Plataforma Koddo para pedir lo que necesites</li>
+            <li>Créditos mensuales</li>
+            <li>Un pedido en construcción a la vez</li>
+            <li>Ingeniero responsable de tu cuenta</li>
+            <li>Publicación y alojamiento incluidos</li>
+          </ul>
+          <a class="btn btn-ink" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Empezar con Base</a>
+        </article>
+        <article class="plan top reveal">
+          <span class="label badge"><span class="dot"></span>Recomendado</span>
+          <span class="name">Crecimiento</span>
+          <div class="price">$1.000<small>/ mes</small></div>
+          <p class="for">Para empresas que quieren llevar toda su operación al sistema.</p>
+          <ul>
+            <li>Todo lo del plan Base</li>
+            <li>El doble de créditos mensuales</li>
+            <li>Varios pedidos en construcción al mismo tiempo</li>
+            <li>Prioridad en la cola de trabajo</li>
+            <li>Reunión mensual de revisión con el ingeniero</li>
+          </ul>
+          <a class="btn btn-red" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Empezar con Crecimiento</a>
+        </article>
+      </div>
+      <p class="plans-note reveal">Precios en dólares estadounidenses. ¿No sabes qué plan te sirve? Agenda 30 minutos y lo vemos juntos.</p>
+    </div>
+  </section>
+
+  <!-- 6 · PRUEBA -->
+  <section class="proof dots" id="casos">
+    <div class="wrap">
+      <span class="label reveal">Ya lo construimos</span>
+      <h2 class="reveal">Empresas reales que dejaron de operar a mano.</h2>
+      <div class="case-grid">
+        <article class="case reveal">
+          <img src="/images/uniSanity/unisanity-persona.png" alt="Técnico de Unión Agronegocios usando Unisanity en el campo" loading="lazy">
+          <div class="card glass">
+            <span class="label">Unión Agronegocios · Sanidad animal</span>
+            <h3>Del Excel al campo conectado.</h3>
+            <p>Plataforma y aplicación para el control sanitario de miles de cabezas de ganado, conectadas a su sistema de gestión.</p>
+          </div>
+        </article>
+        <article class="case reveal">
+          <img src="/images/rcm/rcm-papel.png" alt="Operador de Tracktor registrando trabajo desde la aplicación en el campo" loading="lazy">
+          <div class="card glass">
+            <span class="label">Tracktor · Maquinaria agrícola</span>
+            <h3>Datos donde no hay señal.</h3>
+            <p>Una aplicación que registra horas y combustible sin internet y lo centraliza para analizarlo.</p>
+          </div>
+        </article>
+      </div>
+      <div class="quote reveal">
+        <img class="kata-q" src="/images/logo-koddo-kata.png" alt="" aria-hidden="true">
+        <div>
+          <p>“El equipo de Koddo nos ayudó a construir algo que en Unión teníamos en mente desde hace tiempo, y cumplió nuestras expectativas con creces.”</p>
+          <span class="label">Dr. Guerin Sensano · Director de Sanidad Animal · Unión Agronegocios</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · PREGUNTAS -->
+  <section class="cream-sec faq" id="preguntas">
+    <div class="wrap faq-grid">
+      <div class="reveal">
+        <span class="label">Preguntas</span>
+        <h2>Lo que nos preguntan.</h2>
+      </div>
+      <div class="reveal">
+        <details open><summary>¿Qué es un crédito?</summary><p>Es la unidad con la que se mide cada pedido. Cada mes tu plan te da créditos; un ajuste chico usa pocos y una aplicación nueva usa más. Antes de empezar, el ingeniero te dice cuántos usa y tú decides.</p></details>
+        <details><summary>¿Quién construye mi software?</summary><p>Agentes de inteligencia artificial hacen el desarrollo. Un ingeniero de Koddo define el plan, revisa el trabajo y responde por el resultado. Nada se publica sin su aprobación.</p></details>
+        <details><summary>¿Qué puedo pedir?</summary><p>Aplicaciones web y móviles, conexiones con tu sistema de gestión, reportes y tableros, y asistentes con inteligencia artificial para tu operación.</p></details>
+        <details><summary>¿Cómo pido algo?</summary><p>Desde tu plataforma Koddo: lo cuentas por voz, texto, fotos o documentos. Te devolvemos lo que entendimos en diagramas hasta que confirmes.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · CIERRE -->
+  <section class="cta">
+    <div class="wrap reveal">
+      <span class="label"><span class="dot"></span>Empieza este mes</span>
+      <h2>Deja de cotizar software. <span class="red">Suscríbete.</span></h2>
+      <p>En 30 minutos vemos qué necesita tu empresa y qué plan te sirve.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
+        <a class="btn btn-ghost" href="#planes">Ver planes</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <img src="/images/logo-koddo-cream.png" alt="Koddo · software &amp; data engineering">
+      <span class="label">Data &amp; systems, engineered with AI agents</span>
+      <span class="label">Santa Cruz · Bolivia · © 2026</span>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el); });
+  </script>
+</body>
+</html>

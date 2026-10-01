@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koddo · Propuesta v2</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/webp" href="/images/web-icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@600;800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Azules oscuros */
+      --navy-900: #05080e;
+      --navy-800: #0a101b;
+      --navy-700: #111a2a;
+      --navy-600: #1b2740;
+      /* Cremas */
+      --cream-100: #f6f3ec;
+      --cream-200: #f1ede4;
+      --cream-300: #e6dfd0;
+      --ink: #121926;
+      --ink-soft: rgba(18, 25, 38, .62);
+      /* Un solo acento: la persona en el loop */
+      --coral: #d93c33;
+
+      --text: #f4f2ee;
+      --text-2: rgba(244, 242, 238, .66);
+      --text-3: rgba(244, 242, 238, .38);
+
+      /* Vidrio */
+      --glass-dark: rgba(22, 32, 52, .42);
+      --glass-dark-line: rgba(255, 255, 255, .10);
+      --glass-cream: rgba(246, 243, 236, .55);
+      --glass-cream-line: rgba(18, 25, 38, .10);
+      --blur: blur(22px) saturate(140%);
+
+      --serif: 'Instrument Serif', Georgia, serif;
+      --dot: 'Doto', 'JetBrains Mono', monospace;
+      --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+      --sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+      --r: 20px;
+      --gutter: clamp(16px, 4vw, 48px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--navy-900); color: var(--text); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ---------- Piezas comunes ---------- */
+    .wrap { width: min(1200px, 100%); margin: 0 auto; padding: 0 var(--gutter); }
+    .label { font: 500 11px/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); }
+    .label .dot-red { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--coral); margin-right: 8px; vertical-align: 1px; }
+    .serif { font-family: var(--serif); font-weight: 400; letter-spacing: -.01em; }
+    .glass { background: var(--glass-dark); border: 1px solid var(--glass-dark-line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-radius: var(--r); }
+    .dots-bg { background-image: radial-gradient(rgba(255,255,255,.09) 1px, transparent 1.4px); background-size: 28px 28px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 22px; border-radius: 999px; font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; transition: transform .2s, background .2s; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-light { background: var(--cream-200); color: var(--ink); }
+    .btn-glass { background: rgba(255,255,255,.06); border: 1px solid var(--glass-dark-line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.on { opacity: 1; transform: none; }
+
+    /* ---------- Navegación: píldora de vidrio ---------- */
+    .nav { position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 50; width: min(720px, calc(100% - 32px)); height: 48px; display: flex; align-items: center; justify-content: space-between; padding: 0 8px 0 20px; border-radius: 14px; }
+    .nav .brand { font: 800 20px/1 var(--dot); letter-spacing: .08em; }
+    .nav ul { display: flex; gap: 22px; list-style: none; }
+    .nav ul a { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--text-2); }
+    .nav ul a:hover { color: var(--text); }
+    .nav .btn { height: 34px; padding: 0 14px; font-size: 11px; }
+
+    /* ---------- Héroe ---------- */
+    .hero { position: relative; min-height: min(100vh, 940px); display: grid; place-items: center; padding: 120px 0 80px; overflow: hidden;
+            background: radial-gradient(120% 80% at 50% 110%, #1d3354 0%, var(--navy-800) 45%, var(--navy-900) 75%); }
+    .hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1.4px); background-size: 28px 28px; mask-image: radial-gradient(70% 60% at 50% 40%, #000 30%, transparent 85%); }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+    .hero h1 { font: 400 clamp(44px, 6.4vw, 88px)/1.0 var(--serif); letter-spacing: -.02em; margin: 22px 0 24px; }
+    .hero h1 em { font-style: italic; color: var(--cream-300); }
+    .hero p.lead { font-size: clamp(16px, 1.5vw, 19px); color: var(--text-2); max-width: 520px; }
+    .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
+
+    /* El "equipo transparente": se ve el interior de cómo se construye */
+    .inside { position: relative; padding: 22px; }
+    .inside-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .inside-head .brand-dot { font: 800 15px/1 var(--dot); letter-spacing: .08em; color: var(--text-2); }
+    .pipeline { display: grid; gap: 10px; }
+    .stage { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.06); }
+    .stage .n { font: 800 20px/1 var(--dot); color: var(--text-3); }
+    .stage b { display: block; font: 500 15px/1.3 var(--sans); }
+    .stage small { color: var(--text-3); font-size: 13px; }
+    .stage .who { font: 500 10px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); padding: 6px 8px; border: 1px solid rgba(255,255,255,.08); border-radius: 999px; white-space: nowrap; }
+    .stage.human { background: rgba(217,60,51,.07); border-color: rgba(217,60,51,.28); }
+    .stage.human .who { color: var(--cream-200); border-color: rgba(217,60,51,.5); }
+    .stage.human .who::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--coral); margin-right: 6px; vertical-align: 1px; box-shadow: 0 0 10px var(--coral); }
+    .stage .pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--cream-300); opacity: .5; animation: blink 1.6s infinite; }
+    @keyframes blink { 50% { opacity: .1; } }
+    .inside-foot { display: flex; justify-content: space-between; margin-top: 16px; }
+
+    /* ---------- Manifiesto (crema) ---------- */
+    .cream { background: var(--cream-200); color: var(--ink); }
+    .cream .label { color: rgba(18,25,38,.45); }
+    .manifesto { padding: clamp(80px, 12vw, 160px) 0; background-image: radial-gradient(rgba(18,25,38,.08) 1px, transparent 1.4px); background-size: 28px 28px; }
+    .manifesto h2 { font: 400 clamp(34px, 4.6vw, 64px)/1.08 var(--serif); letter-spacing: -.015em; max-width: 980px; margin-top: 22px; }
+    .manifesto h2 .muted { color: rgba(18,25,38,.35); }
+    .manifesto h2 .red { color: var(--coral); font-style: italic; }
+
+    /* ---------- Escritorio de capacidades (estilo Nothing) ---------- */
+    .desk { position: relative; padding: clamp(80px, 10vw, 140px) 0; }
+    .desk-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 56px; flex-wrap: wrap; }
+    .desk-head h2 { font: 400 clamp(32px, 4vw, 54px)/1.05 var(--serif); max-width: 560px; margin-top: 16px; }
+    .desk-head p { color: var(--text-2); max-width: 380px; }
+    .files { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .file { padding: 22px; min-height: 250px; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; transition: transform .3s, border-color .3s; }
+    .file:hover { transform: translateY(-4px); border-color: rgba(255,255,255,.22); }
+    .file .icon { width: 54px; height: 54px; border-radius: 12px; display: grid; place-items: center; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); font: 800 22px/1 var(--dot); color: var(--cream-200); }
+    .file h3 { font: 400 26px/1.1 var(--serif); margin: 18px 0 8px; }
+    .file p { color: var(--text-2); font-size: 14px; }
+
+    /* ---------- Cómo trabajamos ---------- */
+    .how { padding: clamp(80px, 10vw, 140px) 0; background: linear-gradient(180deg, var(--navy-900), var(--navy-800)); }
+    .how h2 { font: 400 clamp(32px, 4vw, 54px)/1.05 var(--serif); margin: 16px 0 56px; max-width: 760px; }
+    .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; counter-reset: s; }
+    .step { padding: 22px 18px; min-height: 250px; display: flex; flex-direction: column; }
+    .step .num { font: 800 44px/1 var(--dot); color: rgba(244,242,238,.22); }
+    .step h3 { font: 500 16px/1.3 var(--sans); margin: 26px 0 8px; }
+    .step p { font-size: 14px; color: var(--text-2); }
+    .step .tag { margin-top: auto; padding-top: 16px; }
+    .step.human { border-color: rgba(217,60,51,.35); background: linear-gradient(180deg, rgba(217,60,51,.08), rgba(22,32,52,.42)); }
+    .step.human .num { color: var(--coral); }
+
+    /* ---------- Casos ---------- */
+    .cases { padding: clamp(80px, 10vw, 140px) 0; }
+    .cases h2 { font: 400 clamp(32px, 4vw, 54px)/1.05 var(--serif); margin: 16px 0 48px; }
+    .case-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 18px; }
+    .case { position: relative; min-height: 520px; border-radius: 24px; overflow: hidden; color: var(--text); }
+    .case img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.75) contrast(1.05); }
+    .case::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,8,14,0) 35%, rgba(5,8,14,.55)); }
+    .case .card { position: absolute; left: 16px; right: 16px; bottom: 16px; z-index: 2; padding: 22px; }
+    .case .card h3 { font: 400 30px/1.1 var(--serif); margin: 10px 0 8px; }
+    .case .card p { color: var(--text-2); font-size: 14px; }
+    .quote { margin-top: 18px; padding: 34px; border-radius: 24px; background: rgba(241, 237, 228, .9); border: 1px solid var(--glass-cream-line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+    .quote p { font: 400 clamp(22px, 2.4vw, 32px)/1.25 var(--serif); }
+    .quote .who { margin-top: 18px; }
+
+    /* ---------- Membresía / cifras ---------- */
+    .numbers { padding: clamp(70px, 9vw, 120px) 0; }
+    .num-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
+    .num-card { padding: 28px; border-radius: 22px; background: var(--glass-cream); border: 1px solid var(--glass-cream-line); }
+    .num-card .big { font: 800 clamp(48px, 6vw, 76px)/1 var(--dot); color: var(--ink); }
+    .num-card p { margin-top: 12px; color: var(--ink-soft); }
+
+    /* ---------- Cierre ---------- */
+    .cta { position: relative; padding: clamp(90px, 12vw, 170px) 0; text-align: center; overflow: hidden;
+           background: radial-gradient(90% 70% at 50% 0%, #1d3354 0%, var(--navy-800) 50%, var(--navy-900) 85%); }
+    .cta h2 { font: 400 clamp(38px, 5.6vw, 76px)/1.02 var(--serif); max-width: 900px; margin: 18px auto 30px; }
+    .cta p { color: var(--text-2); max-width: 520px; margin: 0 auto 34px; }
+    footer { padding: 40px 0 56px; border-top: 1px solid rgba(255,255,255,.06); }
+    .foot { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .foot .brand { font: 800 26px/1 var(--dot); letter-spacing: .08em; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .files { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .case-grid { grid-template-columns: 1fr; }
+      .num-grid { grid-template-columns: 1fr; }
+      .nav ul { display: none; }
+    }
+    @media (max-width: 560px) {
+      .files, .steps { grid-template-columns: 1fr; }
+      .stage { grid-template-columns: 28px 1fr; }
+      .stage .who { grid-column: 2; justify-self: start; }
+      .case { min-height: 440px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .stage .pulse { animation: none; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav glass" aria-label="Principal">
+    <a href="#" class="brand">KODDO</a>
+    <ul>
+      <li><a href="#como">Cómo trabajamos</a></li>
+      <li><a href="#casos">Casos</a></li>
+      <li><a href="#membresia">Membresía</a></li>
+    </ul>
+    <a class="btn btn-light" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
+  </nav>
+
+  <!-- 1 · HÉROE -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="label">Data &amp; systems, engineered with AI agents</span>
+        <h1>Software hecho por agentes. <em>Decidido por personas.</em></h1>
+        <p class="lead">Conectamos tu sistema de gestión con la operación real: aplicaciones, integraciones y tableros. Los agentes de inteligencia artificial construyen; un ingeniero decide qué se hace y responde por el resultado.</p>
+        <div class="actions">
+          <a class="btn btn-light" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda una llamada</a>
+          <a class="btn btn-glass" href="#como">Ver cómo trabajamos →</a>
+        </div>
+      </div>
+
+      <aside class="inside glass reveal" aria-label="Cómo se construye un proyecto en Koddo">
+        <div class="inside-head">
+          <span class="brand-dot">KODDO</span>
+          <span class="label">proyecto en curso</span>
+        </div>
+        <div class="pipeline">
+          <div class="stage"><span class="n">01</span><span><b>Nos cuentas tu necesidad</b><small>Voz, fotos y documentos</small></span><span class="who">Agente</span></div>
+          <div class="stage"><span class="n">02</span><span><b>La dibujamos contigo</b><small>Diagramas hasta entendernos</small></span><span class="who">Agente</span></div>
+          <div class="stage human"><span class="n">03</span><span><b>Un ingeniero decide</b><small>Solución, plazo y precio</small></span><span class="who">Persona</span></div>
+          <div class="stage"><span class="n">04</span><span><b>Se construye</b><small>Avances cada semana</small></span><span class="who"><span class="pulse" style="display:inline-block;margin-right:6px"></span>Agentes</span></div>
+          <div class="stage human"><span class="n">05</span><span><b>Revisión y entrega</b><small>Nada sale sin aprobación</small></span><span class="who">Persona</span></div>
+        </div>
+        <div class="inside-foot">
+          <span class="label"><span class="dot-red"></span>Persona en el control</span>
+          <span class="label">Bolivia · 2026</span>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- 2 · MANIFIESTO -->
+  <section class="cream manifesto">
+    <div class="wrap reveal">
+      <span class="label">Por qué Koddo</span>
+      <h2>Tu sistema de gestión llegó hasta la oficina. <span class="muted">El resto de tu empresa sigue en papel, Excel y WhatsApp.</span> Nosotros construimos ese tramo, rápido, con agentes, y siempre con <span class="red">una persona que decide</span>.</h2>
+    </div>
+  </section>
+
+  <!-- 3 · ESCRITORIO DE CAPACIDADES -->
+  <section class="desk dots-bg">
+    <div class="wrap">
+      <div class="desk-head reveal">
+        <div>
+          <span class="label">Qué construimos</span>
+          <h2>Las piezas que le faltan a tu operación.</h2>
+        </div>
+        <p>Sin cambiar tu sistema actual. Cada pieza se conecta a lo que ya tienes y a lo que tu equipo ya usa.</p>
+      </div>
+      <div class="files">
+        <article class="file glass reveal"><div><span class="icon">◧</span><h3>Aplicaciones de campo</h3><p>Tu equipo registra desde el celular, con o sin señal, y todo llega solo al sistema.</p></div><span class="label">Web · móvil</span></article>
+        <article class="file glass reveal"><div><span class="icon">⇄</span><h3>Conexiones</h3><p>Lo que hoy se pasa a mano entre sistemas, fluye solo: facturación, bancos, ventas.</p></div><span class="label">Sistema de gestión</span></article>
+        <article class="file glass reveal"><div><span class="icon">▤</span><h3>Tableros</h3><p>Ventas, inventario y operación en una pantalla, al día. Sin esperar el Excel del lunes.</p></div><span class="label">Datos en vivo</span></article>
+        <article class="file glass reveal"><div><span class="icon">✳</span><h3>Agentes</h3><p>Asistentes que atienden, clasifican y avisan, con una persona revisando lo importante.</p></div><span class="label">Inteligencia artificial</span></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · CÓMO TRABAJAMOS -->
+  <section class="how" id="como">
+    <div class="wrap">
+      <span class="label reveal">Cómo trabajamos</span>
+      <h2 class="reveal">Transparente por dentro. Ves cada paso y quién lo hace.</h2>
+      <div class="steps">
+        <article class="step glass reveal"><span class="num">01</span><h3>Captura</h3><p>Nos cuentas tu necesidad por voz, texto o fotos. Un agente lo ordena.</p><span class="label tag">Agente</span></article>
+        <article class="step glass reveal"><span class="num">02</span><h3>Entendimiento</h3><p>Te devolvemos diagramas de lo que entendimos hasta que confirmes.</p><span class="label tag">Agente</span></article>
+        <article class="step glass human reveal"><span class="num">03</span><h3>Decisión</h3><p>Un ingeniero define la solución, el plazo y el precio. Sin letra pequeña.</p><span class="label tag"><span class="dot-red"></span>Persona</span></article>
+        <article class="step glass reveal"><span class="num">04</span><h3>Construcción</h3><p>Los agentes desarrollan y tú ves avances cada semana.</p><span class="label tag">Agentes</span></article>
+        <article class="step glass human reveal"><span class="num">05</span><h3>Entrega</h3><p>Revisamos, capacitamos a tu equipo y te acompañamos después.</p><span class="label tag"><span class="dot-red"></span>Persona</span></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · CASOS -->
+  <section class="cases dots-bg" id="casos">
+    <div class="wrap">
+      <span class="label reveal">Casos reales</span>
+      <h2 class="reveal">Empresas que dejaron de operar a mano.</h2>
+      <div class="case-grid">
+        <article class="case reveal">
+          <img src="/images/uniSanity/unisanity-persona.png" alt="Técnico de Unión Agronegocios usando Unisanity en el campo" loading="lazy">
+          <div class="card glass">
+            <span class="label">Unión Agronegocios · Sanidad animal</span>
+            <h3>Del Excel al campo conectado.</h3>
+            <p>Plataforma y aplicación para el control sanitario de miles de cabezas de ganado, conectadas a su sistema de gestión.</p>
+          </div>
+        </article>
+        <article class="case reveal">
+          <img src="/images/rcm/rcm-papel.png" alt="Operador de RCM registrando trabajo desde la aplicación en el campo" loading="lazy">
+          <div class="card glass">
+            <span class="label">Tracktor · Maquinaria agrícola</span>
+            <h3>Datos sin señal.</h3>
+            <p>Una aplicación que registra horas y combustible donde no hay internet, y lo centraliza para analizarlo.</p>
+          </div>
+        </article>
+      </div>
+      <div class="quote reveal" style="color:var(--ink)">
+        <p>“El equipo de Koddo nos ayudó a construir algo que en Unión teníamos en mente desde hace tiempo, y cumplió nuestras expectativas con creces.”</p>
+        <div class="who label" style="color:var(--ink-soft)">Dr. Guerin Sensano · Director de Sanidad Animal · Unión Agronegocios</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · MEMBRESÍA -->
+  <section class="cream numbers" id="membresia">
+    <div class="wrap">
+      <span class="label reveal">Membresía</span>
+      <h2 class="serif reveal" style="font-size:clamp(32px,4vw,54px);line-height:1.05;margin-top:16px;max-width:760px">Tu equipo de software, sin armar un equipo.</h2>
+      <div class="num-grid">
+        <div class="num-card reveal"><div class="big">1</div><p>semana para tu primera entrega.</p></div>
+        <div class="num-card reveal"><div class="big">2–6</div><p>semanas por proyecto, con avances cada semana.</p></div>
+        <div class="num-card reveal"><div class="big">1</div><p>ingeniero responsable que decide y responde.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · CIERRE -->
+  <section class="cta">
+    <div class="wrap reveal">
+      <span class="label"><span class="dot-red"></span>Hablemos</span>
+      <h2>¿Qué parte de tu empresa sigue funcionando a mano?</h2>
+      <p>En 30 minutos te decimos qué construir primero, cuánto cuesta y cuándo estaría funcionando.</p>
+      <a class="btn btn-light" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda una llamada</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <span class="brand">KODDO</span>
+      <span class="label">Data &amp; systems, engineered with AI agents</span>
+      <span class="label">Santa Cruz · Bolivia</span>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 5) * 70 + 'ms'; io.observe(el); });
+  </script>
+</body>
+</html>
