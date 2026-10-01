@@ -66,14 +66,14 @@
       <h1 id="t">Entra a tu <em>plataforma.</em></h1>
       <p class="sub">Todos tus proyectos en un lugar: pide, sigue y aprueba.</p>
 
-      <!-- Pendiente: conectar con el sistema de cuentas de Koe (POST /api/entrar) cuando esté publicado. Hoy el formulario no envía datos. -->
+      <!-- Fake door: el formulario no envía datos; siempre responde credenciales incorrectas y empuja a planes. -->
       <form id="entrar" novalidate>
         <label class="f" for="email">Email</label>
         <input id="email" name="email" type="email" autocomplete="email" placeholder="tu@empresa.com" required>
         <label class="f" for="clave">Contraseña</label>
         <input id="clave" name="clave" type="password" autocomplete="current-password" placeholder="••••••••••" required>
         <button type="submit">Entrar</button>
-        <p class="msg" id="msg" role="status">Estamos habilitando el acceso a la plataforma. Si ya eres cliente, te escribimos con tu acceso. <a href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a></p>
+        <p class="msg" id="msg" role="alert">Email o contraseña incorrectos. ¿Aún no tienes cuenta? <a href="/#planes">Ver planes</a></p>
       </form>
 
       <p class="foot">¿Aún no tienes cuenta? <a href="/#planes">Ver planes</a></p>
@@ -81,10 +81,20 @@
   </main>
 
   <script>
-    document.getElementById('entrar').addEventListener('submit', e => {
+    const form = document.getElementById('entrar');
+    const btn = form.querySelector('button');
+    const msg = document.getElementById('msg');
+    form.addEventListener('submit', e => {
       e.preventDefault();
-      document.getElementById('clave').value = '';
-      document.getElementById('msg').classList.add('on');
+      msg.classList.remove('on');
+      btn.disabled = true;
+      btn.textContent = 'Verificando…';
+      setTimeout(() => {
+        document.getElementById('clave').value = '';
+        btn.disabled = false;
+        btn.textContent = 'Entrar';
+        msg.classList.add('on');
+      }, 900);
     });
   </script>
 </body>

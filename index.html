@@ -244,14 +244,21 @@
     }
     @media (max-width: 560px) {
       .story .panel { padding: 20px; }
-      .story { padding-bottom: 90px; }
-      .product { margin-top: -70px; gap: 10px; padding: 12px 6px 0; }
+      .product { margin-top: 28px; gap: 10px; padding: 12px 6px 0; }
       .frame-phone { border-width: 4px; border-radius: 16px; margin-bottom: -12px; }
       .frame-phone img { border-radius: 12px; }
       .product.phones .frame-phone { width: 30%; }
       .product.phones .frame-phone:nth-child(2) { transform: translateY(-18px); }
       .ba div { grid-template-columns: 1fr; gap: 4px; }
       .nav .logo img { height: 34px; }
+      .nav .right { gap: 8px; }
+      .nav .btn { padding: 0 12px; letter-spacing: .08em; }
+      .product-cap { text-align: center; }
+      .toggle button { padding: 0 14px; letter-spacing: .08em; }
+    }
+    @media (max-width: 360px) {
+      .nav .right .btn-ink { display: none; }
+      .toggle button { padding: 0 10px; font-size: 10.5px; }
     }
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .chev { animation: none; } }
   </style>
