@@ -2,6 +2,18 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <script>
+    // Acceso de Koddo: en un navegador marcado, el login lleva al Koe local en vez de la puerta falsa.
+    // Marcar: /login?koe=local · Desmarcar: /login?koe=off. Solo afecta a este navegador.
+    (function () {
+      try {
+        var p = new URLSearchParams(location.search).get('koe');
+        if (p === 'local') localStorage.setItem('koddo_koe', 'local');
+        if (p === 'off') localStorage.removeItem('koddo_koe');
+        if (localStorage.getItem('koddo_koe') === 'local') location.replace('http://localhost:4321/');
+      } catch (e) {}
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Koddo · Plataforma</title>
   <meta name="description" content="Entra a la plataforma Koddo, donde controlas todos tus proyectos.">
