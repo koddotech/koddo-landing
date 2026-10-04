@@ -3,10 +3,10 @@
 *Built by agents, designed by humans.*
 
 ## Qué es Koddo
-Koddo es una empresa de agentes de inteligencia artificial que construyen el
-software de otras empresas, dirigidos por arquitectos de software. Los agentes
-construyen rápido y sin pausa; los arquitectos definen el plan, revisan cada
-entrega y responden por el resultado. Tiene base en Santa Cruz, Bolivia, y
+Koddo es una empresa donde arquitectos de software diseñan y enjambres de
+agentes de inteligencia artificial construyen el software de otras empresas.
+Los arquitectos definen el plan, revisan cada entrega y responden por el
+resultado; los agentes construyen rápido y sin pausa. Tiene base en Santa Cruz, Bolivia, y
 trabaja con empresas de Bolivia, Perú y Argentina.
 
 Se contrata por suscripción mensual o anual con créditos: cada idea usa
@@ -66,8 +66,9 @@ Especialmente para empresas de Bolivia, Perú y Argentina.
 ---
 
 ## In English
-Koddo is a company of AI agents that build software for businesses, led by
-software architects who set the plan and review every delivery. Based in Santa
+Koddo is a company where software architects design and swarms of AI agents
+build software for businesses. The architects set the plan and review every
+delivery. Based in Santa
 Cruz, Bolivia. Hired by subscription with monthly credits: Startup (199
 credits, $199/month), Pro (500 credits, $499/month) and Max (1,100 credits,
 $999/month). Annual billing includes 2 months free. Website:
