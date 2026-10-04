@@ -237,8 +237,7 @@
     .hero { min-height: min(100vh, 900px); display: grid; place-items: center; text-align: center; padding: 140px 0 70px; position: relative; }
     .hero h1 { font-size: clamp(46px, 6.6vw, 96px); line-height: 1; letter-spacing: -.02em; max-width: 1040px; margin: 0 auto; }
     .hero h1 em { color: var(--ink); }
-    .note { max-width: 440px; margin: 34px auto 0; font: italic 400 19px/1.4 var(--serif); color: var(--ink-2); }
-    .services { list-style: none; padding: 0; margin: 22px auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; font: 500 11px/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+    .services { list-style: none; padding: 0; margin: 34px auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; font: 500 11px/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
     .services li + li::before { content: "·"; margin-right: 18px; }
     @media (max-width: 640px) { .services { gap: 8px 16px; } .services li + li::before { content: none; } }
     .hero .actions { display: flex; gap: 22px; justify-content: center; align-items: center; margin-top: 40px; flex-wrap: wrap; }
@@ -399,7 +398,6 @@
   <header class="hero dots-c">
     <div class="wrap">
       <h1 class="reveal">Agentes de IA que construyen<br><em>el software de tu empresa.</em></h1>
-      <p class="note reveal"><span>Arquitectos de software que diseñan tu idea y enjambres de agentes que la construyen.</span></p>
       <ul class="services reveal" aria-label="Servicios"><li>Arquitectura</li><li>Desarrollo</li><li>Despliegue</li><li>Mantenimiento y evolución</li></ul>
       <div class="actions reveal">
         <a class="btn btn-ink" href="#planes">Ver planes</a>
