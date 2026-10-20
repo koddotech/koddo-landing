@@ -28,7 +28,6 @@ export default defineConfig({
         blogMejorarProcesos: resolve(__dirname, 'blog/como-mejorar-procesos-empresa-sin-cambiar-sistema/index.html'),
         blogTiInterno: resolve(__dirname, 'blog/ti-interno-o-partner-tecnologico/index.html'),
         blogConstruirEmpresa: resolve(__dirname, 'blog/como-construir-empresa-estos-dias/index.html'),
-        onePager: resolve(__dirname, 'one-pager/index.html'),
         login: resolve(__dirname, 'login.html'),
         loginEn: resolve(__dirname, 'en/login.html'),
       },
