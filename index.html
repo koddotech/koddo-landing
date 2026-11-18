@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Koddo · Agentes de IA que evolucionan los sistemas de tu empresa</title>
-  <meta name="description" content="Koddo desarrolla y mantiene los sistemas de tu empresa con agentes de inteligencia artificial, supervisión humana y seguridad. Por suscripción, desde 199 créditos al mes.">
+  <title>Koddo · Tu socio de desarrollo, con lo último en tecnología</title>
+  <meta name="description" content="Koddo es tu socio de desarrollo: investigamos los avances de la inteligencia artificial y los aplicamos en tu empresa para que ganes tiempo y control. Empieza con una prueba, sin permanencia.">
   <link rel="canonical" href="https://www.koddo.tech/">
   <link rel="alternate" hreflang="es" href="https://www.koddo.tech/">
   <link rel="alternate" hreflang="en" href="https://www.koddo.tech/en">
   <link rel="alternate" hreflang="x-default" href="https://www.koddo.tech/">
-  <meta property="og:title" content="Koddo · Agentes de IA que evolucionan los sistemas de tu empresa">
-  <meta property="og:description" content="Agentes de IA que desarrollan y mantienen los sistemas de tu empresa, con arquitectos que revisan cada entrega. Por suscripción, desde 199 créditos al mes.">
+  <meta property="og:title" content="Koddo · Tu socio de desarrollo, con lo último en tecnología">
+  <meta property="og:description" content="Investigamos los avances de la inteligencia artificial y los aplicamos en tu empresa para que ganes tiempo y control. Empieza con una prueba, sin permanencia.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.koddo.tech/">
   <meta property="og:image" content="https://www.koddo.tech/images/og-hero.png?v=4">
@@ -70,7 +70,7 @@
       "@id": "https://www.koddo.tech/#page",
       "url": "https://www.koddo.tech/",
       "inLanguage": "es",
-      "name": "Koddo · Agentes de IA que evolucionan los sistemas de tu empresa",
+      "name": "Koddo · Tu socio de desarrollo, con lo último en tecnología",
       "isPartOf": {
         "@id": "https://www.koddo.tech/#website"
       },
@@ -93,14 +93,22 @@
       "offers": [
         {
           "@type": "Offer",
-          "name": "Koddo Startup",
-          "description": "199 créditos al mes. Un proyecto a la vez, pensado para validar una idea rápido.",
-          "price": "199",
+          "name": "Koddo Prueba",
+          "description": "Primer proyecto funcionando en unas 2 semanas, con entregables cada semana. Pago único al aceptar la entrega.",
+          "price": "500",
+          "priceCurrency": "USD",
+          "url": "https://www.koddo.tech/#planes"
+        },
+        {
+          "@type": "Offer",
+          "name": "Koddo Plan mensual",
+          "description": "Mantenimiento y evolución constante, una mejora a la vez y contacto directo con el arquitecto. Sin permanencia.",
+          "price": "700",
           "priceCurrency": "USD",
           "url": "https://www.koddo.tech/#planes",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "199",
+            "price": "700",
             "priceCurrency": "USD",
             "unitCode": "MON",
             "referenceQuantity": {
@@ -112,33 +120,14 @@
         },
         {
           "@type": "Offer",
-          "name": "Koddo Pro",
-          "description": "500 créditos al mes. Un proyecto a la vez con arquitecto asignado.",
-          "price": "499",
+          "name": "Koddo Enterprise",
+          "description": "Dos mejoras en paralelo, respuesta prioritaria y revisión semanal. Desde.",
+          "price": "1400",
           "priceCurrency": "USD",
           "url": "https://www.koddo.tech/#planes",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "499",
-            "priceCurrency": "USD",
-            "unitCode": "MON",
-            "referenceQuantity": {
-              "@type": "QuantitativeValue",
-              "value": 1,
-              "unitCode": "MON"
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Koddo Max",
-          "description": "1100 créditos al mes. Proyectos en paralelo y prioridad.",
-          "price": "999",
-          "priceCurrency": "USD",
-          "url": "https://www.koddo.tech/#planes",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "999",
+            "price": "1400",
             "priceCurrency": "USD",
             "unitCode": "MON",
             "referenceQuantity": {
@@ -237,6 +226,7 @@
     .hero { min-height: min(100vh, 900px); display: grid; place-items: center; text-align: center; padding: 140px 0 70px; position: relative; }
     .hero h1 { font-size: clamp(46px, 6.6vw, 96px); line-height: 1; letter-spacing: -.02em; max-width: 1040px; margin: 0 auto; }
     .hero h1 em { color: var(--ink); }
+    .lede { margin: 22px auto 0; max-width: 640px; font-size: clamp(17px, 1.6vw, 20px); color: var(--ink-2); }
     .services { list-style: none; padding: 0; margin: 34px auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; font: 500 11px/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
     .services li + li::before { content: "·"; margin-right: 18px; }
     @media (max-width: 640px) { .services { gap: 8px 16px; } .services li + li::before { content: none; } }
@@ -309,6 +299,10 @@
     .plan.top .name, .plan.top .credits-l, .plan.top .price span, .plan.top .billed, .plan.top li::before { color: rgba(243,243,242,.55); }
     .plan.top .price { border-top-color: rgba(243,243,242,.14); }
     .plan.top li.annual, .plan.top li.annual::before { color: #ff8a82; }
+    .plans-more { max-width: 1100px; margin: 26px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .plans-more p { font-size: 15px; color: var(--ink-2); padding: 20px 22px; border: 1px solid var(--line-c); border-radius: 18px; }
+    .plans-more b { color: var(--ink); font-weight: 600; }
+    @media (max-width: 960px) { .plans-more { grid-template-columns: 1fr; } }
     .plans-note { text-align: center; margin-top: 22px; color: var(--ink-3); font-size: 14px; }
 
     /* ---------- Cierre ---------- */
@@ -362,7 +356,7 @@
       <div class="right">
         <a class="link" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
         <a class="btn btn-ink" href="#planes">Ver planes</a>
-        <a class="btn btn-line" href="https://koe.koddo.tech">Plataforma</a>
+        <a class="btn btn-line" href="https://koe.koddo.tech">Portal</a>
       </div>
     </div>
   </nav>
@@ -370,8 +364,9 @@
   <!-- Héroe -->
   <header class="hero dots-c">
     <div class="wrap">
-      <h1 class="reveal">Agentes de IA que evolucionan<br><em>los sistemas de tu empresa.</em></h1>
-      <ul class="services reveal" aria-label="Servicios"><li>Diseño</li><li>Desarrollo</li><li>Publicación</li><li>Mantenimiento y evolución</li></ul>
+      <h1 class="reveal">Tu socio de desarrollo,<br><em>con lo último en tecnología.</em></h1>
+      <p class="lede reveal">Investigamos los avances de la inteligencia artificial y los aplicamos en tu empresa, para que ganes tiempo y control. Un equipo de desarrollo a tu lado, sin contratarlo.</p>
+      <ul class="services reveal" aria-label="Servicios"><li>Horas recuperadas</li><li>Más control de tu operación</li><li>Mantenimiento y evolución constante</li></ul>
       <div class="actions reveal">
         <a class="btn btn-ink" href="#planes">Ver planes</a>
         <a class="link" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
@@ -384,11 +379,11 @@
   <section class="dark pain dots">
     <div class="wrap">
       <span class="label reveal">El problema</span>
-      <h2 class="reveal">Todas las empresas tienen ideas de software. <span class="soft">Pocas saben cómo hacerlas bien.</span></h2>
+      <h2 class="reveal">Toda empresa puede ganar tiempo con la tecnología. <span class="soft">Pocas saben por dónde empezar.</span></h2>
       <div class="pain-lines">
-        <p class="reveal">Saber cómo hacerlo <span>cuesta.</span></p>
-        <p class="reveal">Encontrar quién <span>tarda.</span></p>
-        <p class="reveal">Hacerlo mal <span>sale caro.</span></p>
+        <p class="reveal">Saber qué aplicar <span>cuesta.</span></p>
+        <p class="reveal">Encontrar quién lo haga <span>tarda.</span></p>
+        <p class="reveal">Aplicarlo mal <span>sale caro.</span></p>
       </div>
     </div>
   </section>
@@ -399,9 +394,9 @@
       <span class="label reveal">Cómo funciona</span>
       <h2 class="reveal">Sin cotizaciones <em>y sin buscar programadores.</em></h2>
       <div class="how-strip reveal">
-        <div><span class="n">01</span><b>Cuéntanos tu idea</b><span class="label">Voz, texto o fotos</span></div>
-        <div class="human"><span class="n">02</span><b>Un arquitecto define el plan</b><span class="label"><span class="dot-red"></span>Alcance, fechas y créditos</span></div>
-        <div><span class="n">03</span><b>Los agentes la construyen</b><span class="label">Avances cada semana</span></div>
+        <div><span class="n">01</span><b>Cuéntanos tu problema</b><span class="label">Voz, texto o fotos</span></div>
+        <div class="human"><span class="n">02</span><b>Un arquitecto define el plan</b><span class="label"><span class="dot-red"></span>Meta y alcance, gratis</span></div>
+        <div><span class="n">03</span><b>La construimos con IA</b><span class="label">Avances cada semana, revisados</span></div>
       </div>
     </div>
   </section>
@@ -410,7 +405,7 @@
   <section class="dark cases dots" id="casos">
     <div class="wrap">
       <span class="label reveal">Resultados</span>
-      <h2 class="reveal">Sistemas que nuestros agentes <em>siguen evolucionando.</em></h2>
+      <h2 class="reveal">Sistemas que seguimos <em>manteniendo y haciendo evolucionar.</em></h2>
       <div class="stats reveal" aria-label="Indicadores">
         <div><b>4</b><span class="label">Sistemas</span></div>
         <div><b>3</b><span class="label">Rubros</span></div>
@@ -446,58 +441,50 @@
     <div class="wrap">
       <div class="plans-head reveal">
         <span class="label">Planes</span>
-        <h2>Créditos cada mes. <em>Las ideas que quieras.</em></h2>
-        <p>Cada idea usa créditos según su tamaño.</p>
-      </div>
-      <div class="toggle reveal" role="group" aria-label="Forma de pago">
-        <button type="button" data-billing="monthly" aria-pressed="true">Mensual</button>
-        <button type="button" data-billing="annual" aria-pressed="false">Anual <span class="save">2 meses gratis</span></button>
+        <h2>Empieza con una prueba. <em>Sigue si funciona.</em></h2>
+        <p>Sin permanencia. El sistema, el código y los datos son tuyos.</p>
       </div>
       <div class="plan-grid" id="plan-grid">
         <article class="plan glass-c reveal">
-          <span class="name">Startup</span>
-          <div class="credits">199</div>
-          <div class="credits-l">Créditos al mes</div>
-          <div class="price"><b data-monthly="$199" data-annual="$166">$199</b><span>/ mes</span></div>
-          <div class="billed" data-monthly="$1,00 por crédito" data-annual="$1.990 al año · ≈ $0,83 por crédito">$1,00 por crédito</div>
-          <ul>
-            <li>Un proyecto a la vez</li>
-            <li>Valida tu idea rápido: de la idea a algo que puedes probar</li>
-            <li class="annual">2 meses gratis</li>
-            <li class="annual">Créditos acumulables todo el año</li>
-          </ul>
-          <a class="btn btn-ink" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Empezar</a>
-        </article>
-        <article class="plan glass-c reveal">
-          <span class="name">Pro</span>
+          <span class="name">Prueba</span>
           <div class="credits">500</div>
-          <div class="credits-l">Créditos al mes</div>
-          <div class="price"><b data-monthly="$499" data-annual="$416">$499</b><span>/ mes</span></div>
-          <div class="billed" data-monthly="≈ $1,00 por crédito" data-annual="$4.990 al año · ≈ $0,83 por crédito">≈ $1,00 por crédito</div>
+          <div class="credits-l">Dólares · pago único</div>
+          <div class="billed">Se paga cuando aceptas la entrega</div>
           <ul>
-            <li>Un proyecto a la vez</li>
-            <li>Arquitecto asignado</li>
-            <li class="annual">2 meses gratis</li>
-            <li class="annual">Créditos acumulables todo el año</li>
+            <li>Un primer proyecto funcionando en unas 2 semanas, con entregables cada semana</li>
+            <li>Una meta medible, acordada al empezar</li>
+            <li>Si sigues, lo pagado se descuenta de tu primer mes</li>
           </ul>
-          <a class="btn btn-ink" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Empezar</a>
+          <a class="btn btn-ink" href="https://koe.koddo.tech">Cuenta tu problema</a>
         </article>
         <article class="plan top reveal">
-          <span class="name">Max <span class="label" style="color:var(--cream)"><span class="dot-red"></span>Mejor valorado</span></span>
-          <div class="credits">1.100</div>
-          <div class="credits-l">Créditos al mes · 100 de regalo</div>
-          <div class="price"><b data-monthly="$999" data-annual="$833">$999</b><span>/ mes</span></div>
-          <div class="billed" data-monthly="≈ $0,91 por crédito" data-annual="$9.990 al año · ≈ $0,76 por crédito">≈ $0,91 por crédito</div>
+          <span class="name">Plan mensual <span class="label" style="color:var(--cream)"><span class="dot-red"></span>Recomendado</span></span>
+          <div class="credits">700</div>
+          <div class="credits-l">Dólares al mes</div>
+          <div class="billed">Sin permanencia</div>
           <ul>
-            <li>Proyectos en paralelo</li>
-            <li>Prioridad</li>
-            <li class="annual">2 meses gratis</li>
-            <li class="annual">Créditos acumulables todo el año</li>
+            <li>Mantenimiento y evolución constante</li>
+            <li>Una mejora a la vez, entregada en 1 a 2 semanas</li>
+            <li>Contacto directo con el arquitecto</li>
+            <li>Reunión mensual de revisión</li>
+            <li>Sin cobros extra por pedidos</li>
           </ul>
-          <a class="btn btn-cream" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Empezar</a>
+          <a class="btn btn-cream" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
+        </article>
+        <article class="plan glass-c reveal">
+          <span class="name">Enterprise</span>
+          <div class="credits"><span style="margin-right:.22em">&gt;</span>1.400</div>
+          <div class="credits-l">Dólares al mes</div>
+          <div class="billed">Sube cuando tu trabajo crece, baja cuando quieras</div>
+          <ul>
+            <li>Dos mejoras en paralelo</li>
+            <li>Respuesta prioritaria</li>
+            <li>Revisión de avances cada semana</li>
+            <li>Más áreas de tu empresa</li>
+          </ul>
+          <a class="btn btn-ink" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
         </article>
       </div>
-      <p class="plans-note reveal">Precios en dólares estadounidenses.</p>
     </div>
   </section>
 
@@ -505,7 +492,7 @@
   <section class="dark cta">
     <div class="wrap reveal">
       <span class="label"><span class="dot-red"></span>Hablemos</span>
-      <h2>¿Cuál es <em>tu idea?</em></h2>
+      <h2>¿Qué problema <em>quieres resolver?</em></h2>
       <div class="actions">
         <a class="btn btn-cream" href="https://cal.com/koddo-charls/30min" target="_blank" rel="noopener noreferrer">Agenda 30 min</a>
         <a class="btn btn-ghost" href="#planes">Ver planes</a>
@@ -534,14 +521,6 @@
     addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    const grid = document.getElementById('plan-grid');
-    document.querySelectorAll('.toggle button').forEach(b => b.addEventListener('click', () => {
-      const mode = b.dataset.billing;
-      document.querySelectorAll('.toggle button').forEach(x => x.setAttribute('aria-pressed', x === b));
-      grid.classList.toggle('annual-on', mode === 'annual');
-      grid.querySelectorAll('[data-monthly]').forEach(el => { el.textContent = el.dataset[mode]; });
-    }));
-    if (new URLSearchParams(location.search).get('pago') === 'anual') document.querySelector('[data-billing="annual"]').click();
   </script>
 </body>
 </html>
